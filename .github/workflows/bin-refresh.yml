@@ -73,27 +73,16 @@ jobs:
       # - name: Fill update.json size/sha256/notes (per-variant manifests; MMRL stub <50MB)
       # ---------------------------------------------------------------------------------
 
-      - name: Commit binary refresh
-        # if: steps.chk.outputs.state == 'changed'
-        run: |
-          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "nothing to commit"
-          else
-            git commit -m "chore: binary refresh ${VER}"
-            git push
-          fi
-
-      - name: Create GitHub release
+      # Order (STANDARDS 7.1): PUBLISH the release first, assert the bot author, and ONLY THEN commit the
+      # patch-bump. Committing the bump before a successful publish would, on a failed publish, leave the
+      # branch bumped with update.json pointing at a 404 asset - worse on a cron with no human watching.
+      - name: Create GitHub release (publish BEFORE committing the bump)
         # if: steps.chk.outputs.state == 'changed'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
-          gh release create "${VER}" --title "VD INSTALLER ${VER} (binary refresh)" --generate-notes ./*.zip
+          gh release create "${VER}" --title "VD INSTALLER ${VER} (binary refresh)" --generate-notes dist/*.zip
 
       # Fail-closed guard: if the token was ever swapped for a user PAT, the release ships under that
       # human; this catches it in CI instead of silently.
@@ -105,3 +94,12 @@ jobs:
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
           author="$(gh release view "${VER}" --json author -q '.author.login')"
           [ "$author" = "github-actions[bot]" ] || { echo "::error::release ${VER} authored by ${author}, not github-actions[bot]"; exit 1; }
+
+      - name: Commit the patch-bump + lock (after a successful publish)
+        # if: steps.chk.outputs.state == 'changed'
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add module/module.prop module/update.json .github/bin-versions.lock CHANGELOG.md 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing to commit"; else git commit -m "chore: binary refresh ${VER}"; git push; fi

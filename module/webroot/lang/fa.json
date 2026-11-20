@@ -1,12 +1,10 @@
 {
   "app_title": "VDInstaller",
   "app_tagline": "نصب‌کننده sideload با روت و بدون دردسر",
-
   "nav_install": "نصب",
   "nav_options": "گزینه‌ها",
   "nav_about": "درباره",
   "nav_updates": "به‌روزرسانی‌ها",
-
   "mode_label": "چه چیزی نصب می‌کنید؟",
   "mode_single": "APK تکی",
   "mode_single_hint": "یک فایل .apk.",
@@ -16,7 +14,6 @@
   "mode_archive_hint": "یک بسته گروه‌بندی‌شده: .xapk، .apkm، .apks یا .zip (base + splits).",
   "mode_splitdir": "پوشه split",
   "mode_splitdir_hint": "پوشه‌ای با فایل‌های .apk پراکنده split یک اپ.",
-
   "lbl_path_file": "مسیر APK",
   "lbl_path_folder": "مسیر پوشه",
   "ph_path_file": "/sdcard/Download/app.apk",
@@ -29,14 +26,12 @@
   "browse_up": "بالا",
   "browse_usefolder": "استفاده از این پوشه",
   "browse_empty": "چیز قابل نصبی اینجا نیست.",
-
   "opt_source_head": "منبع نصب",
   "opt_spoof": "نمایش Play Store به عنوان نصب‌کننده",
   "opt_spoof_hint": "installerPackageName را تنظیم می‌کند تا اپ sideloaded به نظر نرسد.",
   "opt_spoof_pkg": "بسته نصب‌کننده",
   "opt_deepspoof": "آغازگر را هم جعل کن (packages.xml)",
   "opt_deepspoof_hint": "installInitiator و packageSource را تنظیم می‌کند. پس از ریبوت بعدی اعمال می‌شود.",
-
   "opt_verifier_head": "بررسی‌کننده Play Protect",
   "opt_verifier": "بررسی‌کننده بسته",
   "verifier_restore": "همان‌طور که بود نگه دار (فقط در حین نصب خاموش)",
@@ -45,16 +40,13 @@
   "verifier_off_warn": "خاموش گذاشتن بررسی‌کننده یک نشانه مخفی‌کاری است (مقداری که پیش از این نبود). فقط اگر دلیلش را می‌دانید استفاده کنید.",
   "opt_devverif": "Developer Verification",
   "devverif_note": "Developer Verification اندروید توسط یک سرویس جداگانه اعمال می‌شود، نه Play Protect. نصب با روت پیشاپیش معاف است، پس این کلید در حد تلاش است.",
-
   "opt_flags_head": "flagهای نصب",
   "opt_grant": "اعطای همه مجوزهای runtime",
   "opt_test": "اجازه بسته‌های آزمایشی",
   "opt_lowsdk": "دور زدن قفل target SDK پایین",
   "opt_user": "کاربر هدف",
-
   "hma_title": "پنهان بمانید",
   "hma_text": "برای مخفی‌کاری، پنهان کردن مدیر روت و اپ‌های حساس خود با HMA-OSS را در نظر بگیرید. VDInstaller هرگز به پیکربندی HMA-OSS شما دست نمی‌زند - هر وقت خواستید HMA-OSS را باز کنید و خودتان تغییر را اعمال کنید.",
-
   "phase_starting": "در حال شروع",
   "phase_extracting": "در حال استخراج",
   "phase_installing": "در حال نصب",
@@ -62,12 +54,12 @@
   "phase_done": "انجام شد",
   "msg_installed_ok": "نصب شد: ${pkg}",
   "msg_installed_fail": "نصب ناموفق بود: ${msg}",
-  "hint_verifier": "بررسی‌کننده Play Protect آن را مسدود کرد. در Options، کلید بررسی‌کننده را روی «همان‌طور که بود نگه دار» بگذارید تا VDInstaller آن را برای نصب خاموش کند.",
+  "hint_verifier": "بررسی‌کننده Play Protect آن را مسدود کرد. در گزینه‌ها، کلید بررسی‌کننده را روی «همان‌طور که بود نگه دار» بگذارید تا VDInstaller آن را برای نصب خاموش کند.",
   "hint_downgrade": "این نسخه‌ای قدیمی‌تر از نسخه نصب‌شده است. Android از بازگشت درجا به نسخه پایین‌تر جلوگیری می‌کند؛ ابتدا اپ فعلی را حذف نصب کنید (داده‌هایش از بین می‌رود).",
   "hint_storage": "فضای ذخیره‌سازی کافی نیست. مقداری فضا آزاد کنید و دوباره تلاش کنید.",
   "hint_signature": "اپ نصب‌شده با کلید دیگری امضا شده است. ابتدا آن را حذف نصب کنید (داده‌هایش از بین می‌رود)، سپس این یکی را نصب کنید.",
   "hint_exists": "آن بسته از قبل نصب شده است.",
-  "hint_lowsdk": "اپ، SDK بسیار قدیمی‌تری از این Android را هدف گرفته است. «دور زدن قفل target SDK پایین» را در Options فعال کنید.",
+  "hint_lowsdk": "اپ، SDK بسیار قدیمی‌تری از این Android را هدف گرفته است. «دور زدن قفل target SDK پایین» را در گزینه‌ها فعال کنید.",
   "hint_invalid_apk": "APK قابل تجزیه نبود. ممکن است خراب باشد، یا یک APK معتبر یا مجموعه split معتبر برای این حالت نباشد.",
   "opt_restore": "بازگرداندن منبع نصب اصلی",
   "opt_restore_hint": "جعل آغازگر در packages.xml را از جدیدترین نسخه پشتیبان بازمی‌گرداند؛ پس از ریبوت بعدی اعمال می‌شود.",
@@ -79,7 +71,6 @@
   "msg_batch_done": "${ok} از ${total} نصب شد",
   "msg_need_path": "ابتدا یک مسیر وارد کنید.",
   "msg_cancelled": "لغو شد.",
-
   "about_version": "نسخه",
   "about_what": "VDInstaller اپ‌های APK سایدلودشده را به صورت روت و بدون دردسر نصب می‌کند: بدون درخواست اعطای su، بدون ترمینال، بدون جنگیدن با Play Protect. یک APK انتخاب کنید و نصب کنید.",
   "about_features_head": "چه کاری انجام می‌دهد",
@@ -93,7 +84,6 @@
   "about_license": "GNU AGPL-3.0-or-later. نرم‌افزار آزاد؛ اگر نسخه‌ای تغییریافته را اجرا کنید، حتی به صورت سرویس، باید کد منبع آن را ارائه دهید.",
   "about_credit": "ساخته VD171. تولیدشده با Claude.",
   "about_links": "پیوندها",
-
   "err_generic": "مشکلی پیش آمد.",
   "err_path": "فایل پیدا نشد.",
   "err_dir": "پوشه پیدا نشد.",

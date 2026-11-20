@@ -73,17 +73,45 @@
 
   // --- scan -------------------------------------------------------------
   function dirOf(p) { p = String(p || "").replace(/\/+$/, ""); var i = p.lastIndexOf("/"); return i > 0 ? p.slice(0, i) : "/"; }
-  $("scan-btn").addEventListener("click", function () {
-    var p = $("path").value.trim(); if (!p) { $("scan-out").textContent = T("msg_need_path"); return; }
-    var dir = isFolderMode(mode) ? p : dirOf(p);
-    $("scan-out").textContent = "...";
-    api("scan", { dir: dir }).then(function (r) {
-      if (!r.ok) { $("scan-out").textContent = T("err_" + ((r.code || "").replace("ERR_", "").toLowerCase()) || "err_generic") || r.message; return; }
-      var items = r.items || [];
-      if (!items.length) { $("scan-out").textContent = T("scan_empty"); return; }
-      $("scan-out").textContent = T("scan_count", { n: items.length }) + ": " + items.map(function (x) { return x.name; }).join(", ");
+  var browseDir = "/sdcard", browseParent = "/";
+  function openBrowse() {
+    $("browse-usefolder").classList.toggle("hidden", !isFolderMode(mode));
+    $("browse-title").textContent = T(isFolderMode(mode) ? "browse_title_folder" : "browse_title_file");
+    var p = $("path").value.trim();
+    loadBrowse(p ? (isFolderMode(mode) ? p : dirOf(p)) : "/sdcard");
+    $("browse-modal").classList.remove("hidden");
+  }
+  function closeBrowse() { $("browse-modal").classList.add("hidden"); }
+  function loadBrowse(dir) {
+    api("browse", { dir: dir }).then(function (r) {
+      if (!r.ok) { if (dir !== "/sdcard") loadBrowse("/sdcard"); return; }
+      browseDir = r.dir; browseParent = r.parent || "/";
+      $("browse-path").textContent = r.dir;
+      var list = $("browse-list"); list.innerHTML = "";
+      var ents = (r.entries || []).slice().sort(function (a, b) {
+        if ((a.type === "dir") !== (b.type === "dir")) return a.type === "dir" ? -1 : 1;
+        return a.name < b.name ? -1 : (a.name > b.name ? 1 : 0);
+      });
+      if (!ents.length) {
+        var em = document.createElement("div"); em.className = "browse-row muted"; em.textContent = T("browse_empty"); list.appendChild(em);
+      }
+      ents.forEach(function (e) {
+        var row = document.createElement("div"); row.className = "browse-row";
+        row.textContent = (e.type === "dir" ? "📁 " : "📄 ") + e.name;
+        row.addEventListener("click", function () {
+          if (e.type === "dir") loadBrowse(browseDir.replace(/\/+$/, "") + "/" + e.name);
+          else if (!isFolderMode(mode)) { $("path").value = browseDir.replace(/\/+$/, "") + "/" + e.name; closeBrowse(); }
+        });
+        list.appendChild(row);
+      });
+      $("browse-up").disabled = (r.dir === "/");
     });
-  });
+  }
+  $("browse-btn").addEventListener("click", openBrowse);
+  $("browse-close").addEventListener("click", closeBrowse);
+  $("browse-modal").addEventListener("click", function (e) { if (e.target === $("browse-modal")) closeBrowse(); });
+  $("browse-up").addEventListener("click", function () { loadBrowse(browseParent); });
+  $("browse-usefolder").addEventListener("click", function () { $("path").value = browseDir; closeBrowse(); });
 
   // --- install + progress ----------------------------------------------
   var timer = null, curOpid = null;

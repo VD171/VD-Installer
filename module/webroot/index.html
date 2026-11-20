@@ -71,7 +71,7 @@
         <label class="field" id="path-label" data-i18n="lbl_path_file">APK path</label>
         <div class="row">
           <input type="text" id="path" data-i18n-ph="ph_path_file" autocomplete="off" autocapitalize="none" spellcheck="false">
-          <button class="btn sec" id="scan-btn" data-i18n="btn_scan">Scan</button>
+          <button class="btn sec" id="browse-btn" data-i18n="btn_browse">Browse</button>
         </div>
         <div id="scan-out" class="muted" style="font-size:12px;margin-top:6px;"></div>
 
@@ -133,19 +133,62 @@
 
     <!-- ABOUT -->
     <section id="tab-about" class="tab">
+      <div class="card" style="text-align:center">
+        <img src="assets/logo-icon.svg" alt="" style="width:56px;height:56px">
+        <div class="ttl" style="font-size:20px;margin-top:6px" data-i18n="app_title">VDInstaller</div>
+        <div class="muted" data-i18n="app_tagline">Frictionless root sideload installer</div>
+        <div class="muted" style="margin-top:4px"><span data-i18n="about_version">Version</span> <span id="ver">-</span></div>
+      </div>
       <div class="card">
-        <div class="switch"><span class="lbl" data-i18n="about_version">Version</span><span id="ver" class="muted">-</span></div>
-        <p data-i18n="about_what" style="color:var(--muted);font-size:13px"></p>
+        <p style="margin:0" data-i18n="about_what"></p>
+      </div>
+      <div class="card">
+        <h2 data-i18n="about_features_head">What it does</h2>
+        <ul style="margin:0;padding-inline-start:18px">
+          <li data-i18n="about_feat_modes"></li>
+          <li data-i18n="about_feat_verifier"></li>
+          <li data-i18n="about_feat_source"></li>
+          <li data-i18n="about_feat_detached"></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 data-i18n="about_req_head">Requirements</h2>
+        <p class="muted" style="margin:0" data-i18n="about_req"></p>
       </div>
       <div class="card links">
-        <h2 data-i18n="about_links">Links</h2>
+        <h2 data-i18n="about_links">Links &amp; contact</h2>
+        <div><a href="https://github.com/VD171/VD-Installer" target="_blank" rel="noreferrer">github.com/VD171/VD-Installer</a></div>
         <div><a href="https://github.com/VD171" target="_blank" rel="noreferrer">GitHub @VD171</a></div>
         <div><a href="https://vd171.ru" target="_blank" rel="noreferrer">https://vd171.ru</a></div>
         <div><a href="https://vd.priv8.ru" target="_blank" rel="noreferrer">https://vd.priv8.ru</a></div>
+        <div><a href="https://xdaforums.com/t/root-webui-v1-00-vd-installer.4809504/" target="_blank" rel="noreferrer">XDA thread</a></div>
         <div><a href="https://t.me/VD_Priv8" target="_blank" rel="noreferrer">Telegram @VD_Priv8</a></div>
+        <div><a href="https://t.me/Priv8_VD" target="_blank" rel="noreferrer">Channel @Priv8_VD</a></div>
+        <div><a href="https://discord.com/users/1296831918989639721" target="_blank" rel="noreferrer">Discord @VD.Priv8</a></div>
         <div class="muted">vd.priv8@pm.me</div>
       </div>
+      <div class="card">
+        <h2 data-i18n="about_license_head">License</h2>
+        <p class="muted" style="margin:0 0 8px" data-i18n="about_license"></p>
+        <p class="muted" style="margin:0;font-size:12px" data-i18n="about_credit"></p>
+      </div>
     </section>
+
+    <!-- BROWSE MODAL -->
+    <div class="modal hidden" id="browse-modal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <span id="browse-title" data-i18n="browse_title_file">Select a file</span>
+          <button class="btn sec" id="browse-close" aria-label="close">&#10005;</button>
+        </div>
+        <div class="browse-path" id="browse-path"></div>
+        <div class="browse-list" id="browse-list"></div>
+        <div class="modal-foot">
+          <button class="btn sec" id="browse-up" data-i18n="browse_up">Up</button>
+          <button class="btn hidden" id="browse-usefolder" data-i18n="browse_usefolder">Use this folder</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="lang/en.js"></script>

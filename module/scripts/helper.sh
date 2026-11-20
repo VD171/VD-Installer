@@ -68,6 +68,28 @@ case "$VERB" in
     done
     ok "\"dir\":\"$(jstr "$_dir")\",\"items\":[$_items]" ;;
 
+  browse)
+    _dir="$(jget "$ARGS" '.dir')"; case "$_dir" in ''|null) _dir=/sdcard ;; esac
+    [ -d "$_dir" ] || _dir=/sdcard; [ -d "$_dir" ] || _dir=/
+    _dir="$(cd "$_dir" 2>/dev/null && pwd)"; [ -n "$_dir" ] || _dir=/
+    case "$_dir" in /) _parent=/ ;; *) _parent="$(dirname "$_dir")" ;; esac
+    _ents=""
+    for _e in "$_dir"/*; do
+      [ -e "$_e" ] || continue
+      _bn="$(basename "$_e")"
+      if [ -d "$_e" ]; then _et=dir; _es=0
+      else
+        case "$_e" in
+          *.apk|*.APK) _et=apk ;;
+          *.xapk|*.XAPK|*.apkm|*.APKM|*.apks|*.APKS|*.zip|*.ZIP) _et=archive ;;
+          *) continue ;;
+        esac
+        _es="$(stat -c %s "$_e" 2>/dev/null)"
+      fi
+      _ents="${_ents:+$_ents,}$(printf '{"name":"%s","type":"%s","size":%s}' "$(jstr "$_bn")" "$_et" "${_es:-0}")"
+    done
+    ok "\"dir\":\"$(jstr "$_dir")\",\"parent\":\"$(jstr "$_parent")\",\"entries\":[$_ents]" ;;
+
   install)
     case "$(jget "$ARGS" '.mode')" in
       single)   _w=install-single ;;

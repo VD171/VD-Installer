@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+  ======================================================================
+   VD INSTALLER  ::  frictionless root sideload installer
+   Install sideload APKs as root (single/batch/split), no friction: KernelSU/APatch/Magisk WebUI.
+
+   Copyright (C) 2026  VD171
+   SPDX-License-Identifier: AGPL-3.0-or-later
+
+   Free software under the GNU AGPL v3 or later. NETWORK COPYLEFT: run a
+   modified version, even as a service, and you MUST offer its source.
+
+   Site           : https://vd171.ru
+   Site           : https://vd.priv8.ru
+   Source         : https://github.com/VD171/VD-Installer
+   GitHub         : @VD171 https://github.com/VD171
+   XDA-Developers : @VD171 https://xdaforums.com/m/vd171.4699873/
+   XDA thread     : https://xdaforums.com/t/VD-Installer.4809504/
+   Telegram       : @VD_Priv8 https://t.me/VD_Priv8
+   Channel        : @Priv8_VD https://t.me/Priv8_VD
+   Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
+   E-mail         : vd.priv8@pm.me
+  ======================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>VDInstaller</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo-icon.svg" alt="">
+    <div>
+      <div class="ttl" data-i18n="app_title">VDInstaller</div>
+      <div class="sub" data-i18n="app_tagline">Frictionless root sideload installer</div>
+    </div>
+  </header>
+
+  <nav>
+    <button data-tab="install" class="active" data-i18n="nav_install">Install</button>
+    <button data-tab="options" data-i18n="nav_options">Options</button>
+    <button data-tab="about" data-i18n="nav_about">About</button>
+  </nav>
+
+  <main>
+    <!-- INSTALL -->
+    <section id="tab-install" class="tab active">
+      <div class="card">
+        <h2 data-i18n="mode_label">What are you installing?</h2>
+        <div class="modes" id="modes">
+          <div class="mode sel" data-mode="single">
+            <div class="mt" data-i18n="mode_single">Single APK</div>
+            <div class="mh" data-i18n="mode_single_hint"></div>
+          </div>
+          <div class="mode" data-mode="batch">
+            <div class="mt" data-i18n="mode_batch">Folder of APKs</div>
+            <div class="mh" data-i18n="mode_batch_hint"></div>
+          </div>
+          <div class="mode" data-mode="archive">
+            <div class="mt" data-i18n="mode_archive">Split archive</div>
+            <div class="mh" data-i18n="mode_archive_hint"></div>
+          </div>
+          <div class="mode" data-mode="splitdir">
+            <div class="mt" data-i18n="mode_splitdir">Split folder</div>
+            <div class="mh" data-i18n="mode_splitdir_hint"></div>
+          </div>
+        </div>
+
+        <label class="field" id="path-label" data-i18n="lbl_path_file">APK path</label>
+        <div class="row">
+          <input type="text" id="path" data-i18n-ph="ph_path_file" autocomplete="off" autocapitalize="none" spellcheck="false">
+          <button class="btn sec" id="scan-btn" data-i18n="btn_scan">Scan</button>
+        </div>
+        <div id="scan-out" class="muted" style="font-size:12px;margin-top:6px;"></div>
+
+        <button class="btn block" id="install-btn" data-i18n="btn_install">Install</button>
+      </div>
+
+      <div class="card hidden" id="progress-card">
+        <div class="switch"><span class="lbl" id="phase-text" data-i18n="phase_starting">Starting</span>
+          <button class="btn sec" id="cancel-btn" data-i18n="btn_cancel">Cancel</button></div>
+        <div class="progress"><i id="bar"></i></div>
+        <div class="log" id="log"></div>
+      </div>
+
+      <div class="card">
+        <div class="notice">
+          <strong data-i18n="hma_title">Stay hidden</strong>
+          <div style="margin-top:6px" data-i18n="hma_text"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section id="tab-options" class="tab">
+      <div class="card">
+        <h2 data-i18n="opt_source_head">Install source</h2>
+        <div class="switch"><span class="lbl"><span data-i18n="opt_spoof">Show the Play Store as installer</span>
+          <div class="hint" data-i18n="opt_spoof_hint"></div></span>
+          <label class="toggle"><input type="checkbox" id="o-spoof"><span></span></label></div>
+        <label class="field" data-i18n="opt_spoof_pkg">Installer package</label>
+        <input type="text" id="o-spoofpkg" autocomplete="off" autocapitalize="none" spellcheck="false">
+        <div class="switch"><span class="lbl"><span data-i18n="opt_deepspoof">Also spoof the initiator (packages.xml)</span>
+          <div class="hint" data-i18n="opt_deepspoof_hint"></div></span>
+          <label class="toggle"><input type="checkbox" id="o-deepspoof"><span></span></label></div>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="opt_verifier_head">Play Protect verifier</h2>
+        <label class="radio"><input type="radio" name="verifier" value="restore"><span data-i18n="verifier_restore"></span></label>
+        <label class="radio"><input type="radio" name="verifier" value="always_on"><span data-i18n="verifier_on"></span></label>
+        <label class="radio"><input type="radio" name="verifier" value="always_off"><span data-i18n="verifier_off"></span></label>
+        <div class="notice danger hidden" id="verifier-warn" data-i18n="verifier_off_warn"></div>
+        <h2 style="margin-top:14px" data-i18n="opt_devverif">Developer Verification</h2>
+        <label class="radio"><input type="radio" name="devverif" value="restore"><span data-i18n="verifier_restore"></span></label>
+        <label class="radio"><input type="radio" name="devverif" value="always_on"><span data-i18n="verifier_on"></span></label>
+        <label class="radio"><input type="radio" name="devverif" value="always_off"><span data-i18n="verifier_off"></span></label>
+        <div class="notice" style="margin-top:8px" data-i18n="devverif_note"></div>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="opt_flags_head">Install flags</h2>
+        <div class="switch"><span class="lbl" data-i18n="opt_grant">Grant all runtime permissions</span><label class="toggle"><input type="checkbox" id="o-grant"><span></span></label></div>
+        <div class="switch"><span class="lbl" data-i18n="opt_downgrade">Allow downgrade</span><label class="toggle"><input type="checkbox" id="o-downgrade"><span></span></label></div>
+        <div class="switch"><span class="lbl" data-i18n="opt_test">Allow test packages</span><label class="toggle"><input type="checkbox" id="o-test"><span></span></label></div>
+        <div class="switch"><span class="lbl" data-i18n="opt_lowsdk">Bypass low target SDK block</span><label class="toggle"><input type="checkbox" id="o-lowsdk"><span></span></label></div>
+        <label class="field" data-i18n="opt_user">Target user</label>
+        <input type="number" id="o-user" min="0" value="0">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="tab-about" class="tab">
+      <div class="card">
+        <div class="switch"><span class="lbl" data-i18n="about_version">Version</span><span id="ver" class="muted">-</span></div>
+        <p data-i18n="about_what" style="color:var(--muted);font-size:13px"></p>
+      </div>
+      <div class="card links">
+        <h2 data-i18n="about_links">Links</h2>
+        <div><a href="https://github.com/VD171" target="_blank" rel="noreferrer">GitHub @VD171</a></div>
+        <div><a href="https://vd171.ru" target="_blank" rel="noreferrer">https://vd171.ru</a></div>
+        <div><a href="https://vd.priv8.ru" target="_blank" rel="noreferrer">https://vd.priv8.ru</a></div>
+        <div><a href="https://t.me/VD_Priv8" target="_blank" rel="noreferrer">Telegram @VD_Priv8</a></div>
+        <div class="muted">vd.priv8@pm.me</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="lang/en.js"></script>
+  <script src="i18n.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

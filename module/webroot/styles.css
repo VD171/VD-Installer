@@ -1,0 +1,113 @@
+/*
+ * ======================================================================
+ *  VD INSTALLER  ::  frictionless root sideload installer
+ *  Install sideload APKs as root (single/batch/split), no friction: KernelSU/APatch/Magisk WebUI.
+ *
+ *  Copyright (C) 2026  VD171
+ *  SPDX-License-Identifier: AGPL-3.0-or-later
+ *
+ *  Free software under the GNU AGPL v3 or later. NETWORK COPYLEFT: run a
+ *  modified version, even as a service, and you MUST offer its source.
+ *
+ *  Site           : https://vd171.ru
+ *  Site           : https://vd.priv8.ru
+ *  Source         : https://github.com/VD171/VD-Installer
+ *  GitHub         : @VD171 https://github.com/VD171
+ *  XDA-Developers : @VD171 https://xdaforums.com/m/vd171.4699873/
+ *  XDA thread     : https://xdaforums.com/t/VD-Installer.4809504/
+ *  Telegram       : @VD_Priv8 https://t.me/VD_Priv8
+ *  Channel        : @Priv8_VD https://t.me/Priv8_VD
+ *  Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
+ *  E-mail         : vd.priv8@pm.me
+ * ======================================================================
+ */
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --surface-2: #eceef1; --border: #d8dbe0;
+  --text: #1a1c1f; --muted: #5b6069; --accent: #1f8a4c; --accent-2: #166b3a;
+  --danger: #c0392b; --warn: #b8860b; --radius: 12px; --gap: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a; --surface: #1e2126; --surface-2: #272b31; --border: #353a42;
+    --text: #e8eaed; --muted: #9aa1ab; --accent: #2ecc71; --accent-2: #27ae60;
+    --danger: #e74c3c; --warn: #e2b007;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a; --surface: #1e2126; --surface-2: #272b31; --border: #353a42;
+  --text: #e8eaed; --muted: #9aa1ab; --accent: #2ecc71; --accent-2: #27ae60;
+  --danger: #e74c3c; --warn: #e2b007;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px; line-height: 1.5; -webkit-text-size-adjust: 100%;
+}
+header {
+  display: flex; align-items: center; gap: 10px; padding: 16px;
+  background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5;
+}
+header img { width: 32px; height: 32px; }
+header .ttl { font-weight: 700; font-size: 18px; }
+header .sub { color: var(--muted); font-size: 12px; }
+nav { display: flex; gap: 4px; padding: 8px 12px 0; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 64px; z-index: 4; }
+nav button {
+  flex: 1; border: none; background: none; color: var(--muted); font: inherit; font-weight: 600;
+  padding: 10px 6px; border-bottom: 2px solid transparent; cursor: pointer;
+}
+nav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+main { padding: 16px; max-width: 760px; margin: 0 auto; }
+.tab { display: none; }
+.tab.active { display: block; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--gap); margin-bottom: var(--gap);
+}
+.card h2 { margin: 0 0 10px; font-size: 15px; }
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mode {
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; cursor: pointer; background: var(--surface-2);
+}
+.mode.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.mode .mt { font-weight: 600; }
+.mode .mh { color: var(--muted); font-size: 12px; margin-top: 4px; }
+label.field { display: block; margin: 10px 0 4px; font-size: 13px; color: var(--muted); }
+input[type=text], input[type=number], select {
+  width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text); font: inherit;
+}
+.row { display: flex; gap: 8px; align-items: center; }
+.row > input[type=text] { flex: 1; }
+button.btn {
+  border: none; border-radius: 10px; padding: 11px 16px; font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: #fff;
+}
+button.btn:active { background: var(--accent-2); }
+button.btn.sec { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+button.btn.block { width: 100%; margin-top: 12px; }
+button.btn[disabled] { opacity: .5; }
+.switch { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; }
+.switch .lbl { flex: 1; }
+.switch .hint { color: var(--muted); font-size: 12px; }
+.toggle { position: relative; width: 44px; height: 26px; flex: none; }
+.toggle input { opacity: 0; width: 100%; height: 100%; margin: 0; }
+.toggle span { position: absolute; inset: 0; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; transition: .15s; }
+.toggle span::after { content: ""; position: absolute; width: 20px; height: 20px; left: 2px; top: 2px; background: #fff; border-radius: 50%; transition: .15s; }
+.toggle input:checked + span { background: var(--accent); border-color: var(--accent); }
+.toggle input:checked + span::after { left: 20px; }
+.radio { display: block; padding: 8px 0; }
+.radio input { margin-right: 8px; }
+.notice { border: 1px solid var(--warn); border-radius: var(--radius); padding: 12px; background: color-mix(in srgb, var(--warn) 10%, var(--surface)); font-size: 13px; }
+.notice.danger { border-color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--surface)); }
+details > summary { cursor: pointer; font-weight: 600; padding: 6px 0; list-style: none; }
+details > summary::before { content: "\25B8"; display: inline-block; margin-right: 6px; transition: .15s; }
+details[open] > summary::before { transform: rotate(90deg); }
+.progress { height: 8px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin: 10px 0; }
+.progress > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.log { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px; font-family: ui-monospace, monospace; font-size: 12px; white-space: pre-wrap; max-height: 240px; overflow: auto; }
+.links a { color: var(--accent); text-decoration: none; }
+.links div { padding: 3px 0; }
+.muted { color: var(--muted); }
+.hidden { display: none !important; }
+@media (max-width: 480px) { .modes { grid-template-columns: 1fr; } nav { top: 64px; } }

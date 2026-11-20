@@ -4,6 +4,7 @@
   "nav_install": "Установка",
   "nav_options": "Параметры",
   "nav_about": "О программе",
+  "nav_updates": "Обновления",
   "mode_label": "Что вы устанавливаете?",
   "mode_single": "Один APK",
   "mode_single_hint": "Один файл .apk.",

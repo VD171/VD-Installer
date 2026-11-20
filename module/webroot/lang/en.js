@@ -28,6 +28,7 @@ window.__I18N_EN = {
   nav_install: "Install",
   nav_options: "Options",
   nav_about: "About",
+  nav_updates: "Updates",
 
   mode_label: "What are you installing?",
   mode_single: "Single APK",

@@ -48,13 +48,54 @@
   function api(verb, args) { return execCommand(HELPER + " " + verb + " " + b64(JSON.stringify(args || {}))).then(parse); }
   function apiRaw(verb, raw) { return execCommand(HELPER + " " + verb + " " + b64(String(raw))).then(parse); }
 
+  // --- VDLU updater bridge ----------------------------------------------
+  var VDLU_STATE_DIR = "/data/adb/vdinstaller/vdlu";
+  var _vdluReady = false, _vdluPanelMounted = false;
+  function currentUiLang() { return document.documentElement.getAttribute("lang") || "en"; }
+  function vdluExec(cmd) {
+    return execCommand(cmd).then(function (r) {
+      if (r.errno === 0) return r.stdout;
+      throw new Error(r.stderr || r.stdout || ("rc=" + r.errno));
+    });
+  }
+  function loadVdluI18n(lang) {
+    return new Promise(function (resolve) {
+      if (!lang || lang === "en") return resolve(null);
+      var file = (lang === "pt") ? "pt-BR" : lang;
+      var g = "VDLU_I18N_" + file.toUpperCase().replace(/-/g, "_");
+      if (typeof window[g] !== "undefined") return resolve(window[g]);
+      var s = document.createElement("script");
+      s.src = "vdlu-i18n/" + file + ".js";
+      s.onload = function () { resolve((typeof window[g] !== "undefined") ? window[g] : null); };
+      s.onerror = function () { resolve(null); };
+      document.head.appendChild(s);
+    });
+  }
+  function initVdlu() {
+    if (_vdluReady || !window.VDLU) return;
+    _vdluReady = true;
+    loadVdluI18n(currentUiLang()).then(function (dict) {
+      var opts = { exec: vdluExec, moduleDir: MOD, vdluDir: VDLU_STATE_DIR, modid: "vdinstaller", module: "VDInstaller" };
+      if (dict) opts.i18n = dict;
+      VDLU.init(opts);
+      VDLU.onWebUIOpen().catch(function () {});
+    });
+  }
+  function openUpdatesPanel() {
+    if (!window.VDLU) return;
+    initVdlu();
+    if (!_vdluPanelMounted) { _vdluPanelMounted = true; VDLU.mountUpdatesPanel("vdlu-updates"); }
+  }
+
   // --- tabs -------------------------------------------------------------
   document.querySelectorAll("nav button").forEach(function (b) {
     b.addEventListener("click", function () {
       document.querySelectorAll("nav button").forEach(function (x) { x.classList.remove("active"); });
       document.querySelectorAll(".tab").forEach(function (x) { x.classList.remove("active"); });
       b.classList.add("active");
-      $("tab-" + b.getAttribute("data-tab")).classList.add("active");
+      var tab = b.getAttribute("data-tab");
+      $("tab-" + tab).classList.add("active");
+      if (tab === "updates") openUpdatesPanel();
     });
   });
 
@@ -208,4 +249,5 @@
   });
   loadOptions();
   loadAbout();
+  initVdlu();
 })();

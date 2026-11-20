@@ -4,6 +4,7 @@
   "nav_install": "Installera",
   "nav_options": "Alternativ",
   "nav_about": "Om",
+  "nav_updates": "Uppdateringar",
   "mode_label": "Vad installerar du?",
   "mode_single": "Enskild APK",
   "mode_single_hint": "En .apk-fil.",

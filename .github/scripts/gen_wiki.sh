@@ -164,7 +164,7 @@ write_home() {   # <code>
   if [ "$_c" = en ]; then _file="$WIKI/Home.md"; _px=""; else _file="$WIKI/${_c}-Home.md"; _px="$_c"; fi
   {
     home_switcher "$_c"; echo; echo "---"; echo
-    echo "# VDBackup"
+    echo "# VDInstaller"
     echo
     _tl="$(tagline "$_c")"
     if [ -n "$_tl" ]; then echo "$_tl"; echo; fi

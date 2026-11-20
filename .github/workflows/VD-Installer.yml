@@ -63,9 +63,30 @@ jobs:
       - name: Assemble release zips
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          VC="$(.github/scripts/version.sh read | sed -n 's/.*versionCode=//p')"
           mkdir -p dist
+          # Seed a KEYLESS vdlu/baseline.json (the content-addressed manifest of exactly what THIS
+          # zip ships) so a fresh install is born "current" and its first VDLU self-update is an
+          # incremental diff, not a from:0 full re-fetch. vdlu-pack only hashes + gzips (no private
+          # key), so it is safe in CI; the SIGNED feed is still produced off-CI with the key. The
+          # manifest must match the INSTALLED tree, so this runs AFTER pruning and BEFORE gen-sha256
+          # (vdlu-pack excludes *.sha256 and the trust root). Non-fatal: on failure the zip ships
+          # without a baseline and the engine does one from:0 fetch - correct, never a broken release.
+          seed_baseline() {   # <staged_module_dir>
+            rm -f "$1"/bin/*/.gitkeep
+            rm -f "$1"/vdlu/RELEASE.md          # dev doc: not shipped to device, not VDLU-managed
+            rm -rf /tmp/bl-seed
+            if python3 .github/scripts/vdlu-pack "$1" /tmp/bl-seed vdinstaller "$VC" \
+                 --version-name "$VER" --channel stable >/dev/null 2>&1 \
+               && [ -f /tmp/bl-seed/manifest.json ]; then
+              cp /tmp/bl-seed/manifest.json "$1/vdlu/baseline.json"
+            else
+              echo "::warning::vdlu baseline seed failed for $1 - shipping without baseline (engine will from:0)"
+            fi
+          }
           # universal: all four ABIs (customize.sh prunes to the device ABI on flash)
           rm -rf stage && cp -a module stage
+          seed_baseline stage
           .github/scripts/gen-sha256.sh stage
           (cd stage && zip -qr "../dist/VD-Installer-${VER}-universal.zip" .)
           # per-ABI: prune bundled binaries and the VDLU verifier to one ABI
@@ -73,6 +94,7 @@ jobs:
             rm -rf stage && cp -a module stage
             for d in stage/bin/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
             for d in stage/vdlu/verify/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
+            seed_baseline stage
             .github/scripts/gen-sha256.sh stage
             (cd stage && zip -qr "../dist/VD-Installer-${VER}-${a}.zip" .)
           done

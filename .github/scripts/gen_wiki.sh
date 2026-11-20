@@ -232,14 +232,37 @@ done
   echo "- [[Languages]]"
 } > "$WIKI/_Sidebar.md"
 
-# Languages: per language, link to each translated doc.
+# Languages: the same documents in every standard language, indexed two ways -
+# by document (each file, then its link in every language) and by language.
 {
   echo "# Languages"
+  echo
+  echo "Every document in each of the fleet's standard languages."
+  echo
+  echo "## By document"
+  echo
+  for b in $DOCS; do
+    echo "### $(doclabel "$b" en)"
+    _line=""
+    for c in en $NAV_LANGS; do
+      if [ "$c" = en ]; then
+        [ -f "$WIKI/$b.md" ] || continue
+        _page="$b"; _lbl="English"
+      else
+        [ -f "$WIKI/$c-$b.md" ] || continue
+        _page="$c-$b"; _lbl="$(endonym "$c")"
+      fi
+      _line="${_line:+$_line &middot; }[$_lbl]($_page)"
+    done
+    echo "$_line"
+    echo
+  done
+  echo "## By language"
   echo
   for d in "$SRC"/*/; do
     [ -d "$d" ] || continue
     lang="$(basename "$d")"
-    echo "## ${lang}"
+    echo "### ${lang}"
     echo
     for f in "$d"*.md; do
       [ -f "$f" ] || continue

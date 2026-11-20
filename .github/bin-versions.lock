@@ -1,0 +1,6 @@
+# Upstream pinned versions for VDInstaller's bundled binaries.
+# bin-refresh.yml diffs this set each run; a real change triggers a patch bump +
+# a "binary refresh" release. Keep one line per pinned source: "<name> <version>".
+jq 1.8.2
+oniguruma 6.9.10-1
+abx rhythmcache/android-xml-converter build-11

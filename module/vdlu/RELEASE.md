@@ -6,15 +6,14 @@ so installed devices update **flashlessly and incrementally** - fetching only th
 applying the live ones without a reboot. The `.zip` stays the first-install and fallback path; VDLU is
 additive and never replaces it.
 
-**Why this also matters: flavor-preserving updates (owner's standing concern).** A static zip update
-(`update.json` for the root manager, the MMRL feed) can only point at ONE `zipUrl`, and the device sends
-no ABI/flavor in the request, so it cannot serve the installed flavor: the manager ends up on
-universal-full (232 MB, but it does keep the full flavor and `customize.sh` prunes the ABI), and MMRL is
-forced to universal-lite by its 50 MB cap (a full install drops to lite until rclone/restic are re-fetched
-on demand - not catastrophic, but not what the user picked). VDLU sidesteps all of it: it diffs the
-**installed** tree (whatever ABI/flavor) against the feed and fetches only the deltas, so arm64-full stays
-arm64-full and lite stays lite - no forced flavor, no 232 MB, no 50 MB cap. So "serve the matching flavor
-wherever possible" is, concretely, "keep the VDLU feed live"; the per-flavor zips remain first-install only.
+**Why this also matters: cheap, live updates.** A static zip update (`update.json` for the root manager,
+the MMRL feed) can only point at ONE `zipUrl`, and the device sends no ABI in the request, so it always
+serves the universal zip (all four ABIs; `customize.sh` prunes to the device ABI on flash). VDInstaller is
+small - one universal zip of a few MB, comfortably under MMRL's 50 MB cap - so there is no heavy flavor to
+lose, but a full re-download every release is still wasteful. VDLU sidesteps that: it diffs the
+**installed** tree against the feed and fetches only the files that changed, so an unchanged `jq` / `abx` /
+engine is never refetched and the update applies live, no reboot. So "keep updates cheap and live" is,
+concretely, "keep the VDLU feed live"; the per-ABI zips remain first-install and fallback only.
 
 The feed is produced by the canonical tools in `VD/Sources/VDLiveUpdate/producer/` and consumed by the
 vendored engine here. The private signing key stays with the release operator, never in the repo or on a
@@ -39,8 +38,8 @@ openssl; blobs are gzip (`enc:"gz"`) and the manifest is `engine_min:3`. Contrac
 ```sh
 VDLU=../VDLiveUpdate                 # VD/Sources/VDLiveUpdate
 OUT=./vdlu-feed                      # manifest.json + blobs/ land here
-VER=10800                            # module.prop versionCode (monotonic; hardened blocks downgrade)
-NAME=v1.08                           # module.prop versionName
+VER=10100                            # module.prop versionCode (monotonic; hardened blocks downgrade)
+NAME=v1.01                           # module.prop versionName
 
 # 0. stage the SHIPPED tree. The CI zips module/ with `-x 'bin/*/.gitkeep'`, so the feed must be
 #    packed from a copy with those placeholders stripped: otherwise the manifest lists the
@@ -64,8 +63,8 @@ TREE=_shipped                        # == exactly what every device flashes
 ```
 
 > **Baseline is automatic and keyless - no open decision.** Each `.zip` already ships `vdlu/baseline.json`,
-> the content-addressed manifest of exactly what *that* variant installs (universal-full, lite without
-> rclone/restic, or a single ABI), stamped by the CI with the vendored keyless `vdlu-pack`
+> the content-addressed manifest of exactly what *that* variant installs (the universal tree, or a single
+> ABI), stamped by the CI with the vendored keyless `vdlu-pack`
 > (`.github/scripts/vdlu-pack` - hash + gzip only, never signs). The engine seeds its local `current.json`
 > from it: it is trusted install-local state (it rode in the flashed zip), not a fetched blob, so it is
 > never signature-verified - only the FETCHED feed manifest is (`vdlu-verify`). So the private key stays
@@ -77,8 +76,8 @@ TREE=_shipped                        # == exactly what every device flashes
   `source` the config seeds (`https://vd171.github.io/VD-Modules/VD-Installer`), a path that keeps the repo
   name. `version` is the numeric `versionCode` - the engine compares it monotonically and, under
   `profile=hardened`, refuses a manifest older than the installed one.
-- VD-Installer packs a single feed from the universal tree; the per-ABI pruning that produces the `-full` /
-  `-lite` `.zip` variants does not fork the feed. The `bin/<abi>/` the live device keeps is already on
+- VD-Installer packs a single feed from the universal tree; the per-ABI pruning that produces the
+  single-ABI `.zip` variants does not fork the feed. The `bin/<abi>/` the live device keeps is already on
   disk, so unchanged binaries are never refetched (content-addressed dedup), and no blob is `reboot`-class
   (VD-Installer is self-contained: no `zygisk/`, no `system/`, no real `sepolicy.rule`), so every update
   applies live.

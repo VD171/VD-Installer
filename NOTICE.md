@@ -13,6 +13,15 @@ Termux package repository, so the engine can parse arguments and build JSON repl
 - **License:** MIT
 - **Source:** https://jqlang.github.io/jq/ (bundled from https://packages.termux.dev/apt)
 
+## Oniguruma (libonig)
+
+jq links against Oniguruma for its regular-expression engine; VDInstaller bundles
+the `libonig.so` closure built from the official Termux package repository.
+
+- **Project:** Oniguruma
+- **License:** BSD-2-Clause
+- **Source:** https://github.com/kkos/oniguruma (bundled from https://packages.termux.dev/apt)
+
 ## Android binary XML converter (abx2xml / xml2abx)
 
 VDInstaller bundles the standalone `abx2xml` / `xml2abx` binaries as a fallback for

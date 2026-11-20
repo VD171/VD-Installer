@@ -100,7 +100,7 @@ doclabel() {   # <base> <code> : the doc's own H1 title in that language (fallba
 tagline() {   # <code> : the localized one-line tagline lifted from that language's README
   if [ "$1" = en ]; then _rf="$ROOT_DIR/README.md"; else _rf="$ROOT_DIR/README.$1.md"; fi
   [ -f "$_rf" ] || return 0
-  grep -o '<b>[^<]*</b>' "$_rf" | head -1 | sed -e 's/<[^>]*>//g' -e 's/&amp;/\&/g' -e 's/&lt;/</g' -e 's/&gt;/>/g'
+  { grep -o '<b>[^<]*</b>' "$_rf" || true; } | head -1 | sed -e 's/<[^>]*>//g' -e 's/&amp;/\&/g' -e 's/&lt;/</g' -e 's/&gt;/>/g'
 }
 # Home chrome, localized (section title / all-languages label / footer note).
 t_doc() { case "$1" in
@@ -145,7 +145,7 @@ endonym() { case "$1" in
   es) printf '%s' "Español" ;; fa) printf '%s' "فارسی" ;; fr) printf '%s' "Français" ;; hi) printf '%s' "हिन्दी" ;;
   id) printf '%s' "Bahasa Indonesia" ;; it) printf Italiano ;; ja) printf '%s' "日本語" ;; ko) printf '%s' "한국어" ;;
   nl) printf Nederlands ;; pl) printf Polski ;; pt) printf '%s' "Português" ;; ru) printf '%s' "Русский" ;;
-  sv) printf Svenska ;; th) printf '%s' "ไทย" ;; tr) printf '%s' "Türkçe" ;; vi) printf '%s' "Tiếng Việt" ;;
+  sv) printf Svenska ;; th) printf '%s' "ไทย" ;; tr) printf '%s' "Türkçe" ;; uk) printf '%s' "Українська" ;; vi) printf '%s' "Tiếng Việt" ;;
   zh) printf '%s' "中文" ;; esac; }
 # Home-level language switcher: links each language's Home (current shown plain)
 home_switcher() {

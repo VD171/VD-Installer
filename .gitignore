@@ -1,0 +1,18 @@
+CLAUDE.md
+.docs/
+keys/*.pem
+build/
+.gradle/
+*.apk.idsig
+__pycache__/
+*.pyc
+*.sha256
+# APKs / archives are user input or test fixtures, never shipped in source
+*.apk
+*.xapk
+*.apkm
+*.apks
+# device-pulled artifacts
+*.abx
+settings_ssaid.xml
+packages.xml

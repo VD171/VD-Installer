@@ -17,3 +17,5 @@ __pycache__/
 settings_ssaid.xml
 packages.xml
 dist/
+module/bin/*
+!module/bin/.gitkeep

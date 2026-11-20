@@ -125,6 +125,7 @@ deep_spoof_installer() {   # <pkg> <installer-pkg>
       && grep "<package name=\"$_p\" " "$1" | grep -q 'packageSource="0"'
   }
   if xml_edit "$_f" _dse '<package name=' _dsv "$STATE/pkgxml_backups"; then
+    prune_backups "$STATE/pkgxml_backups" 10
     audit "deep-spoof $_p installInitiator=$_ip packageSource=0 backup=$XMLEDIT_BAK (applies after reboot)"; return 0
   fi
   audit "deep-spoof skipped/failed, live untouched $_p"; return 1
@@ -160,6 +161,19 @@ install_apks() {   # <apk...>  installs as ONE package; 0 = Success
   CMT="$(fw pm install-commit "$SESSION" 2>&1)"
   case "$CMT" in *Success*) return 0 ;; *) INSTALL_MSG="$(printf '%s' "$CMT" | tr '\n' ' ' | sed 's/  */ /g')"; return 1 ;; esac
 }
+# Map a pm failure message to an actionable hint code the WebUI localizes (empty = none).
+install_hint() {
+  case "$INSTALL_MSG" in
+    *VERIFICATION_FAILURE*|*erification*) echo verifier ;;
+    *VERSION_DOWNGRADE*) echo downgrade ;;
+    *INSUFFICIENT_STORAGE*|*"No space"*) echo storage ;;
+    *UPDATE_INCOMPATIBLE*|*INCONSISTENT_CERTIFICATES*|*"signatures do not match"*) echo signature ;;
+    *ALREADY_EXISTS*) echo exists ;;
+    *OLDER_SDK*|*DEPRECATED_SDK_VERSION*|*"requires a newer"*) echo lowsdk ;;
+    *INVALID_APK*|*PARSE_FAILED*|*"Failed to parse"*|*"Scanning Failed"*) echo invalid_apk ;;
+    *) echo "" ;;
+  esac
+}
 # install one app + post-install source handling + audit. echoes a result object (no braces).
 install_one() {   # <apk...>
   snap_before
@@ -175,7 +189,8 @@ install_one() {   # <apk...>
     printf '{"ok":true,"package":"%s","apks":%s}' "$(jstr "${_pkg:-unknown}")" "$#"
     return 0
   fi
-  printf '{"ok":false,"message":"%s"}' "$(jstr "$INSTALL_MSG")"
+  _hint="$(install_hint)"
+  printf '{"ok":false,"message":"%s"%s}' "$(jstr "$INSTALL_MSG")" "${_hint:+,\"hint\":\"$_hint\"}"
   return 1
 }
 
@@ -252,12 +267,34 @@ do_uninstall() {
 
 rm -f "$PKGS_BEFORE" 2>/dev/null
 OBB_DIR=""
+# Revert the packages.xml install-source spoof: restore the newest backup atomically
+# (owner/mode/SELinux preserved), applies after the next reboot. Merlin-class only (system file).
+do_restore_source() {
+  _bd="$STATE/pkgxml_backups"; _tgt=/data/system/packages.xml
+  _bak="$(ls -1t "$_bd"/packages.xml_*.bak 2>/dev/null | head -1)"
+  [ -n "$_bak" ] && [ -f "$_bak" ] || { finish_prog false 100 done '"error":"ERR_NO_BACKUP","message":"no backup to restore"'; return; }
+  [ -f "$_tgt" ] || { finish_prog false 100 done '"error":"ERR_NO_TARGET","message":"packages.xml not found"'; return; }
+  set_prog 40 restoring "install-source" false
+  _own="$(stat -c '%u:%g' "$_tgt" 2>/dev/null)"; _mode="$(stat -c '%a' "$_tgt" 2>/dev/null)"
+  _tmp="$(dirname "$_tgt")/.vdi-restore.$OPID"
+  if cp "$_bak" "$_tmp" 2>/dev/null; then
+    case "$_own" in *[0-9]:*[0-9]) chown "$_own" "$_tmp" 2>/dev/null ;; esac
+    [ -n "$_mode" ] && chmod "$_mode" "$_tmp" 2>/dev/null
+    if mv -f "$_tmp" "$_tgt" 2>/dev/null; then
+      restorecon "$_tgt" 2>/dev/null
+      audit "install-source restored from $(basename "$_bak") (applies after reboot)"
+      finish_prog true 100 done '"restored":true'
+    else rm -f "$_tmp"; finish_prog false 100 done '"error":"ERR_RESTORE","message":"atomic swap failed"'; fi
+  else rm -f "$_tmp"; finish_prog false 100 done '"error":"ERR_RESTORE","message":"copy failed"'; fi
+}
+
 case "$VERB" in
   install-single)   do_single ;;
   install-batch)    do_batch ;;
   install-archive)  do_archive ;;
   install-splitdir) do_splitdir ;;
   uninstall)        do_uninstall ;;
+  restore-source)   do_restore_source ;;
   *) finish_prog false 100 done '"error":"ERR_VERB","message":"unknown worker verb"' ;;
 esac
 rm -f "$PKGS_BEFORE" 2>/dev/null

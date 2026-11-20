@@ -107,6 +107,9 @@
         <div class="switch"><span class="lbl"><span data-i18n="opt_deepspoof">Also spoof the initiator (packages.xml)</span>
           <div class="hint" data-i18n="opt_deepspoof_hint"></div></span>
           <label class="toggle"><input type="checkbox" id="o-deepspoof"><span></span></label></div>
+        <button class="btn sec block" id="restore-source-btn" data-i18n="opt_restore">Restore original install-source</button>
+        <div class="hint" data-i18n="opt_restore_hint"></div>
+        <div class="muted" id="restore-status" style="font-size:12px;margin-top:6px"></div>
       </div>
 
       <div class="card">
@@ -175,6 +178,10 @@
         <div><a href="https://t.me/Priv8_VD" target="_blank" rel="noreferrer">Channel @Priv8_VD</a></div>
         <div><a href="https://discord.com/users/1296831918989639721" target="_blank" rel="noreferrer">Discord @VD.Priv8</a></div>
         <div class="muted">vd.priv8@pm.me</div>
+      </div>
+      <div class="card">
+        <h2 data-i18n="about_activity_head">Recent activity</h2>
+        <div id="activity" class="log" style="max-height:170px"></div>
       </div>
       <div class="card">
         <h2 data-i18n="about_license_head">License</h2>

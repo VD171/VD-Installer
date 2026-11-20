@@ -102,6 +102,12 @@ case "$VERB" in
 
   uninstall)
     _o="$(new_opid)"; detach "$_o" uninstall "$ARGS_B64" && ok "\"opid\":\"$_o\"" || err ERR_DETACH "failed to start" ;;
+  restore-source)
+    _o="$(new_opid)"; detach "$_o" restore-source "$ARGS_B64" && ok "\"opid\":\"$_o\"" || err ERR_DETACH "failed to start" ;;
+  history)
+    _hn="$(jget "$ARGS" '.n')"; case "$_hn" in ''|*[!0-9]*) _hn=50 ;; esac
+    _he="$(tail -n "$_hn" "$LOGS/audit.jsonl" 2>/dev/null | tr '\n' ',' | sed 's/,*$//')"
+    ok "\"entries\":[$_he]" ;;
 
   progress)
     _o="$(printf '%s' "$ARGS_B64" | base64 -d 2>/dev/null)"

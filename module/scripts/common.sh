@@ -66,6 +66,11 @@ jget() { printf '%s' "$1" | "$JQ" -r "$2" 2>/dev/null; }
 cfg()  { "$JQ" -r "$1 // empty" "$CONFIG" 2>/dev/null; }
 new_opid() { printf 'op-%s-%s' "$(date +%s)" "$$"; }
 audit() { printf '{"ts":"%s","msg":"%s"}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$(jstr "$1")" >> "$LOGS/audit.jsonl" 2>/dev/null; }
+# Keep only the newest <keep> *.bak in <dir>; prune the rest (XML backups accumulate otherwise).
+prune_backups() {   # <dir> <keep>
+  _pk="${2:-10}"
+  ls -1t "$1"/*.bak 2>/dev/null | tail -n +"$((_pk+1))" | while IFS= read -r _f; do rm -f "$_f"; done
+}
 
 # --- ABX-aware system-XML editing (SSAID, packages.xml, netpolicy ...) ---
 # HARD house rule: EVERY Android XML the module touches is checked for ABX (ABX\0 magic) and

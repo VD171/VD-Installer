@@ -96,6 +96,7 @@
       var tab = b.getAttribute("data-tab");
       $("tab-" + tab).classList.add("active");
       if (tab === "updates") openUpdatesPanel();
+      if (tab === "about") loadActivity();
     });
   });
 
@@ -168,7 +169,7 @@
     if (p.results !== undefined) { logLine(T("msg_batch_done", { ok: p.installed, total: p.total })); }
     else if (p.result) {
       if (p.result.ok) logLine(T("msg_installed_ok", { pkg: p.result.package || "" }));
-      else logLine(T("msg_installed_fail", { msg: p.result.message || "" }));
+      else { logLine(T("msg_installed_fail", { msg: p.result.message || "" })); if (p.result.hint) logLine("💡 " + T("hint_" + p.result.hint)); }
     } else if (p.error) { logLine(T("msg_installed_fail", { msg: p.message || p.error })); }
   }
   function poll(opid) {
@@ -241,6 +242,35 @@
 
   // --- about ------------------------------------------------------------
   function loadAbout() { api("version", {}).then(function (r) { if (r.version) $("ver").textContent = r.version + " (" + r.versionCode + ")"; }); }
+
+  // --- restore install-source + activity log ----------------------------
+  function pollSimple(opid, done) {
+    apiRaw("progress", opid).then(function (p) {
+      if (p.done) done(p); else setTimeout(function () { pollSimple(opid, done); }, 800);
+    });
+  }
+  $("restore-source-btn").addEventListener("click", function () {
+    var b = $("restore-source-btn"); b.disabled = true; $("restore-status").textContent = T("phase_starting");
+    api("restore-source", {}).then(function (r) {
+      if (!r.ok || !r.opid) { b.disabled = false; $("restore-status").textContent = r.message || T("err_generic"); return; }
+      pollSimple(r.opid, function (p) {
+        b.disabled = false;
+        if (p.restored) { $("restore-status").textContent = T("msg_restore_ok"); loadActivity(); }
+        else if (p.error === "ERR_NO_BACKUP") $("restore-status").textContent = T("msg_restore_none");
+        else $("restore-status").textContent = T("msg_restore_fail", { msg: (p.message || p.error || "") });
+      });
+    });
+  });
+  function loadActivity() {
+    api("history", { n: 50 }).then(function (r) {
+      var el = $("activity"); if (!el) return;
+      var ents = (r && r.entries) ? r.entries : [];
+      if (!ents.length) { el.textContent = T("about_activity_empty"); return; }
+      el.textContent = ents.slice().reverse().map(function (e) {
+        return (e.ts ? e.ts.replace("T", " ").replace("Z", "") + "  " : "") + (e.msg || "");
+      }).join("\n");
+    });
+  }
 
   // --- boot -------------------------------------------------------------
   api("config-get", {}).then(function (c) {

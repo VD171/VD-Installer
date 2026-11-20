@@ -51,3 +51,9 @@ Please report privately first. Include steps to reproduce, affected version, and
 - Site           : https://vd.priv8.ru
 - GitHub         : [@VD171](https://github.com/VD171)
 - XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
+
+<!-- doc-footer -->
+
+---
+
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._

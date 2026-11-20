@@ -38,3 +38,9 @@ All notable changes to VDInstaller are documented here. This file is English onl
 - Bundled `jq` + `abx2xml` / `xml2abx` for all four ABIs, each with a `PROVENANCE.json`.
 - VDLU flashless, signed, incremental self-update.
 - 22-language WebUI.
+
+<!-- doc-footer -->
+
+---
+
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._

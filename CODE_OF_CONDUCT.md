@@ -36,3 +36,9 @@ Report unacceptable behavior privately to the maintainer:
 
 Maintainers may remove, edit or reject contributions and comments that violate this code, and may
 ban temporarily or permanently any contributor for behavior they deem inappropriate.
+
+<!-- doc-footer -->
+
+---
+
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._

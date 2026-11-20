@@ -97,7 +97,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
-          gh release create "${VER}" --title "${VER}" --generate-notes dist/*.zip
+          if gh release view "${VER}" >/dev/null 2>&1; then
+            gh release upload "${VER}" dist/*.zip --clobber
+          else
+            gh release create "${VER}" --title "${VER}" --generate-notes dist/*.zip
+          fi
+          # Channel banner, always LAST (idempotent: strip any prior banner before re-adding).
+          body="$(gh release view "${VER}" --json body -q .body | grep -vi 't.me/Priv8_VD')"
+          printf '%s\n\n📣 Join the channel for updates: @Priv8_VD https://t.me/Priv8_VD\n' "$body" | gh release edit "${VER}" --notes-file -
 
       - name: Assert release author is github-actions[bot]
         env:

@@ -26,14 +26,14 @@
 
 All notable changes to VDInstaller are documented here. This file is English only.
 
-## v1.00
+## v1.01
 
 - First release. Frictionless root sideload installer (KernelSU / APatch / Magisk WebUI).
 - Install modes: single APK, folder batch, grouped split archive (`.xapk` / `.apkm` / `.apks` / `.zip`), loose split folder.
 - 3-way Play Protect package verifier toggle (keep as it was / always on / always off) with a stealth-tell warning on always-off; the exact prior state is restored by default.
 - Best-effort Developer Verification toggle (a root install is already ADB-exempt from it).
 - Play install-source spoof: installer at install time (`-i`) and initiator via an ABX-aware `packages.xml` edit.
-- Install flags: allow downgrade, allow test packages, grant all runtime permissions, target user, bypass low target SDK block.
+- Install flags: allow test packages, grant all runtime permissions, target user, bypass low target SDK block.
 - Detached install with live progress and cancel; uninstall.
 - Bundled `jq` + `abx2xml` / `xml2abx` for all four ABIs, each with a `PROVENANCE.json`.
 - VDLU flashless, signed, incremental self-update.

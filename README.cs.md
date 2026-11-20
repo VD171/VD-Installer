@@ -88,10 +88,12 @@ Návody jsou v [docs/](docs/) a zrcadlí se do GitHub wiki. Pro bezhlavou smlouv
 
 ## Viz také
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - úplná záloha a obnova aplikací i dat, jako root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - přečti každou informaci o zařízení každou metodou, pak porovnej.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - čtení RCS, Wallet a atestací jako root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - modul pro Pixel fingerprint a props.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: debugger metod zařízení, který čte každou položku přes každou metodu, která ji umí přečíst, a porovnává je vedle sebe.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: tvé služby Google (RCS, Wallet, atestace Play Integrity), čtené na tvém zařízení bez internetu.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: nástroj pro podvržení zařízení, který promění čerstvý fingerprint v soudržný, konzistentní profil.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: samostatný rootovaný SSH démon (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: kompletní záloha a obnova aplikací a dat jako root, ovládaná výhradně z WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: bezflashový, inkrementální engine pro samoaktualizaci, vestavěný do modulů KernelSU/APatch/Magisk.
 
 ## Kontakty
 

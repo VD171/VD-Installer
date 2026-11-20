@@ -88,10 +88,12 @@ Gidsen staan in [docs/](docs/) en spiegelen naar de GitHub-wiki. Zie
 
 ## Zie ook
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - volledige app- en data-back-up & herstel, als root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - lees elke apparaatinfo met elke methode, en vergelijk.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - lees RCS, Wallet en attestaties als root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel-fingerprint- en props-module.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: een apparaat-methodedebugger die elk item leest via elke methode die het kan lezen en ze naast elkaar vergelijkt.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: je Google-diensten (RCS, Wallet, Play Integrity-attestaties), gelezen op je toestel zonder internet.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: een apparaatspoofer die een verse fingerprint omzet in een coherent, consistent profiel.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: een standalone geroote SSH-daemon (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: volledige back-up en herstel van apps en gegevens als root, volledig aangestuurd vanuit een WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: een flashloze, incrementele zelfupdate-engine, ingebed in KernelSU/APatch/Magisk-modules.
 
 ## Contacten
 

@@ -87,10 +87,12 @@ Termux (مع إغلاق مكتباته المشتركة) ومُحوِّلَي `a
 
 ## انظر أيضًا
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - نسخ احتياطي واستعادة كاملان للتطبيقات والبيانات، بصلاحيات الجذر.
-- [VDInfos](https://github.com/VD171/VD-Infos) - اقرأ كل معلومات الجهاز بكل طريقة، ثم قارن.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - قراءة RCS وWallet والإثباتات بصلاحيات الجذر.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - وحدة بصمة Pixel وخصائصها.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: مُنقّح طرق الجهاز يقرأ كل عنصر عبر كل طريقة يمكنها قراءته ويقارنها جنباً إلى جنب.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: خدمات Google الخاصة بك (RCS، Wallet، شهادات Play Integrity)، تُقرأ على جهازك دون إنترنت.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: مُزيِّف جهاز يحوّل بصمة جديدة إلى ملف تعريف متماسك ومتسق.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: خادم SSH مستقل يعمل بصلاحيات الجذر (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: نسخ احتياطي واستعادة كاملة للتطبيقات والبيانات بصلاحية root، تُدار بالكامل من WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: محرك تحديث ذاتي تزايدي بلا فلاش، مدمج في وحدات KernelSU/APatch/Magisk.
 
 ## جهات الاتصال
 

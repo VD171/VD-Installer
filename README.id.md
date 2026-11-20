@@ -89,10 +89,12 @@ Panduan berada di [docs/](docs/) dan dicerminkan ke wiki GitHub. Lihat
 
 ## Lihat juga
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - backup dan pemulihan penuh aplikasi serta data, sebagai root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - baca setiap info perangkat dengan setiap metode, lalu bandingkan.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - baca RCS, Wallet dan atestasi sebagai root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - modul fingerprint dan props Pixel.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: sebuah debugger metode perangkat yang membaca setiap item melalui setiap metode yang dapat membacanya dan membandingkannya secara berdampingan.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: layanan Google Anda (RCS, Wallet, atestasi Play Integrity), dibaca di perangkat Anda tanpa internet.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: sebuah pemalsu perangkat yang mengubah fingerprint baru menjadi profil yang koheren dan konsisten.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: daemon SSH mandiri dengan akses root (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: backup dan pemulihan penuh aplikasi dan data sebagai root, dikendalikan sepenuhnya dari sebuah WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: sebuah mesin pembaruan-mandiri inkremental tanpa flash, tertanam di dalam modul KernelSU/APatch/Magisk.
 
 ## Kontak
 

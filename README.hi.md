@@ -88,10 +88,12 @@ VDInstaller रूट के रूप में चलता है और आ�
 
 ## यह भी देखें
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - रूट के रूप में पूर्ण ऐप और डेटा बैकअप व पुनर्स्थापना।
-- [VDInfos](https://github.com/VD171/VD-Infos) - हर विधि से हर डिवाइस जानकारी पढ़ें, फिर तुलना करें।
-- [VDGoogle](https://github.com/VD171/VDGoogle) - रूट के रूप में RCS, Wallet और अटेस्टेशन पढ़ें।
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel फ़िंगरप्रिंट और props मॉड्यूल।
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: एक डिवाइस मेथड डिबगर जो हर आइटम को उसे पढ़ सकने वाले हर मेथड के ज़रिए पढ़ता है और उन्हें साथ-साथ तुलना करता है।
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: आपकी Google सेवाएँ (RCS, Wallet, Play Integrity प्रमाणन), आपके डिवाइस पर बिना इंटरनेट के पढ़ी गईं।
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: एक डिवाइस स्पूफ़र जो एक ताज़ा फ़िंगरप्रिंट को एक सुसंगत, संगत प्रोफ़ाइल में बदल देता है।
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: रूट के रूप में चलने वाला एक स्वतंत्र SSH डेमॉन (Dropbear)।
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: रूट के रूप में ऐप और डेटा का पूर्ण बैकअप और रीस्टोर, पूरी तरह एक WebUI से संचालित।
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: KernelSU/APatch/Magisk मॉड्यूल में एम्बेडेड एक फ्लैशलेस, इंक्रीमेंटल सेल्फ-अपडेट इंजन।
 
 ## संपर्क
 

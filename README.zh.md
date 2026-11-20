@@ -83,10 +83,12 @@ HMA-OSS 配置。请按 [SECURITY.md](SECURITY.md) 报告问题。
 
 ## 另见
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - 以 root 进行完整的应用与数据备份和恢复。
-- [VDInfos](https://github.com/VD171/VD-Infos) - 用每一种方法读取每一项设备信息，然后对比。
-- [VDGoogle](https://github.com/VD171/VDGoogle) - 以 root 读取 RCS、Wallet 和各项 attestation。
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel fingerprint 与 props 模块。
+- **[VDInfos](https://github.com/VD171/VD-Infos)**：一个设备方法调试器，通过每一种能读取某项的方法来读取它，并将它们并排比较。
+- **[VDGoogle](https://github.com/VD171/VD-Google)**：你的 Google 服务（RCS、Wallet、Play Integrity 证明），在你的设备上读取，无需联网。
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: 一个设备伪装器，把全新的指纹变成连贯一致的配置。
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**：一个以 root 权限运行的独立 SSH 守护进程（Dropbear）。
+- **[VDBackup](https://github.com/VD171/VD-Backup)**：以 root 权限完整备份和恢复应用与数据，完全从 WebUI 驱动。
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: 一个无需刷入的增量自更新引擎，嵌入到 KernelSU/APatch/Magisk 模块中。
 
 ## 联系方式
 

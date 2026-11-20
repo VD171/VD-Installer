@@ -88,10 +88,12 @@ Przewodniki znajdują się w [docs/](docs/) i są odzwierciedlane na wiki GitHub
 
 ## Zobacz także
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - pełna kopia zapasowa i przywracanie aplikacji oraz danych, jako root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - odczytaj każdą informację o urządzeniu każdą metodą, a następnie porównaj.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - odczytaj RCS, Wallet i atestacje jako root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - moduł fingerprintu i propsów Pixela.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: debuger metod urządzenia, który odczytuje każdy element wszystkimi metodami zdolnymi go odczytać i porównuje je obok siebie.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: twoje usługi Google (RCS, Wallet, atestacje Play Integrity), odczytane na twoim urządzeniu bez internetu.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: narzędzie do podszywania się urządzenia, które zamienia świeży fingerprint w spójny, konsekwentny profil.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: samodzielny demon SSH działający z uprawnieniami roota (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: pełny backup i przywracanie aplikacji oraz danych jako root, obsługiwane w całości z WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: bezflashowy, przyrostowy silnik samoaktualizacji, wbudowany w moduły KernelSU/APatch/Magisk.
 
 ## Kontakty
 

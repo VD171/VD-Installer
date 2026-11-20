@@ -87,10 +87,12 @@ Guider finns i [docs/](docs/) och speglas till GitHub-wikin. Se
 
 ## Se även
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - fullständig säkerhetskopiering och återställning av appar och data, som root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - läs varje enhetsinfo med varje metod, jämför sedan.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - läs RCS, Wallet och attesteringar som root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - modul för Pixel-fingerprint och props.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: en enhetsmetod-debugger som läser varje objekt genom varje metod som kan läsa det och jämför dem sida vid sida.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: dina Google-tjänster (RCS, Wallet, Play Integrity-attesteringar), lästa på din enhet utan internet.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: en enhetsspoofer som förvandlar ett färskt fingerprint till en sammanhängande, konsekvent profil.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: en fristående SSH-daemon som körs som root (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: fullständig säkerhetskopiering och återställning av appar och data som root, helt styrd från ett WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: en flashfri, inkrementell självuppdateringsmotor, inbäddad i KernelSU/APatch/Magisk-moduler.
 
 ## Kontakter
 

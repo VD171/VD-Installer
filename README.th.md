@@ -85,10 +85,12 @@ release เสมอ ไม่เคย debug `.github/scripts/build_bin.sh` ด
 
 ## ดูเพิ่มเติม
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - สำรองและกู้คืนแอปและข้อมูลทั้งหมด ในฐานะ root
-- [VDInfos](https://github.com/VD171/VD-Infos) - อ่านข้อมูลอุปกรณ์ทุกอย่างด้วยทุกวิธี แล้วเปรียบเทียบ
-- [VDGoogle](https://github.com/VD171/VDGoogle) - อ่าน RCS, Wallet และ attestation ในฐานะ root
-- [COPG-VD](https://github.com/VD171/COPG-VD) - โมดูล Pixel fingerprint และ props
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: ตัวดีบักเมธอดของอุปกรณ์ที่อ่านแต่ละรายการผ่านทุกเมธอดที่สามารถอ่านได้ และนำมาเปรียบเทียบกันเคียงข้างกัน
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: บริการ Google ของคุณ (RCS, Wallet, การรับรอง Play Integrity) อ่านบนอุปกรณ์ของคุณโดยไม่ใช้อินเทอร์เน็ต
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: ตัวปลอมแปลงอุปกรณ์ที่เปลี่ยนฟิงเกอร์พรินต์ใหม่ให้กลายเป็นโปรไฟล์ที่สอดคล้องและกลมกลืน.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: SSH daemon แบบสแตนด์อโลนที่ทำงานด้วยสิทธิ์ root (Dropbear)
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: สำรองและกู้คืนแอปและข้อมูลแบบเต็มรูปแบบในฐานะ root ควบคุมทั้งหมดจาก WebUI
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: เอนจินอัปเดตตัวเองแบบเพิ่มทีละส่วนโดยไม่ต้องแฟลช ฝังอยู่ในโมดูล KernelSU/APatch/Magisk
 
 ## Contacts
 

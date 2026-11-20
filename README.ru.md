@@ -90,10 +90,12 @@ VDInstaller работает как root и устанавливает выбр�
 
 ## Смотрите также
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - полное резервное копирование и восстановление приложений и данных, как root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - прочитайте каждую информацию об устройстве каждым методом, затем сравните.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - читайте RCS, Wallet и аттестации как root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - модуль fingerprint и props для Pixel.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: отладчик методов устройства, который читает каждый элемент всеми методами, способными его прочитать, и сравнивает их бок о бок.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: ваши сервисы Google (RCS, Wallet, аттестации Play Integrity), прочитанные на вашем устройстве без интернета.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: спуфер устройства, который превращает свежий fingerprint в связный, согласованный профиль.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: автономный SSH-демон с правами root (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: полное резервное копирование и восстановление приложений и данных с правами root, полностью управляемое из WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: безфлешевый инкрементальный движок самообновления, встроенный в модули KernelSU/APatch/Magisk.
 
 ## Контакты
 

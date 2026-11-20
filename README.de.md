@@ -95,10 +95,12 @@ Die Anleitungen liegen in [docs/](docs/) und werden ins GitHub-Wiki gespiegelt. 
 
 ## Siehe auch
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - vollständige App- und Datensicherung & -wiederherstellung, als root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - jede Geräteinfo mit jeder Methode auslesen, dann vergleichen.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - RCS, Wallet und Attestierungen als root auslesen.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel-Fingerprint- und Props-Modul.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: ein Geräte-Methoden-Debugger, der jeden Eintrag über jede Methode liest, die ihn lesen kann, und sie nebeneinander vergleicht.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: deine Google-Dienste (RCS, Wallet, Play-Integrity-Attestierungen), auf deinem Gerät gelesen, ohne Internet.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: ein Geräte-Spoofer, der einen frischen Fingerprint in ein kohärentes, konsistentes Profil verwandelt.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: ein eigenständiger gerooteter SSH-Daemon (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: vollständige Sicherung und Wiederherstellung von Apps und Daten als root, komplett über eine WebUI gesteuert.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: eine flashlose, inkrementelle Selbstaktualisierungs-Engine, eingebettet in KernelSU/APatch/Magisk-Module.
 
 ## Kontakte
 

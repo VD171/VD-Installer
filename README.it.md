@@ -92,10 +92,12 @@ Le guide si trovano in [docs/](docs/) e si rispecchiano nella wiki di GitHub. Ve
 
 ## Vedi anche
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - backup e ripristino completi di app e dati, come root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - leggi ogni info del dispositivo con ogni metodo, poi confronta.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - leggi RCS, Wallet e attestazioni come root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - modulo di fingerprint e props Pixel.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: un debugger di metodi del dispositivo che legge ogni elemento attraverso ogni metodo in grado di leggerlo e li confronta affiancati.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: i tuoi servizi Google (RCS, Wallet, attestazioni Play Integrity), letti sul tuo dispositivo senza internet.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: uno spoofer del dispositivo che trasforma un fingerprint nuovo in un profilo coerente e consistente.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: un daemon SSH autonomo con privilegi di root (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: backup e ripristino completi di app e dati come root, gestiti interamente da una WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: un motore di autoaggiornamento incrementale e senza flash, integrato nei moduli KernelSU/APatch/Magisk.
 
 ## Contatti
 

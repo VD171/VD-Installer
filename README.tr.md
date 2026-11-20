@@ -93,10 +93,12 @@ Kılavuzlar [docs/](docs/) içinde bulunur ve GitHub wiki'sine yansıtılır. He
 
 ## Ayrıca bakınız
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - root olarak tam uygulama ve veri yedekleme ve geri yükleme.
-- [VDInfos](https://github.com/VD171/VD-Infos) - her cihaz bilgisini her yöntemle okuyun, sonra karşılaştırın.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - RCS, Wallet ve attestation'ları root olarak okuyun.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel fingerprint ve props modülü.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: her bir ögeyi onu okuyabilen her yöntemle okuyup yan yana karşılaştıran bir cihaz yöntemi hata ayıklayıcısı.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: Google hizmetleriniz (RCS, Wallet, Play Integrity doğrulamaları), internet olmadan cihazınızda okunur.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: taze bir parmak izini tutarlı, uyumlu bir profile dönüştüren bir cihaz sahteleyici.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: root olarak çalışan bağımsız bir SSH arka plan hizmeti (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: root olarak tam uygulama ve veri yedekleme ve geri yükleme, tamamen bir WebUI'den yönetilir.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: KernelSU/APatch/Magisk modüllerine gömülü, flash'sız, artımlı bir kendini güncelleme motoru.
 
 ## Contacts
 

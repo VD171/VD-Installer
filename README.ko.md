@@ -88,10 +88,12 @@ VDInstaller는 root로 실행되며 당신이 선택한 APK를 설치합니다. 
 
 ## 참고
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - root로 앱과 데이터를 완전히 백업 & 복원.
-- [VDInfos](https://github.com/VD171/VD-Infos) - 모든 방법으로 모든 기기 정보를 읽은 다음 비교.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - root로 RCS, Wallet, 어테스테이션을 읽음.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel 지문 및 속성 모듈.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: 각 항목을 그것을 읽을 수 있는 모든 메서드를 통해 읽고 나란히 비교하는 기기 메서드 디버거입니다.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: 당신의 Google 서비스(RCS, Wallet, Play Integrity 증명)를 인터넷 없이 기기에서 읽습니다.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: 새 핑거프린트를 일관되고 정합성 있는 프로필로 바꾸는 기기 스푸퍼.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: root로 동작하는 독립 실행형 SSH 데몬 (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: 앱과 데이터의 전체 백업과 복원을 root로 수행하며, 전적으로 WebUI에서 제어합니다.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: KernelSU/APatch/Magisk 모듈에 내장된, 플래시가 필요 없는 증분 자가 업데이트 엔진.
 
 ## 연락처
 

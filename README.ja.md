@@ -89,10 +89,12 @@ VDInstaller は root として実行され、あなたが選んだ APK をイン
 
 ## 関連項目
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - root としてアプリとデータを完全にバックアップ & 復元。
-- [VDInfos](https://github.com/VD171/VD-Infos) - あらゆる方法で端末情報を読み取り、比較する。
-- [VDGoogle](https://github.com/VD171/VDGoogle) - root として RCS、Wallet、アテステーションを読み取る。
-- [COPG-VD](https://github.com/VD171/COPG-VD) - Pixel フィンガープリントとプロパティモジュール。
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: 各項目を、それを読み取れるあらゆるメソッドを通して読み取り、並べて比較するデバイスメソッドデバッガーです。
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: あなたの Google サービス (RCS、Wallet、Play Integrity の認証) を、インターネットなしで端末上で読み取ります。
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: 新しいフィンガープリントを、首尾一貫した整合性のあるプロファイルに変えるデバイススプーファー。
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: root として動作するスタンドアロンの SSH デーモン (Dropbear)。
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: アプリとデータの完全なバックアップと復元を root として行い、すべて WebUI から操作します。
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: フラッシュ不要の増分セルフアップデートエンジンで、KernelSU/APatch/Magisk モジュールに組み込まれます。
 
 ## 連絡先
 

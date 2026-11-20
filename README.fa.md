@@ -88,10 +88,12 @@ VDInstaller به صورت روت اجرا می‌شود و APKهایی را که
 
 ## همچنین ببینید
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - پشتیبان‌گیری و بازگردانی کامل اپ و داده، به صورت روت.
-- [VDInfos](https://github.com/VD171/VD-Infos) - خواندن هر اطلاعات دستگاه با هر روش، و سپس مقایسه.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - خواندن RCS، Wallet و attestationها به صورت روت.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - ماژول fingerprint و props مربوط به Pixel.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: یک اشکال‌زدای روش‌های دستگاه که هر مورد را از طریق همه روش‌هایی که می‌توانند آن را بخوانند می‌خواند و آن‌ها را کنار هم مقایسه می‌کند.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: سرویس‌های Google شما (RCS، Wallet، گواهی‌های Play Integrity)، خوانده‌شده روی دستگاه شما بدون اینترنت.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: یک جاعلِ دستگاه که یک اثرانگشت تازه را به یک پروفایلِ منسجم و یکدست تبدیل می‌کند.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: یک دیمن SSH مستقل با روت (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: پشتیبان‌گیری و بازیابی کامل اپ‌ها و داده‌ها به‌صورت root، که به‌طور کامل از یک WebUI هدایت می‌شود.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: یک موتور خودبه‌روزرسانی افزایشی و بدون فلش، تعبیه‌شده در ماژول‌های KernelSU/APatch/Magisk.
 
 ## تماس‌ها
 

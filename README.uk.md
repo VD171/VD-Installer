@@ -90,10 +90,12 @@ VDInstaller працює як root і встановлює вибрані вам
 
 ## Див. також
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - повне резервне копіювання й відновлення застосунків і даних, як root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - читайте кожну інформацію про пристрій кожним методом, а потім порівнюйте.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - читайте RCS, Wallet і атестації як root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - модуль Pixel fingerprint і props.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: налагоджувач методів пристрою, що читає кожен елемент через кожен метод, який може його прочитати, і порівнює їх пліч-о-пліч.
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: ваші сервіси Google (RCS, Wallet, атестації Play Integrity), прочитані на вашому пристрої без інтернету.
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: підмінювач пристрою, який перетворює свіжий fingerprint на узгоджений, послідовний профіль.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: автономний SSH-демон із правами root (Dropbear).
+- **[VDBackup](https://github.com/VD171/VD-Backup)**: повне резервне копіювання та відновлення застосунків і даних з правами root, кероване повністю з WebUI.
+- **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: безфлешевий інкрементальний рушій самооновлення, вбудований у модулі KernelSU/APatch/Magisk.
 
 ## Contacts
 

@@ -141,7 +141,6 @@ exists and never pretends to flip a switch that does nothing.
 | Flag | Effect |
 |---|---|
 | **Grant all runtime permissions** | grant every runtime permission at install (`-g`). |
-| **Allow downgrade** | install an older version over a newer one (`-d`). |
 | **Allow test packages** | install packages marked test-only (`-t`). |
 | **Bypass low target SDK block** | install apps with a very old `targetSdk`. |
 | **Target user** | the Android user id to install for (default `0`). |

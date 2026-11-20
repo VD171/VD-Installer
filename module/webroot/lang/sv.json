@@ -41,7 +41,6 @@
   "devverif_note": "Android Developer Verification genomdrivs av en separat tjänst, inte av Play Protect. En root-installation är redan undantagen, så den här växeln gör sitt bästa.",
   "opt_flags_head": "Installationsflaggor",
   "opt_grant": "Bevilja alla körningsbehörigheter",
-  "opt_downgrade": "Tillåt nedgradering",
   "opt_test": "Tillåt testpaket",
   "opt_lowsdk": "Kringgå blockering för låg mål-SDK",
   "opt_user": "Målanvändare",

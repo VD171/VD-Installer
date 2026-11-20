@@ -41,7 +41,6 @@
   "devverif_note": "A Android Developer Verification é imposta por um serviço separado, não pelo Play Protect. Uma instalação root já é isenta, então este botão é best-effort.",
   "opt_flags_head": "Flags de instalação",
   "opt_grant": "Conceder todas as permissões de runtime",
-  "opt_downgrade": "Permitir downgrade",
   "opt_test": "Permitir pacotes de teste",
   "opt_lowsdk": "Ignorar o bloqueio de target SDK baixo",
   "opt_user": "Usuário alvo",

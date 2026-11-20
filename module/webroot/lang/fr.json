@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Flags d'installation",
   "opt_grant": "Accorder toutes les permissions runtime",
-  "opt_downgrade": "Autoriser la retrogradation",
   "opt_test": "Autoriser les paquets de test",
   "opt_lowsdk": "Contourner le blocage de target SDK bas",
   "opt_user": "Utilisateur cible",

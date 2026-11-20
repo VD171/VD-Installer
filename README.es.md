@@ -52,7 +52,7 @@ como root, sin ningun aviso de "conceder su" y sin terminal.
   consciente de ABX).
 - **Independiente y reanudable** - las instalaciones corren como un proceso root independiente;
   cerrar la WebUI nunca las interrumpe, y la UI se reconecta por id de operacion.
-- **Tu decides** - degradar version, paquetes de prueba, conceder todos los permisos de runtime,
+- **Tu decides** - paquetes de prueba, conceder todos los permisos de runtime,
   usuario de destino, saltarse el bloqueo de target SDK bajo: todo opcional.
 - **Offline, autocontenido, sin reinicio** - un modulo WebUI con sus binarios incluidos; usable en el
   momento en que se flashea.

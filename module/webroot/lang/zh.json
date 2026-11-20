@@ -47,7 +47,6 @@
 
   "opt_flags_head": "安装标志",
   "opt_grant": "授予所有运行时权限",
-  "opt_downgrade": "允许降级",
   "opt_test": "允许测试包",
   "opt_lowsdk": "绕过低目标 SDK 拦截",
   "opt_user": "目标用户",

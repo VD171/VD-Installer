@@ -70,7 +70,6 @@ window.__I18N_EN = {
 
   opt_flags_head: "Install flags",
   opt_grant: "Grant all runtime permissions",
-  opt_downgrade: "Allow downgrade",
   opt_test: "Allow test packages",
   opt_lowsdk: "Bypass low target SDK block",
   opt_user: "Target user",

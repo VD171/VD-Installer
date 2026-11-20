@@ -41,7 +41,6 @@
   "devverif_note": "Android Developer Verification को Play Protect नहीं, बल्कि एक अलग सेवा लागू करती है। रूट इंस्टॉल पहले से ही इससे मुक्त है, इसलिए यह टॉगल best effort है।",
   "opt_flags_head": "इंस्टॉल फ़्लैग",
   "opt_grant": "सभी रनटाइम अनुमतियाँ दें",
-  "opt_downgrade": "डाउनग्रेड की अनुमति दें",
   "opt_test": "टेस्ट पैकेज की अनुमति दें",
   "opt_lowsdk": "कम टारगेट SDK ब्लॉक को बायपास करें",
   "opt_user": "टारगेट उपयोगकर्ता",

@@ -88,7 +88,6 @@ if [ ! -f "$STATE_DIR/config.json" ]; then
   "verifier_mode": "restore",
   "devverif_mode": "restore",
   "grant_all_perms": false,
-  "allow_downgrade": true,
   "allow_test": true,
   "bypass_low_target_sdk": true,
   "target_user": 0,

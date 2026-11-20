@@ -47,7 +47,6 @@
 
   "opt_flags_head": "설치 플래그",
   "opt_grant": "모든 런타임 권한 부여",
-  "opt_downgrade": "다운그레이드 허용",
   "opt_test": "테스트 패키지 허용",
   "opt_lowsdk": "낮은 타겟 SDK 차단 우회",
   "opt_user": "대상 사용자",

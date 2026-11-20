@@ -48,7 +48,7 @@ allemaal voor je, al als root, zonder "verleen su"-prompt en zonder terminal.
   installer (op installatietijd) als de initiator (via een ABX-bewuste `packages.xml`-bewerking).
 - **Losgekoppeld en hervatbaar** - installaties draaien als een losgekoppeld root-proces; het sluiten
   van de WebUI onderbreekt ze nooit, en de UI koppelt opnieuw aan op operatie-id.
-- **Jouw keuze** - downgrade, testpakketten, alle runtime-machtigingen verlenen, doelgebruiker, de
+- **Jouw keuze** - testpakketten, alle runtime-machtigingen verlenen, doelgebruiker, de
   blokkade voor lage doel-SDK omzeilen: allemaal optioneel.
 - **Offline, zelfstandig, herstart-vrij** - een WebUI-module met zijn binaries gebundeld; bruikbaar op
   het moment dat hij geflasht is.

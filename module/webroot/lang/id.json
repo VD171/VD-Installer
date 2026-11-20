@@ -41,7 +41,6 @@
   "devverif_note": "Android Developer Verification dijalankan oleh layanan terpisah, bukan Play Protect. Pemasangan root sudah dikecualikan, jadi sakelar ini bersifat best effort.",
   "opt_flags_head": "Flag pemasangan",
   "opt_grant": "Berikan semua izin runtime",
-  "opt_downgrade": "Izinkan downgrade",
   "opt_test": "Izinkan paket uji",
   "opt_lowsdk": "Lewati blokir target SDK rendah",
   "opt_user": "Pengguna target",

@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Yükleme bayrakları",
   "opt_grant": "Tüm çalışma zamanı izinlerini ver",
-  "opt_downgrade": "Sürüm düşürmeye izin ver",
   "opt_test": "Test paketlerine izin ver",
   "opt_lowsdk": "Düşük hedef SDK engelini atla",
   "opt_user": "Hedef kullanıcı",

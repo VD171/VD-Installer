@@ -51,7 +51,7 @@ pour vous, deja en root, sans aucune invite "accorder su" ni terminal.
   consciente d'ABX).
 - **Detache et reprenable** - les installations tournent comme un processus root detache ; fermer la
   WebUI ne les interrompt jamais, et l'interface se rattache par identifiant d'operation.
-- **A vous de choisir** - retrograder, paquets de test, accorder toutes les permissions runtime,
+- **A vous de choisir** - paquets de test, accorder toutes les permissions runtime,
   utilisateur cible, contourner le blocage de target SDK bas : tout est optionnel.
 - **Hors ligne, autonome, sans redemarrage** - un module WebUI avec ses binaires inclus ; utilisable
   des qu'il est flashe.

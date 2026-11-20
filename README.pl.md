@@ -48,7 +48,7 @@ monitu "przyznaj su" i bez terminala.
   (w chwili instalacji), jak i inicjatora (poprzez edycję `packages.xml` świadomą ABX).
 - **Odłączalne i wznawialne** - instalacje działają jako odłączony proces root; zamknięcie WebUI nigdy ich
   nie przerywa, a interfejs ponownie się podłącza po identyfikatorze operacji.
-- **Twoja decyzja** - obniżenie wersji, pakiety testowe, przyznanie wszystkich uprawnień czasu działania,
+- **Twoja decyzja** - pakiety testowe, przyznanie wszystkich uprawnień czasu działania,
   użytkownik docelowy, ominięcie blokady niskiego docelowego SDK: wszystko opcjonalne.
 - **Offline, samowystarczalny, bez restartu** - moduł WebUI z dołączonymi binariami; gotowy do użycia
   w chwili flashowania.

@@ -48,7 +48,7 @@ app that reads its install source. VDInstaller does all of that for you, already
   installer (at install time) and the initiator (via an ABX-aware `packages.xml` edit).
 - **Detached and resumable** - installs run as a detached root process; closing the WebUI never
   interrupts them, and the UI reattaches by operation id.
-- **Your call** - downgrade, test packages, grant all runtime permissions, target user, bypass the
+- **Your call** - test packages, grant all runtime permissions, target user, bypass the
   low-target-SDK block: all optional.
 - **Offline, self-contained, reboot-free** - a WebUI module with its binaries bundled; usable the
   moment it is flashed.

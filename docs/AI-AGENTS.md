@@ -64,7 +64,7 @@ scrape the WebUI; use this contract.
 
 `spoof_installer` (bool), `spoof_installer_pkg` (string), `deep_spoof` (bool),
 `verifier_mode` / `devverif_mode` (`restore` \| `always_on` \| `always_off`),
-`grant_all_perms`, `allow_downgrade`, `allow_test`, `bypass_low_target_sdk` (bool), `target_user` (int).
+`grant_all_perms`, `allow_test`, `bypass_low_target_sdk` (bool), `target_user` (int).
 
 ## Progress
 

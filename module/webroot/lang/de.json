@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Installations-Flags",
   "opt_grant": "Alle Laufzeitberechtigungen gewähren",
-  "opt_downgrade": "Downgrade erlauben",
   "opt_test": "Test-Pakete erlauben",
   "opt_lowsdk": "Sperre für niedriges Target-SDK umgehen",
   "opt_user": "Zielnutzer",

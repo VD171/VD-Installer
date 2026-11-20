@@ -49,7 +49,7 @@ udělá za tebe, už jako root, bez výzvy "udělit su" a bez terminálu.
   instalace), tak iniciátora (přes úpravu `packages.xml` s ohledem na ABX).
 - **Odpojené a obnovitelné** - instalace běží jako odpojený root proces; zavření WebUI je nikdy
   nepřeruší a UI se znovu připojí podle ID operace.
-- **Tvoje volba** - downgrade, testovací balíčky, udělení všech runtime oprávnění, cílový uživatel,
+- **Tvoje volba** - testovací balíčky, udělení všech runtime oprávnění, cílový uživatel,
   obejití blokace nízkého cílového SDK: vše volitelné.
 - **Offline, soběstačný, bez restartu** - WebUI modul s přibalenými binárkami; použitelný ve chvíli,
   kdy je naflashován.

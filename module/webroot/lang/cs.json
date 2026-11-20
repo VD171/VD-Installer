@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Příznaky instalace",
   "opt_grant": "Udělit všechna runtime oprávnění",
-  "opt_downgrade": "Povolit downgrade",
   "opt_test": "Povolit testovací balíčky",
   "opt_lowsdk": "Obejít blokaci nízkého cílového SDK",
   "opt_user": "Cílový uživatel",

@@ -49,7 +49,7 @@ como root, sem o prompt de "conceder su" e sem terminal.
   instalador (na hora da instalação) quanto o iniciador (via uma edição do `packages.xml` ciente de ABX).
 - **Destacado e retomável** - instalações rodam como processo root destacado; fechar a WebUI nunca as
   interrompe, e a UI reata pelo id da operação.
-- **Você no controle** - downgrade, pacotes de teste, conceder todas as permissões de runtime, usuário
+- **Você no controle** - pacotes de teste, conceder todas as permissões de runtime, usuário
   alvo, ignorar o bloqueio de target SDK baixo: tudo opcional.
 - **Offline, autossuficiente, sem reboot** - um módulo WebUI com os binários embarcados; usável assim
   que é flashado.

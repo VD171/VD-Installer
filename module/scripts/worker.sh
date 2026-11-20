@@ -52,7 +52,6 @@ arg_or_cfg() { _v="$(jget "$ARGS" "$1")"; case "$_v" in ""|null) cfg "$1" ;; *) 
 pm_install_flags() {
   _f="-r"
   [ "$(arg_or_cfg .allow_test)" = true ] && _f="$_f -t"
-  [ "$(arg_or_cfg .allow_downgrade)" = true ] && _f="$_f -d"
   [ "$(arg_or_cfg .grant_all_perms)" = true ] && _f="$_f -g"
   if [ "$(arg_or_cfg .bypass_low_target_sdk)" = true ]; then
     fw pm install-create --help 2>&1 | grep -q 'bypass-low-target-sdk-block' && _f="$_f --bypass-low-target-sdk-block"

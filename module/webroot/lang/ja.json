@@ -47,7 +47,6 @@
 
   "opt_flags_head": "インストールフラグ",
   "opt_grant": "すべての実行時権限を付与",
-  "opt_downgrade": "ダウングレードを許可",
   "opt_test": "テストパッケージを許可",
   "opt_lowsdk": "低ターゲット SDK ブロックをバイパス",
   "opt_user": "ターゲットユーザー",

@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Cờ cài đặt",
   "opt_grant": "Cấp mọi quyền runtime",
-  "opt_downgrade": "Cho phép hạ cấp",
   "opt_test": "Cho phép gói test",
   "opt_lowsdk": "Bỏ qua chặn target SDK thấp",
   "opt_user": "Người dùng đích",

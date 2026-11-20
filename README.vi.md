@@ -49,7 +49,7 @@ cần dùng session API bằng tay, và một app vừa cài sẽ tự khai là 
   cài) lẫn phần khởi tạo (qua một chỉnh sửa `packages.xml` có nhận biết ABX).
 - **Tách rời và có thể tiếp tục** - các bản cài chạy như một tiến trình root tách rời; đóng WebUI không
   bao giờ làm gián đoạn chúng, và giao diện gắn kết lại theo operation id.
-- **Bạn quyết định** - hạ cấp, gói test, cấp mọi quyền runtime, người dùng đích, bỏ qua chặn target
+- **Bạn quyết định** - gói test, cấp mọi quyền runtime, người dùng đích, bỏ qua chặn target
   SDK thấp: tất cả đều tùy chọn.
 - **Offline, tự chứa đủ, không cần khởi động lại** - một module WebUI với các binary đóng kèm; dùng được
   ngay khi vừa flash.

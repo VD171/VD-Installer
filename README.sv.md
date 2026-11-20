@@ -48,7 +48,7 @@ su"-dialog och utan terminal.
   (vid installationstillfället) och initieraren (via en ABX-medveten `packages.xml`-redigering).
 - **Fristående och återupptagbar** - installationer kör som en fristående root-process; att stänga WebUI:t
   avbryter dem aldrig, och gränssnittet återansluter via operations-id.
-- **Ditt val** - nedgradering, testpaket, bevilja alla körningsbehörigheter, målanvändare, kringgå
+- **Ditt val** - testpaket, bevilja alla körningsbehörigheter, målanvändare, kringgå
   blockeringen för låg mål-SDK: allt valfritt.
 - **Offline, fristående, omstartsfri** - en WebUI-modul med sina binärer medföljande; användbar i samma
   stund den flashas.

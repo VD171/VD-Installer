@@ -41,7 +41,6 @@
   "devverif_note": "Android Developer Verification jest egzekwowana przez osobną usługę, nie przez Play Protect. Instalacja jako root jest już z niej zwolniona, więc ten przełącznik działa w miarę możliwości.",
   "opt_flags_head": "Flagi instalacji",
   "opt_grant": "Przyznaj wszystkie uprawnienia czasu działania",
-  "opt_downgrade": "Zezwól na obniżenie wersji",
   "opt_test": "Zezwól na pakiety testowe",
   "opt_lowsdk": "Omiń blokadę niskiego docelowego SDK",
   "opt_user": "Użytkownik docelowy",

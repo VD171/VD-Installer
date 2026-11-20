@@ -52,7 +52,7 @@ alles für dich, bereits als root, ohne "su gewähren"-Abfrage und ohne Terminal
   `packages.xml`-Bearbeitung).
 - **Abgekoppelt und fortsetzbar** - Installationen laufen als abgekoppelter Root-Prozess; das
   Schließen der WebUI unterbricht sie nie, und die UI klinkt sich über die Operations-ID wieder ein.
-- **Deine Entscheidung** - Downgrade, Test-Pakete, alle Laufzeitberechtigungen gewähren, Zielnutzer,
+- **Deine Entscheidung** - Test-Pakete, alle Laufzeitberechtigungen gewähren, Zielnutzer,
   Umgehung der Sperre für niedriges Target-SDK: alles optional.
 - **Offline, eigenständig, ohne Neustart** - ein WebUI-Modul mit gebündelten Binaries; nutzbar in dem
   Moment, in dem es geflasht wird.

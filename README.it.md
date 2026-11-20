@@ -51,7 +51,7 @@ questo al posto tuo, già con permessi di root, senza richieste di "concedi su" 
   `packages.xml` consapevole di ABX).
 - **Distaccato e ripristinabile** - le installazioni girano come processo root distaccato; chiudere la
   WebUI non le interrompe mai, e l'interfaccia si riaggancia tramite l'id dell'operazione.
-- **Scelta tua** - downgrade, pacchetti di test, concessione di tutti i permessi di runtime, utente di
+- **Scelta tua** - pacchetti di test, concessione di tutti i permessi di runtime, utente di
   destinazione, aggirare il blocco per target SDK basso: tutto facoltativo.
 - **Offline, autonomo, senza riavvio** - un modulo WebUI con i suoi binari inclusi; utilizzabile nel
   momento in cui viene flashato.

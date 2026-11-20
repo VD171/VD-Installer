@@ -52,7 +52,7 @@ olmadan yapar.
   hem yükleyici (yükleme anında) hem de başlatıcı (ABX uyumlu bir `packages.xml` düzenlemesiyle).
 - **Ayrık ve sürdürülebilir** - yüklemeler ayrık bir root süreci olarak çalışır; WebUI'yi kapatmak
   onları asla kesmez ve arayüz işlem kimliğiyle yeniden bağlanır.
-- **Sizin kararınız** - sürüm düşürme, test paketleri, tüm çalışma zamanı izinlerini verme, hedef
+- **Sizin kararınız** - test paketleri, tüm çalışma zamanı izinlerini verme, hedef
   kullanıcı, düşük hedef SDK engelini atlama: hepsi isteğe bağlı.
 - **Çevrimdışı, kendi kendine yeterli, yeniden başlatma gerektirmez** - ikili dosyaları paketlenmiş
   bir WebUI modülü; flaşlandığı anda kullanılabilir.

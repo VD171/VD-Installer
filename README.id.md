@@ -49,7 +49,7 @@ itu untuk Anda, sudah sebagai root, tanpa permintaan "beri izin su" dan tanpa te
   pemasang (saat pemasangan) maupun penginisiasi (melalui penyuntingan `packages.xml` yang sadar ABX).
 - **Terlepas dan dapat dilanjutkan** - pemasangan berjalan sebagai proses root yang terlepas; menutup
   WebUI tidak pernah menghentikannya, dan antarmuka tersambung kembali melalui id operasi.
-- **Keputusan Anda** - downgrade, paket uji, berikan semua izin runtime, pengguna target, lewati blokir
+- **Keputusan Anda** - paket uji, berikan semua izin runtime, pengguna target, lewati blokir
   target SDK rendah: semuanya opsional.
 - **Offline, mandiri, tanpa reboot** - modul WebUI dengan binernya ikut disertakan; dapat dipakai begitu
   di-flash.

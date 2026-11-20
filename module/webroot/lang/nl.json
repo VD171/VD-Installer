@@ -47,7 +47,6 @@
 
   "opt_flags_head": "Installatievlaggen",
   "opt_grant": "Alle runtime-machtigingen verlenen",
-  "opt_downgrade": "Downgrade toestaan",
   "opt_test": "Testpakketten toestaan",
   "opt_lowsdk": "Blokkade voor lage doel-SDK omzeilen",
   "opt_user": "Doelgebruiker",

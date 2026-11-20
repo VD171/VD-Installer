@@ -161,7 +161,6 @@
       $("o-spoofpkg").value = c.spoof_installer_pkg || "com.android.vending";
       $("o-deepspoof").checked = c.deep_spoof !== false;
       $("o-grant").checked = !!c.grant_all_perms;
-      $("o-downgrade").checked = c.allow_downgrade !== false;
       $("o-test").checked = c.allow_test !== false;
       $("o-lowsdk").checked = c.bypass_low_target_sdk !== false;
       $("o-user").value = (c.target_user != null ? c.target_user : 0);
@@ -187,7 +186,6 @@
         spoof_installer_pkg: ($("o-spoofpkg").value.trim() || "com.android.vending"),
         deep_spoof: $("o-deepspoof").checked,
         grant_all_perms: $("o-grant").checked,
-        allow_downgrade: $("o-downgrade").checked,
         allow_test: $("o-test").checked,
         bypass_low_target_sdk: $("o-lowsdk").checked,
         target_user: u,

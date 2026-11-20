@@ -47,7 +47,6 @@
 
   "opt_flags_head": "flagهای نصب",
   "opt_grant": "اعطای همه مجوزهای runtime",
-  "opt_downgrade": "اجازه downgrade",
   "opt_test": "اجازه بسته‌های آزمایشی",
   "opt_lowsdk": "دور زدن قفل target SDK پایین",
   "opt_user": "کاربر هدف",

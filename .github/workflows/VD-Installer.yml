@@ -84,20 +84,13 @@ jobs:
               echo "::warning::vdlu baseline seed failed for $1 - shipping without baseline (engine will from:0)"
             fi
           }
-          # universal: all four ABIs (customize.sh prunes to the device ABI on flash)
+          # Single universal zip: all four ABIs, and customize.sh prunes to the device ABI on flash.
+          # The module is a few MB, so a per-ABI split would shave a negligible download while adding
+          # four extra assets to maintain; update.json, the VDLU feed and MMRL are universal-only too.
           rm -rf stage && cp -a module stage
           seed_baseline stage
           .github/scripts/gen-sha256.sh stage
           (cd stage && zip -qr "../dist/VD-Installer-${VER}-universal.zip" .)
-          # per-ABI: prune bundled binaries and the VDLU verifier to one ABI
-          for a in arm64-v8a armeabi-v7a x86 x86_64; do
-            rm -rf stage && cp -a module stage
-            for d in stage/bin/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
-            for d in stage/vdlu/verify/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
-            seed_baseline stage
-            .github/scripts/gen-sha256.sh stage
-            (cd stage && zip -qr "../dist/VD-Installer-${VER}-${a}.zip" .)
-          done
           rm -rf stage
           ls -la dist
 

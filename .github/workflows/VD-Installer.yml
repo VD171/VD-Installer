@@ -1,0 +1,113 @@
+# ======================================================================
+#  VD INSTALLER  ::  frictionless root sideload installer
+#  Install sideload APKs as root (single/batch/split), no friction: KernelSU/APatch/Magisk WebUI.
+#
+#  Copyright (C) 2026  VD171
+#  SPDX-License-Identifier: AGPL-3.0-or-later
+#
+#  Site           : https://vd171.ru
+#  Site           : https://vd.priv8.ru
+#  Source         : https://github.com/VD171/VD-Installer
+#  GitHub         : @VD171 https://github.com/VD171
+#  XDA-Developers : @VD171 https://xdaforums.com/m/vd171.4699873/
+#  XDA thread     : https://xdaforums.com/t/VD-Installer.4809504/
+#  Telegram       : @VD_Priv8 https://t.me/VD_Priv8
+#  Channel        : @Priv8_VD https://t.me/Priv8_VD
+#  Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
+#  E-mail         : vd.priv8@pm.me
+# ======================================================================
+
+# Release. Manual dispatch. Order (STANDARDS 7.1): bump -> build -> package -> PUBLISH the GitHub
+# release -> assert bot author -> ONLY THEN commit the bump + artifacts. Publishing before the bump
+# commit avoids leaving main bumped with update.json pointing at a 404 asset on a failed publish.
+# The CI publishes directly as github-actions[bot]; never draft + manual UI publish.
+# The VDLU feed is signed off-CI by the operator (the private key never touches CI).
+
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'version bump: none | bump | major | patch'
+        default: none
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install build deps
+        run: sudo apt-get update && sudo apt-get install -y zip binutils xz-utils zstd
+
+      - name: Bump version
+        run: |
+          case "${{ github.event.inputs.bump }}" in
+            none|'') echo "no bump" ;;
+            *) .github/scripts/version.sh "${{ github.event.inputs.bump }}" ;;
+          esac
+
+      - name: Build bundled binaries (jq + abx, four ABIs)
+        run: .github/scripts/build_bin.sh
+
+      - name: Verify provenance present
+        run: for a in arm64-v8a armeabi-v7a x86 x86_64; do test -f "module/bin/$a/PROVENANCE.json" || { echo "::error::missing PROVENANCE.json for $a"; exit 1; }; done
+
+      - name: Assemble release zips
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          mkdir -p dist
+          # universal: all four ABIs (customize.sh prunes to the device ABI on flash)
+          rm -rf stage && cp -a module stage
+          .github/scripts/gen-sha256.sh stage
+          (cd stage && zip -qr "../dist/VD-Installer-${VER}-universal.zip" .)
+          # per-ABI: prune bundled binaries and the VDLU verifier to one ABI
+          for a in arm64-v8a armeabi-v7a x86 x86_64; do
+            rm -rf stage && cp -a module stage
+            for d in stage/bin/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
+            for d in stage/vdlu/verify/*/; do [ "$(basename "$d")" = "$a" ] || rm -rf "$d"; done
+            .github/scripts/gen-sha256.sh stage
+            (cd stage && zip -qr "../dist/VD-Installer-${VER}-${a}.zip" .)
+          done
+          rm -rf stage
+          ls -la dist
+
+      - name: Fill update.json
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          VC="$(.github/scripts/version.sh read | sed -n 's/.*versionCode=//p')"
+          cat > module/update.json <<JSON
+          {
+            "version": "${VER}",
+            "versionCode": ${VC},
+            "zipUrl": "https://github.com/VD171/VD-Installer/releases/download/${VER}/VD-Installer-${VER}-universal.zip",
+            "changelog": "https://raw.githubusercontent.com/VD171/VD-Installer/main/CHANGELOG.md"
+          }
+          JSON
+
+      - name: Create GitHub release (publish BEFORE committing the bump)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          gh release create "${VER}" --title "${VER}" --generate-notes dist/*.zip
+
+      - name: Assert release author is github-actions[bot]
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          author="$(gh release view "${VER}" --json author -q '.author.login')"
+          [ "$author" = "github-actions[bot]" ] || { echo "::error::release ${VER} authored by ${author}, not github-actions[bot]"; exit 1; }
+
+      - name: Commit the bump + update.json (after a successful publish)
+        run: |
+          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add module/module.prop module/update.json CHANGELOG.md 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing to commit"; else git commit -m "release: ${VER}"; git push; fi

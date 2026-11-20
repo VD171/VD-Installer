@@ -16,3 +16,4 @@ __pycache__/
 *.abx
 settings_ssaid.xml
 packages.xml
+dist/

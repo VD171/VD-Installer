@@ -1,0 +1,61 @@
+# ======================================================================
+#  VD INSTALLER  ::  frictionless root sideload installer
+#  Install sideload APKs as root (single/batch/split), no friction: KernelSU/APatch/Magisk WebUI.
+#
+#  Copyright (C) 2026  VD171
+#  SPDX-License-Identifier: AGPL-3.0-or-later
+#
+#  Site           : https://vd171.ru
+#  Site           : https://vd.priv8.ru
+#  Source         : https://github.com/VD171/VD-Installer
+#  GitHub         : @VD171 https://github.com/VD171
+#  XDA-Developers : @VD171 https://xdaforums.com/m/vd171.4699873/
+#  XDA thread     : https://xdaforums.com/t/VD-Installer.4809504/
+#  Telegram       : @VD_Priv8 https://t.me/VD_Priv8
+#  Channel        : @Priv8_VD https://t.me/Priv8_VD
+#  Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
+#  E-mail         : vd.priv8@pm.me
+# ======================================================================
+
+# Mirror docs/ into the project Wiki. docs/ stays the source of truth; this copies it into the
+# separate <repo>.wiki.git so the same content is browsable at /wiki/. Initialize the Wiki once
+# (create any page in the web UI) before the first run, or the wiki clone has no repo.
+
+name: Wiki sync
+
+on:
+  push:
+    branches: [main, master]
+    paths: ['docs/**', '.github/workflows/wiki-sync.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wiki-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Mirror docs/ into the wiki
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git" wiki
+          bash .github/scripts/gen_wiki.sh docs wiki
+          cd wiki
+          git add -A
+          if git diff --cached --quiet; then
+            echo "wiki already up to date"
+          else
+            git commit -m "docs: sync from docs/ @ ${GITHUB_SHA}"
+            git push
+          fi

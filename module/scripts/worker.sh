@@ -33,7 +33,7 @@ ARGS="$(printf '%s' "$ARGS_B64" | base64 -d 2>/dev/null)"
 [ -n "$ARGS" ] || ARGS='{}'
 
 # move the worker's own pgid to the cgroup root so the app-freezer / phantom-killer cannot
-# freeze a detached install when the manager goes to cache (same escape as VD-Backup).
+# freeze a detached install when the manager goes to cache.
 echo $$ > /sys/fs/cgroup/cgroup.procs 2>/dev/null || true
 
 set_prog() { # <percent> <phase> <item> <done-bool>

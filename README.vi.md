@@ -26,75 +26,75 @@
 
 # VDInstaller
 
-> Trinh cai sideload qua root khong rao can - KernelSU / APatch / Magisk WebUI.
+> Trình cài sideload qua root không rào cản - KernelSU / APatch / Magisk WebUI.
 
-## Tai sao
+## Tại sao
 
-Cai mot APK sideload tren dien thoai da root on ao hon muc can thiet: trinh xac minh goi cua Play Protect
-co the nem ra `INSTALL_FAILED_VERIFICATION_FAILURE`, cac app chia nho (`.xapk` / `.apkm` / `.apks`)
-can dung session API bang tay, va mot app vua cai se tu khai la "sideloaded" voi moi app doc nguon cai
-dat cua no. VDInstaller lam tat ca nhung viec do thay ban, da san o che do root, khong co loi nhac
-"grant su" va khong can terminal.
+Cài một APK sideload trên điện thoại đã root ồn ào hơn mức cần thiết: trình xác minh gói của Play Protect
+có thể ném ra `INSTALL_FAILED_VERIFICATION_FAILURE`, các app chia nhỏ (`.xapk` / `.apkm` / `.apks`)
+cần dùng session API bằng tay, và một app vừa cài sẽ tự khai là "sideloaded" với mọi app đọc nguồn cài
+đặt của nó. VDInstaller làm tất cả những việc đó thay bạn, đã sẵn ở chế độ root, không có lời nhắc
+"grant su" và không cần terminal.
 
-## Tinh nang
+## Tính năng
 
-- **Moi hinh thuc APK** - mot `.apk` don le, ca mot thu muc cac APK doc lap (batch), mot archive chia
-  nho theo nhom (`.xapk` / `.apkm` / `.apks` / `.zip`), hoac mot thu muc chua cac split APK roi roi.
-- **Khong con buc tuong xac minh** - mot cong tac 3 trang thai cho trinh xac minh goi cua Play Protect:
-  giu nguyen nhu cu (chi tat trong luc cai, roi khoi phuc chinh xac), luon bat, hoac luon tat.
-- **Trung thuc ve Developer Verification** - mot ban cai qua root von da duoc mien tru khoi Developer
-  Verification 2026 cua Android; cong tac nay la no-luc-toi-da va noi ro dieu do, khong bao gio la mot
-  nut gia.
-- **Khong phai "sideloaded"** - tuy chon trinh bay nguon cai dat la Play Store, ca phan trinh cai (luc
-  cai) lan phan khoi tao (qua mot chinh sua `packages.xml` co nhan biet ABX).
-- **Tach roi va co the tiep tuc** - cac ban cai chay nhu mot tien trinh root tach roi; dong WebUI khong
-  bao gio lam gian doan chung, va giao dien gan ket lai theo operation id.
-- **Ban quyet dinh** - ha cap, goi test, cap moi quyen runtime, nguoi dung dich, bo qua chan target
-  SDK thap: tat ca deu tuy chon.
-- **Offline, tu chua du, khong can khoi dong lai** - mot module WebUI voi cac binary dong kem; dung duoc
-  ngay khi vua flash.
+- **Mọi hình thức APK** - một `.apk` đơn lẻ, cả một thư mục các APK độc lập (batch), một archive chia
+  nhỏ theo nhóm (`.xapk` / `.apkm` / `.apks` / `.zip`), hoặc một thư mục chứa các split APK rời rạc.
+- **Không còn bức tường xác minh** - một công tắc 3 trạng thái cho trình xác minh gói của Play Protect:
+  giữ nguyên như cũ (chỉ tắt trong lúc cài, rồi khôi phục chính xác), luôn bật, hoặc luôn tắt.
+- **Trung thực về Developer Verification** - một bản cài qua root vốn đã được miễn trừ khỏi Developer
+  Verification 2026 của Android; công tắc này chỉ là nỗ lực tối đa và nói rõ điều đó, không bao giờ là một
+  nút giả.
+- **Không phải "sideloaded"** - tùy chọn trình bày nguồn cài đặt là Play Store, cả phần trình cài (lúc
+  cài) lẫn phần khởi tạo (qua một chỉnh sửa `packages.xml` có nhận biết ABX).
+- **Tách rời và có thể tiếp tục** - các bản cài chạy như một tiến trình root tách rời; đóng WebUI không
+  bao giờ làm gián đoạn chúng, và giao diện gắn kết lại theo operation id.
+- **Bạn quyết định** - hạ cấp, gói test, cấp mọi quyền runtime, người dùng đích, bỏ qua chặn target
+  SDK thấp: tất cả đều tùy chọn.
+- **Offline, tự chứa đủ, không cần khởi động lại** - một module WebUI với các binary đóng kèm; dùng được
+  ngay khi vừa flash.
 
-## Tac nhan AI
+## Tác nhân AI
 
-Du an nay chao don nhung nguoi dong gop la AI va tac nhan. Engine noi JSON qua mot hop dong headless nho
-(`scripts/helper.sh <verb> <base64(JSON)>`), duoc mo ta trong
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md), nen mot tac nhan co the dieu khien moi hanh dong ma WebUI lam
-duoc - dung scrape WebUI. Cac ban va tu AI duoc danh gia theo cung tieu chuan review nhu bat ky dong gop
-nao khac.
+Dự án này chào đón những người đóng góp là AI và tác nhân. Engine nói JSON qua một hợp đồng headless nhỏ
+(`scripts/helper.sh <verb> <base64(JSON)>`), được mô tả trong
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md), nên một tác nhân có thể điều khiển mọi hành động mà WebUI làm
+được - đừng scrape WebUI. Các bản vá từ AI được đánh giá theo cùng tiêu chuẩn review như bất kỳ đóng góp
+nào khác.
 
-## Cai dat
+## Cài đặt
 
-Flash tep zip trong KernelSU, APatch hoac Magisk va mo WebUI cua VDInstaller tu trinh quan ly root cua
-ban. Trinh cai chi giu lai ABI cua thiet bi ban va chay cong kiem tra toan ven `.sha256` bat buoc
-(huy khi zip bi hong hoac bi cat cut). Android 8.0 (API 26) tro len.
+Flash tệp zip trong KernelSU, APatch hoặc Magisk và mở WebUI của VDInstaller từ trình quản lý root của
+bạn. Trình cài chỉ giữ lại ABI của thiết bị bạn và chạy cổng kiểm tra toàn vẹn `.sha256` bắt buộc
+(hủy khi zip bị hỏng hoặc bị cắt cụt). Android 8.0 (API 26) trở lên.
 
-## Bao mat
+## Bảo mật
 
-VDInstaller chay o che do root va cai nhung APK ban chon; tat trinh xac minh goi cho mot ban cai se vo
-hieu hoa mot lan quet ma doc, nen chi cai nhung APK ban tin tuong. No khong bao gio am tham lam yeu di
-bao mat thiet bi: theo mac dinh trinh xac minh duoc khoi phuc ve dung trang thai truoc do, va no khong
-bao gio dong vao thiet lap HMA-OSS cua ban. Bao loi theo [SECURITY.md](SECURITY.md).
+VDInstaller chạy ở chế độ root và cài những APK bạn chọn; tắt trình xác minh gói cho một bản cài sẽ vô
+hiệu hóa một lần quét mã độc, nên chỉ cài những APK bạn tin tưởng. Nó không bao giờ âm thầm làm yếu đi
+bảo mật thiết bị: theo mặc định trình xác minh được khôi phục về đúng trạng thái trước đó, và nó không
+bao giờ động vào thiết lập HMA-OSS của bạn. Báo lỗi theo [SECURITY.md](SECURITY.md).
 
 ## Build
 
-Luon release, khong bao gio debug. `.github/scripts/build_bin.sh` lay `jq` tu kho apt Termux (cung
-voi be mat thu vien chia se cua no) va cac trinh chuyen doi `abx2xml` / `xml2abx` doc lap, cho ca bon
-ABI, moi cai kem mot `PROVENANCE.json`. Workflow release lap rap cac zip flash duoc, ghi cac ban dong
-hanh `.sha256`, dien `update.json` va phat hanh duoi danh nghia `github-actions[bot]`.
+Luôn release, không bao giờ debug. `.github/scripts/build_bin.sh` lấy `jq` từ kho apt Termux (cùng
+với bề mặt thư viện chia sẻ của nó) và các trình chuyển đổi `abx2xml` / `xml2abx` độc lập, cho cả bốn
+ABI, mỗi cái kèm một `PROVENANCE.json`. Workflow release lắp ráp các zip flash được, ghi các bản đồng
+hành `.sha256`, điền `update.json` và phát hành dưới danh nghĩa `github-actions[bot]`.
 
-## Tai lieu
+## Tài liệu
 
-Cac huong dan nam trong [docs/](docs/) va duoc mirror sang GitHub wiki. Xem
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md) de biet hop dong headless.
+Các hướng dẫn nằm trong [docs/](docs/) và được mirror sang GitHub wiki. Xem
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md) để biết hợp đồng headless.
 
-## Xem them
+## Xem thêm
 
-- [VDBackup](https://github.com/VD171/VD-Backup) - sao luu & khoi phuc toan bo app va du lieu, qua root.
-- [VDInfos](https://github.com/VD171/VD-Infos) - doc moi thong tin thiet bi bang moi phuong phap, roi so sanh.
-- [VDGoogle](https://github.com/VD171/VDGoogle) - doc RCS, Wallet va cac attestation qua root.
-- [COPG-VD](https://github.com/VD171/COPG-VD) - module fingerprint va props Pixel.
+- [VDBackup](https://github.com/VD171/VD-Backup) - sao lưu & khôi phục toàn bộ app và dữ liệu, qua root.
+- [VDInfos](https://github.com/VD171/VD-Infos) - đọc mọi thông tin thiết bị bằng mọi phương pháp, rồi so sánh.
+- [VDGoogle](https://github.com/VD171/VDGoogle) - đọc RCS, Wallet và các attestation qua root.
+- [COPG-VD](https://github.com/VD171/COPG-VD) - module fingerprint và props Pixel.
 
-## Lien he
+## Liên hệ
 
 - Site           : https://vd171.ru
 - Site           : https://vd.priv8.ru
@@ -107,15 +107,15 @@ Cac huong dan nam trong [docs/](docs/) va duoc mirror sang GitHub wiki. Xem
 - Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
 - E-mail         : vd.priv8@pm.me
 
-## Giay phep
+## Giấy phép
 
-VDInstaller duoc cap phep theo GNU AGPL-3.0-or-later. Xem [LICENSE](LICENSE). NETWORK COPYLEFT:
-chay mot phien ban da sua doi, ke ca duoi dang dich vu, va ban phai cung cap ma nguon cua no.
+VDInstaller được cấp phép theo GNU AGPL-3.0-or-later. Xem [LICENSE](LICENSE). NETWORK COPYLEFT:
+chạy một phiên bản đã sửa đổi, kể cả dưới dạng dịch vụ, và bạn phải cung cấp mã nguồn của nó.
 
-## Thuong hieu
+## Thương hiệu
 
-Android, KernelSU, APatch, Magisk, Google Play va Play Protect thuoc ve chu so huu tuong ung cua chung.
-Du an nay doc lap va khong lien ket voi hoac duoc ho chung thuc.
+Android, KernelSU, APatch, Magisk, Google Play và Play Protect thuộc về chủ sở hữu tương ứng của chúng.
+Dự án này độc lập và không liên kết với hoặc được họ chứng thực.
 
 ## Tags
 
@@ -123,6 +123,6 @@ Du an nay doc lap va khong lien ket voi hoac duoc ho chung thuc.
 
 ---
 
-> Tham gia kenh: [@Priv8_VD](https://t.me/Priv8_VD)
+> Tham gia kênh: [@Priv8_VD](https://t.me/Priv8_VD)
 
 > _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._

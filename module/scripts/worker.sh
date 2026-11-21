@@ -149,14 +149,23 @@ install_apks() {   # <apk...>  installs as ONE package; 0 = Success
   INSTALL_MSG=""
   SESSION="$(fw pm install-create $(pm_install_flags) $(installer_flag) $(user_flag) 2>/dev/null | sed -n 's/.*\[\([0-9]*\)\].*/\1/p')"
   [ -n "$SESSION" ] || { INSTALL_MSG="install-create failed"; return 1; }
+  # pm runs as system_server, which SELinux bars from reading our staging or /sdcard; it can read
+  # /data/local/tmp (shell_data_file). Stage each apk there, install-write from it, then wipe.
+  _wtmp="/data/local/tmp/vdinstaller.${OPID:-$$}"; rm -rf "$_wtmp"
+  mkdir -p "$_wtmp" || { INSTALL_MSG="cannot create /data/local/tmp staging"; fw pm install-abandon "$SESSION" >/dev/null 2>&1; return 1; }
   _n=0
   for _apk in "$@"; do
     [ -f "$_apk" ] || continue
-    if ! fw pm install-write "$SESSION" "s$_n" "$_apk" >/dev/null 2>&1; then
-      INSTALL_MSG="install-write failed: $(basename "$_apk")"; fw pm install-abandon "$SESSION" >/dev/null 2>&1; return 1
+    _st="$_wtmp/s$_n.apk"
+    cp "$_apk" "$_st" 2>/dev/null || { INSTALL_MSG="staging copy failed: $(basename "$_apk")"; fw pm install-abandon "$SESSION" >/dev/null 2>&1; rm -rf "$_wtmp"; return 1; }
+    restorecon "$_st" 2>/dev/null
+    if _werr="$(fw pm install-write "$SESSION" "s$_n" "$_st" 2>&1)"; then :; else
+      INSTALL_MSG="install-write failed: $(basename "$_apk")${_werr:+: $(printf '%s' "$_werr" | tr '\n' ' ' | sed 's/  */ /g')}"
+      fw pm install-abandon "$SESSION" >/dev/null 2>&1; rm -rf "$_wtmp"; return 1
     fi
     _n=$((_n+1))
   done
+  rm -rf "$_wtmp"
   [ "$_n" -gt 0 ] || { INSTALL_MSG="no apk to write"; fw pm install-abandon "$SESSION" >/dev/null 2>&1; return 1; }
   CMT="$(fw pm install-commit "$SESSION" 2>&1)"
   case "$CMT" in *Success*) return 0 ;; *) INSTALL_MSG="$(printf '%s' "$CMT" | tr '\n' ' ' | sed 's/  */ /g')"; return 1 ;; esac

@@ -26,6 +26,15 @@
 
 All notable changes to VDInstaller are documented here. This file is English only.
 
+## v1.02
+
+- Fixed split and archive installs (`.apkm` / `.apks` / `.xapk` and multi-APK folders): they were failing with "install-write failed" because Android's package installer, running as the system server, could not read the staged files. The APKs are now staged where it can read them, and a failure now reports the installer's real reason.
+- Install failures show a plain-language hint (verifier, storage, signature mismatch, already installed, low target SDK, unreadable APK) next to the raw message.
+- New: one-tap restore of the original install-source, and a Recent activity log in the About tab.
+- Ships as a single universal zip (the per-ABI split is gone).
+- The install hints now name the Options tab in each language, and the Spanish / French / Italian strings regained their accents.
+- Wiki: a per-document language index, and fixed empty labels on the Ukrainian pages.
+
 ## v1.01
 
 - First release. Frictionless root sideload installer (KernelSU / APatch / Magisk WebUI).

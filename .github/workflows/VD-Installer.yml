@@ -109,7 +109,7 @@ jobs:
 
       - name: Create GitHub release (publish BEFORE committing the bump)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
           if gh release view "${VER}" >/dev/null 2>&1; then
@@ -121,9 +121,9 @@ jobs:
           body="$(gh release view "${VER}" --json body -q .body | grep -vi 't.me/Priv8_VD')"
           printf '%s\n\n📣 Join the channel for updates: @Priv8_VD https://t.me/Priv8_VD\n' "$body" | gh release edit "${VER}" --notes-file -
 
-      - name: Assert release author is github-actions[bot]
+      - name: Assert the release author is github-actions[bot]
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
           author="$(gh release view "${VER}" --json author -q '.author.login')"

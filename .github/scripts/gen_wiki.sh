@@ -108,14 +108,14 @@ t_doc() { case "$1" in
   es) printf '%s' "Documentación" ;; fa) printf '%s' "مستندات" ;; fr) printf Documentation ;; hi) printf '%s' "दस्तावेज़ीकरण" ;;
   id) printf Dokumentasi ;; it) printf Documentazione ;; ja) printf '%s' "ドキュメント" ;; ko) printf '%s' "문서" ;;
   nl) printf Documentatie ;; pl) printf Dokumentacja ;; pt) printf '%s' "Documentação" ;; ru) printf '%s' "Документация" ;;
-  sv) printf Dokumentation ;; th) printf '%s' "เอกสารประกอบ" ;; tr) printf Belgeler ;; vi) printf '%s' "Tài liệu" ;;
+  sv) printf Dokumentation ;; th) printf '%s' "เอกสารประกอบ" ;; tr) printf Belgeler ;; uk) printf '%s' "Документація" ;; vi) printf '%s' "Tài liệu" ;;
   zh) printf '%s' "文档" ;; esac; }
 t_all() { case "$1" in
   en) printf '%s' "All languages" ;; ar) printf '%s' "كل اللغات" ;; cs) printf '%s' "Všechny jazyky" ;; de) printf '%s' "Alle Sprachen" ;;
   es) printf '%s' "Todos los idiomas" ;; fa) printf '%s' "همه زبان‌ها" ;; fr) printf '%s' "Toutes les langues" ;; hi) printf '%s' "सभी भाषाएँ" ;;
   id) printf '%s' "Semua bahasa" ;; it) printf '%s' "Tutte le lingue" ;; ja) printf '%s' "すべての言語" ;; ko) printf '%s' "모든 언어" ;;
   nl) printf '%s' "Alle talen" ;; pl) printf '%s' "Wszystkie języki" ;; pt) printf '%s' "Todos os idiomas" ;; ru) printf '%s' "Все языки" ;;
-  sv) printf '%s' "Alla språk" ;; th) printf '%s' "ทุกภาษา" ;; tr) printf '%s' "Tüm diller" ;; vi) printf '%s' "Tất cả ngôn ngữ" ;;
+  sv) printf '%s' "Alla språk" ;; th) printf '%s' "ทุกภาษา" ;; tr) printf '%s' "Tüm diller" ;; uk) printf '%s' "Усі мови" ;; vi) printf '%s' "Tất cả ngôn ngữ" ;;
   zh) printf '%s' "所有语言" ;; esac; }
 t_foot() { case "$1" in
   en) printf '%s' "This wiki is generated from the repository's docs/ folder." ;;
@@ -137,6 +137,7 @@ t_foot() { case "$1" in
   sv) printf '%s' "Den här wikin genereras från mappen docs/ i arkivet." ;;
   th) printf '%s' "วิกินี้สร้างขึ้นจากโฟลเดอร์ docs/ ในที่เก็บโค้ด" ;;
   tr) printf '%s' "Bu viki, deponun docs/ klasöründen oluşturulur." ;;
+  uk) printf '%s' "Ця вікі генерується з теки docs/ репозиторію." ;;
   vi) printf '%s' "Wiki này được tạo từ thư mục docs/ trong kho lưu trữ." ;;
   zh) printf '%s' "本维基由仓库的 docs/ 文件夹生成。" ;; esac; }
 NAV_LANGS="ar cs de es fa fr hi id it ja ko nl pl pt ru sv th tr uk vi zh"

@@ -1,6 +1,6 @@
 {
-  "version": "v1.01",
-  "versionCode": 10100,
-  "zipUrl": "https://github.com/VD171/VD-Installer/releases/download/v1.01/VD-Installer-v1.01-universal.zip",
+  "version": "v1.02",
+  "versionCode": 10200,
+  "zipUrl": "https://github.com/VD171/VD-Installer/releases/download/v1.02/VD-Installer-v1.02-universal.zip",
   "changelog": "https://raw.githubusercontent.com/VD171/VD-Installer/main/CHANGELOG.md"
 }

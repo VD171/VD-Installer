@@ -19,31 +19,32 @@
 #  Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
 #  E-mail         : vd.priv8@pm.me
 # ======================================================================
-
-# Binary refresh (SKELETON). Keep the bundled, pre-compiled upstream binaries fresh BETWEEN feature
-# releases. Scheduled weekly: re-fetch the latest upstream; if any pinned version changed, do a .patch
-# bump (v1.01 -> v1.01.1 -> v1.01.2 ...) and publish a "binary refresh" release with the new zip.
-# A run with no upstream change does nothing. Fill in the module-specific build/compare/package steps;
-# keep the conventions below.
 #
-# House conventions (keep these):
-#  - Track the upstream version set in a lockfile (e.g. .github/bin-versions.lock); compare each run so
-#    an unchanged run is a no-op and only a real change triggers a bump + release.
-#  - Per-binary provenance (source + version + sha256) lives beside each binary (bin/<abi>/PROVENANCE.json).
-#  - Bump with .github/scripts/version.sh patch (prefix SCHEME=minor if the module uses the minor scheme);
-#    never hand-edit versionCode.
-#  - Run tooling/gen-sha256.sh on each pruned variant tree, before that variant's zip.
-#  - Pin every third-party action by commit SHA, not a tag (supply-chain safety).
-#  - Any commit uses the github-actions[bot] identity; the CI PUBLISHES the release directly
-#    (author = github-actions[bot]), token = ${{ secrets.GITHUB_TOKEN }}. NEVER `draft: true` + manual UI
-#    "Publish" (that attributes the release to the human who clicks). Enforced by
-#    tooling/release-workflow-lint.sh + audited by tooling/release-author-audit.sh.
+#  Keep the bundled, pre-compiled upstream binaries (Termux jq + oniguruma, and the ABX
+#  converter) fresh BETWEEN feature releases. Weekly, re-fetch the latest upstream; if any
+#  pinned version changed, do a .patch bump (v1.02 -> v1.02.1 -> v1.02.2 ...) and publish a
+#  "binary refresh" release with a new universal zip. A run with no upstream change does
+#  nothing. Per-binary provenance (source + version + sha256) ships in each
+#  bin/<abi>/PROVENANCE.json; the upstream version set is tracked in .github/bin-versions.lock
+#  so an unchanged run is a no-op.
+#
+#  House conventions:
+#   - The binaries and *.sha256 are gitignored (rebuilt every release from pinned upstream); only
+#     the lock is committed, so an audit re-fetches the pinned sources and compares sha256.
+#   - Bump with version.sh patch; never hand-edit versionCode.
+#   - The release zip is assembled EXACTLY like VD-Installer.yml: seed the keyless VDLU baseline,
+#     then gen-sha256 (the on-device sha256 gate aborts a flash with any missing .sha256), then one
+#     universal zip.
+#   - Any commit uses the github-actions[bot] identity; the CI PUBLISHES the release directly
+#     (author = github-actions[bot]), token = github.token. NEVER draft + manual UI publish (that
+#     attributes the release to the human who clicks); an assert step fails the job if the author is
+#     not the bot.
 
 name: Binary refresh
 
 on:
   schedule:
-    - cron: '17 4 * * 1'   # every Monday 04:17 UTC (stagger per module)
+    - cron: '17 4 * * 1'   # every Monday 04:17 UTC (staggered per module)
   workflow_dispatch: {}
 
 permissions:
@@ -59,50 +60,169 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      # ---- fetch upstream + decide if anything changed (fill these in) ----------------
-      # - name: Build per-ABI binaries (latest upstream)   # e.g. bash .github/scripts/build_bin.sh
-      # - name: Compare upstream versions to the lock      # id: chk -> state=baseline|unchanged|changed
-      #         (diff the freshly derived version set against .github/bin-versions.lock)
-      # - name: Up to date                                 # if state == unchanged: echo + stop
-      # - name: Seed the lock (first run, no release)      # if state == baseline: commit the lock, stop
-      # ---------------------------------------------------------------------------------
+      - name: Install build deps
+        run: sudo apt-get update && sudo apt-get install -y zip binutils xz-utils zstd
 
-      # ---- a real upstream change: build everything, patch-bump, release (fill in) -----
-      # Guard every step below with: if: steps.chk.outputs.state == 'changed'
-      # - name: Set up build toolchain (JDK/SDK/NDK as the module needs)
-      # - name: Patch-bump version           # .github/scripts/version.sh patch
-      # - name: Stage README + LICENSE + refresh the lock
-      # - name: Assemble release zips         # prune to one ABI per variant; run gen-sha256.sh before each zip
-      # - name: Fill update.json size/sha256/notes (per-variant manifests; MMRL stub <50MB)
-      # ---------------------------------------------------------------------------------
+      - name: Build bundled binaries (latest upstream jq + abx, four ABIs)
+        run: .github/scripts/build_bin.sh
 
-      # Order (STANDARDS 7.1): PUBLISH the release first, assert the bot author, and ONLY THEN commit the
-      # patch-bump. Committing the bump before a successful publish would, on a failed publish, leave the
-      # branch bumped with update.json pointing at a 404 asset - worse on a cron with no human watching.
+      - name: Verify provenance present
+        run: for a in arm64-v8a armeabi-v7a x86 x86_64; do test -f "module/bin/$a/PROVENANCE.json" || { echo "::error::missing PROVENANCE.json for $a"; exit 1; }; done
+
+      - name: Compare upstream versions to the lock
+        id: chk
+        run: |
+          set -e
+          # Derive the pinned-version set from every ABI's provenance: Termux debs as
+          # "<package> <version>", the ABX tool as "abx <project> <release>". sort -u folds the
+          # four identical per-ABI sets into one. A new source type would need a branch here.
+          jq -r '.sources[] |
+                   if .type == "termux-deb" then "\(.package) \(.version)"
+                   elif .type == "abx-tool" then "abx \(.project) \(.release)"
+                   else empty end' module/bin/*/PROVENANCE.json | sort -u > /tmp/bin.set
+          grep -vE '^[[:space:]]*#|^[[:space:]]*$' .github/bin-versions.lock 2>/dev/null | sort -u > /tmp/lock.set || true
+          echo "current upstream set:"; cat /tmp/bin.set
+          if [ ! -s /tmp/lock.set ]; then
+            echo "state=baseline" >> "$GITHUB_OUTPUT"
+          elif diff -q /tmp/lock.set /tmp/bin.set >/dev/null 2>&1; then
+            echo "state=unchanged" >> "$GITHUB_OUTPUT"
+          else
+            echo "state=changed" >> "$GITHUB_OUTPUT"
+            echo "changed (< lock, > upstream):"; diff /tmp/lock.set /tmp/bin.set || true
+          fi
+
+      - name: Up to date
+        if: steps.chk.outputs.state == 'unchanged'
+        run: echo "bundled binaries already at the latest upstream versions; nothing to do"
+
+      - name: Seed the lock (first run, no release)
+        if: steps.chk.outputs.state == 'baseline'
+        run: |
+          {
+            echo "# Upstream pinned versions for VDInstaller's bundled binaries."
+            echo "# bin-refresh.yml diffs this set each run; a real change triggers a patch bump +"
+            echo "# a \"binary refresh\" release. Keep one line per pinned source: \"<name> <version>\"."
+            cat /tmp/bin.set
+          } > .github/bin-versions.lock
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/bin-versions.lock
+          git commit -m "chore: seed the binary-version lock"
+          git push
+
+      # ---- a real upstream change: patch-bump, assemble, publish, THEN commit ----
+      - name: Patch-bump version
+        if: steps.chk.outputs.state == 'changed'
+        run: .github/scripts/version.sh patch
+
+      - name: Read version
+        if: steps.chk.outputs.state == 'changed'
+        id: v
+        run: echo "name=$(sed -n 's/^version=//p' module/module.prop)" >> "$GITHUB_OUTPUT"
+
+      - name: Refresh the lock + prepend a CHANGELOG entry
+        if: steps.chk.outputs.state == 'changed'
+        run: |
+          VER="${{ steps.v.outputs.name }}"
+          {
+            echo "# Upstream pinned versions for VDInstaller's bundled binaries."
+            echo "# bin-refresh.yml diffs this set each run; a real change triggers a patch bump +"
+            echo "# a \"binary refresh\" release. Keep one line per pinned source: \"<name> <version>\"."
+            cat /tmp/bin.set
+          } > .github/bin-versions.lock
+          tmp="$(mktemp)"
+          awk -v ver="$VER" '
+            /^## / && !done {
+              print "## " ver
+              print ""
+              print "- Binary refresh: the bundled, pre-compiled upstream tools (jq, oniguruma, abx) were updated to their latest versions. No app or feature changes; per-binary source and SHA-256 are in bin/<abi>/PROVENANCE.json."
+              print ""
+              done = 1
+            }
+            { print }
+          ' CHANGELOG.md > "$tmp"
+          mv "$tmp" CHANGELOG.md
+
+      - name: Assemble the release zip
+        if: steps.chk.outputs.state == 'changed'
+        run: |
+          VER="${{ steps.v.outputs.name }}"
+          VC="$(.github/scripts/version.sh read | sed -n 's/.*versionCode=//p')"
+          mkdir -p dist
+          # Mirror VD-Installer.yml exactly: seed the KEYLESS vdlu/baseline.json (so a fresh install
+          # is born "current" and its first self-update is incremental, not from:0), then gen-sha256
+          # (the on-device gate aborts the flash if any .sha256 is missing), then one universal zip.
+          # The baseline manifest must match the installed tree, so seed_baseline runs after pruning
+          # .gitkeep/RELEASE.md and before gen-sha256 (vdlu-pack excludes *.sha256). Non-fatal.
+          seed_baseline() {
+            rm -f "$1"/bin/*/.gitkeep
+            rm -f "$1"/vdlu/RELEASE.md
+            rm -rf /tmp/bl-seed
+            if python3 .github/scripts/vdlu-pack "$1" /tmp/bl-seed vdinstaller "$VC" \
+                 --version-name "$VER" --channel stable >/dev/null 2>&1 \
+               && [ -f /tmp/bl-seed/manifest.json ]; then
+              cp /tmp/bl-seed/manifest.json "$1/vdlu/baseline.json"
+            else
+              echo "::warning::vdlu baseline seed failed - shipping without baseline (engine will from:0)"
+            fi
+          }
+          rm -rf stage && cp -a module stage
+          seed_baseline stage
+          .github/scripts/gen-sha256.sh stage
+          (cd stage && zip -qr "../dist/VD-Installer-${VER}-universal.zip" .)
+          rm -rf stage
+          ls -la dist
+
+      - name: Fill update.json
+        if: steps.chk.outputs.state == 'changed'
+        run: |
+          VER="${{ steps.v.outputs.name }}"
+          VC="$(.github/scripts/version.sh read | sed -n 's/.*versionCode=//p')"
+          cat > module/update.json <<JSON
+          {
+            "version": "${VER}",
+            "versionCode": ${VC},
+            "zipUrl": "https://github.com/VD171/VD-Installer/releases/download/${VER}/VD-Installer-${VER}-universal.zip",
+            "changelog": "https://raw.githubusercontent.com/VD171/VD-Installer/main/CHANGELOG.md"
+          }
+          JSON
+
+      # Publish BEFORE committing the bump: a failed publish must never leave main bumped with
+      # update.json pointing at a 404 asset - worse on a cron with no human watching. Idempotent
+      # (view -> upload-clobber, else create) so a re-run of the same patch cannot fail on an
+      # existing release.
       - name: Create GitHub release (publish BEFORE committing the bump)
-        # if: steps.chk.outputs.state == 'changed'
+        if: steps.chk.outputs.state == 'changed'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
-          gh release create "${VER}" --title "VD INSTALLER ${VER} (binary refresh)" --generate-notes dist/*.zip
+          VER="${{ steps.v.outputs.name }}"
+          if gh release view "${VER}" >/dev/null 2>&1; then
+            gh release upload "${VER}" dist/*.zip --clobber
+          else
+            gh release create "${VER}" --title "VD INSTALLER ${VER} (binary refresh)" --generate-notes dist/*.zip
+          fi
+          # Channel banner, always LAST (idempotent: strip any prior banner before re-adding).
+          body="$(gh release view "${VER}" --json body -q .body | grep -vi 't.me/Priv8_VD')"
+          printf '%s\n\n📣 Join the channel for updates: @Priv8_VD https://t.me/Priv8_VD\n' "$body" | gh release edit "${VER}" --notes-file -
 
-      # Fail-closed guard: if the token was ever swapped for a user PAT, the release ships under that
-      # human; this catches it in CI instead of silently.
-      - name: Assert release author is github-actions[bot]
-        # if: steps.chk.outputs.state == 'changed'
+      # Fail-closed guard: if the token were ever swapped for a user PAT, the release would ship under
+      # that human; this catches it in CI instead of silently.
+      - name: Assert the release author is github-actions[bot]
+        if: steps.chk.outputs.state == 'changed'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          VER="${{ steps.v.outputs.name }}"
           author="$(gh release view "${VER}" --json author -q '.author.login')"
           [ "$author" = "github-actions[bot]" ] || { echo "::error::release ${VER} authored by ${author}, not github-actions[bot]"; exit 1; }
 
       - name: Commit the patch-bump + lock (after a successful publish)
-        # if: steps.chk.outputs.state == 'changed'
+        if: steps.chk.outputs.state == 'changed'
         run: |
-          VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
+          VER="${{ steps.v.outputs.name }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add module/module.prop module/update.json .github/bin-versions.lock CHANGELOG.md 2>/dev/null || true
-          if git diff --cached --quiet; then echo "nothing to commit"; else git commit -m "chore: binary refresh ${VER}"; git push; fi
+          git add module/module.prop module/update.json .github/bin-versions.lock CHANGELOG.md
+          git commit -m "chore: binary refresh ${VER}"
+          git push

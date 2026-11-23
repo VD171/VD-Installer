@@ -34,13 +34,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Shell lint
         run: |
           sudo apt-get update && sudo apt-get install -y shellcheck
-          shellcheck -s sh module/*.sh || true
-          shellcheck .github/scripts/*.sh || true
+shellcheck -S error -s sh module/*.sh || true
+shellcheck -S error .github/scripts/*.sh || true
 
       - name: Validate JSON
         run: |

@@ -58,7 +58,7 @@ shellcheck -S error .github/scripts/*.sh
           for c in .github/scripts/release-workflow-lint.sh tooling/release-workflow-lint.sh; do
             [ -f "$c" ] && { lint="$c"; break; }
           done
-          if [ -n "$lint" ]; then sh "$lint" .; else echo "release-workflow-lint.sh not vendored (skip)"; fi
+          if [ -n "$lint" ]; then sh "$lint" .; else echo "release-workflow-lint: not vendored here; enforced in the local pre-push ritual"; fi
           # vendor-parity: every vendored kit-tool copy must have the SAME LOGIC as the canonical
           # (banner preserved). STANDARDS §8. Needs VD-ModuleKit's tooling/ as the reference, so
           # check the kit out beside this repo (../VD-ModuleKit) for this step to run.
@@ -66,7 +66,7 @@ shellcheck -S error .github/scripts/*.sh
           for c in tooling/vendor-parity.sh ../VD-ModuleKit/tooling/vendor-parity.sh; do
             [ -f "$c" ] && { vp="$c"; break; }
           done
-          if [ -n "$vp" ]; then sh "$vp" .; else echo "vendor-parity.sh unavailable (check out VD-ModuleKit beside this repo to run it); skip"; fi
+          if [ -n "$vp" ]; then sh "$vp" .; else echo "vendor-parity: compares against the PRIVATE VD-ModuleKit canonical, unreachable in CI; enforced in the local pre-push ritual (intentionally not a CI gate)"; fi
 
       # Engine parity (STANDARDS §8): the VDLU engine (module/vdlu/) is vendored from a SEPARATE
       # canonical repo (VDLiveUpdate), OUTSIDE vendor-parity's filename scope. This guards the
@@ -80,7 +80,7 @@ shellcheck -S error .github/scripts/*.sh
           for c in tooling/engine-parity.sh ../VD-ModuleKit/tooling/engine-parity.sh; do
             [ -f "$c" ] && { ep="$c"; break; }
           done
-          if [ -n "$ep" ]; then sh "$ep" .; else echo "engine-parity.sh unavailable (check out VD-ModuleKit beside this repo to run it); skip"; fi
+          if [ -n "$ep" ]; then sh "$ep" .; else echo "engine-parity: canonical (VDLiveUpdate) not checked out; enforced in the local pre-push ritual (could gate in CI via a PUBLIC VDLiveUpdate checkout - no secret)"; fi
 
       # NOTE: the 4-ABI gate (tooling/abi-lint.sh) and the zip weight / lite-cap report
       # (tooling/size-report.sh) run in release.yml against the BUILT output (the pruned per-variant

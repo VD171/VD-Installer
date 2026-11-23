@@ -39,8 +39,8 @@ jobs:
       - name: Shell lint
         run: |
           sudo apt-get update && sudo apt-get install -y shellcheck
-shellcheck -S error -s sh module/*.sh || true
-shellcheck -S error .github/scripts/*.sh || true
+shellcheck -S error -s sh module/*.sh
+shellcheck -S error .github/scripts/*.sh
 
       - name: Validate JSON
         run: |

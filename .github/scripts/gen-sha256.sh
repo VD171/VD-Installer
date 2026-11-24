@@ -1,15 +1,42 @@
 #!/bin/sh
-# gen-sha256.sh - write a <file>.sha256 companion next to every file in a flashable payload (STANDARDS 8).
+# ======================================================================
+#  VD-ModuleKit  ::  gen-sha256.sh
+#  Write a <file>.sha256 companion next to every file in a flashable payload
+#  (STANDARDS 8).
+#
+#  Copyright (C) 2026  VD171
+#  SPDX-License-Identifier: Apache-2.0
+#
+#  Licensed under the Apache License, Version 2.0; you may obtain a copy at
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Site           : https://vd171.ru
+#  Site           : https://vd.priv8.ru
+#  Source         : https://github.com/VD171/VD-Installer
+#  GitHub         : @VD171 https://github.com/VD171
+#  XDA-Developers : @VD171 https://xdaforums.com/m/vd171.4699873/
+#  XDA thread     : https://xdaforums.com/t/VD-Installer.4809504/
+#  Telegram       : @VD_Priv8 https://t.me/VD_Priv8
+#  Channel        : @Priv8_VD https://t.me/Priv8_VD
+#  Discord        : @VD.Priv8 https://discord.com/users/1296831918989639721
+#  E-mail         : vd.priv8@pm.me
+#  Vendored from VD-ModuleKit; the host module fills the contact chain and keeps
+#  its own license and product banner.
+# ======================================================================
+#
 # Run at build, after assembling the module payload and BEFORE zipping.
 # Run it on the FINAL per-variant tree (after any ABI pruning) so each companion matches the files
-# that variant actually ships. vdlu-pack excludes *.sha256, so companions never enter the VDLU feed:
-# committed-binary modules may track them; CI-built modules (gitignored binaries) keep them gitignored
-# and zip-only. Either way the companions ride only in the flashable zip (and this tool skips *.sha256,
-# so no recursion).
+# that variant actually ships.
+# The .sha256 companions are ALWAYS gitignored, zip-only, and NEVER committed to the source: they are
+# regenerated fresh at build/CI and ride only inside the flashable zip. The old "committed companions"
+# variant was RETIRED. vdlu-pack skips *.sha256, so companions never enter the VDLU feed or baseline.json
+# (and this tool skips *.sha256, so no recursion).
 # Each companion holds `sha256sum <basename>` output, so `sha256sum -c <basename>.sha256` verifies it.
-# Redundant with module/vdlu/baseline.json by design (owner's call): an extra, human-checkable fail-safe;
-# the installer MAY verify these at flash. Note: in-zip hashes catch accidental corruption, not tampering
-# (an attacker edits the file AND its .sha256) - signed integrity stays the VDLU manifest's job.
+# Redundant with the VDLU baseline.json by design (owner's call): an extra, human-checkable fail-safe.
+# The flash gate is MANDATORY and ABORTS: customize.sh sources tooling/sha256-gate.sh, which runs this
+# tool's --check on-device and aborts the flash on any mismatch (a corrupted or truncated zip). Note:
+# in-zip hashes catch accidental corruption, not tampering (an attacker edits the file AND its .sha256)
+# - signed integrity stays the VDLU manifest's job.
 # Usage: gen-sha256.sh [--check] <payload-dir> [...]
 #   (no flag) generate/refresh companions ; --check verify them. Idempotent.
 set -eu

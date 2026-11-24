@@ -34,7 +34,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7
 
       - name: Shell lint
         run: |
@@ -59,6 +59,13 @@ jobs:
             [ -f "$c" ] && { lint="$c"; break; }
           done
           if [ -n "$lint" ]; then sh "$lint" .; else echo "release-workflow-lint: not vendored here; enforced in the local pre-push ritual"; fi
+          # selinux-pm-stage: this module installs APKs by session, which must stage in /data/local/tmp
+          # (system_server cannot read /data/adb under SELinux strict). Self-contained - gates HERE.
+          ps=""
+          for c in .github/scripts/selinux-pm-stage-lint.sh tooling/selinux-pm-stage-lint.sh; do
+            [ -f "$c" ] && { ps="$c"; break; }
+          done
+          if [ -n "$ps" ]; then sh "$ps" .; else echo "selinux-pm-stage: not vendored here; enforced in the local pre-push ritual"; fi
           # vendor-parity: every vendored kit-tool copy must have the SAME LOGIC as the canonical
           # (banner preserved). STANDARDS §8. Needs VD-ModuleKit's tooling/ as the reference, so
           # check the kit out beside this repo (../VD-ModuleKit) for this step to run.

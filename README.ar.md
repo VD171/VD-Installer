@@ -87,12 +87,15 @@ Termux (مع إغلاق مكتباته المشتركة) ومُحوِّلَي `a
 
 ## انظر أيضًا
 
-- **[VDInfos](https://github.com/VD171/VD-Infos)**: مُنقّح طرق الجهاز يقرأ كل عنصر عبر كل طريقة يمكنها قراءته ويقارنها جنباً إلى جنب.
-- **[VDGoogle](https://github.com/VD171/VD-Google)**: خدمات Google الخاصة بك (RCS، Wallet، شهادات Play Integrity)، تُقرأ على جهازك دون إنترنت.
-- **[COPG-VD](https://github.com/VD171/COPG-VD)**: مُزيِّف جهاز يحوّل بصمة جديدة إلى ملف تعريف متماسك ومتسق.
-- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: خادم SSH مستقل يعمل بصلاحيات الجذر (Dropbear).
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: تزييف عالمي لبصمة الجهاز / Play Integrity، على كامل الجهاز مع نطاق لكل تطبيق وWebUI.
 - **[VDBackup](https://github.com/VD171/VD-Backup)**: نسخ احتياطي واستعادة كاملة للتطبيقات والبيانات بصلاحية root، تُدار بالكامل من WebUI.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: خادم SSH مستقل يعمل بصلاحيات الجذر (Dropbear).
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: خدمات Google الخاصة بك (RCS، Wallet، شهادات Play Integrity)، تُقرأ على جهازك دون إنترنت.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: مُنقّح طرق الجهاز يقرأ كل عنصر عبر كل طريقة يمكنها قراءته ويقارنها جنباً إلى جنب.
 - **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: محرك تحديث ذاتي تزايدي بلا فلاش، مدمج في وحدات KernelSU/APatch/Magisk.
+- **[VD-Modules](https://github.com/VD171/VD-Modules)**: مستودع وحدات MMRL/WebUI-X الخاص بنا (ثبّتها جميعاً من مدير الـ root لديك).
+- **[@VictorGabriel7Dev/build.prop](https://github.com/VictorGabriel7Dev/build.prop)**: مجموعة بيانات لبصمات `build.prop` من Pixel (تفرّع من @T3SL4).
+- **[@VictorGabriel7Dev/mtproto-store](https://github.com/VictorGabriel7Dev/mtproto-store)**: استخدم Telegram كمخزن كائنات من أداة Go CLI صغيرة.
 
 ## جهات الاتصال
 
@@ -101,7 +104,7 @@ Termux (مع إغلاق مكتباته المشتركة) ومُحوِّلَي `a
 - Source         : https://github.com/VD171/VD-Installer
 - GitHub         : [@VD171](https://github.com/VD171)
 - XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/root-webui-v1-00-vd-installer.4809504/)
+- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
 - Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
 - Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
 - Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)

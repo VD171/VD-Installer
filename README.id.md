@@ -89,12 +89,15 @@ Panduan berada di [docs/](docs/) dan dicerminkan ke wiki GitHub. Lihat
 
 ## Lihat juga
 
-- **[VDInfos](https://github.com/VD171/VD-Infos)**: sebuah debugger metode perangkat yang membaca setiap item melalui setiap metode yang dapat membacanya dan membandingkannya secara berdampingan.
-- **[VDGoogle](https://github.com/VD171/VD-Google)**: layanan Google Anda (RCS, Wallet, atestasi Play Integrity), dibaca di perangkat Anda tanpa internet.
-- **[COPG-VD](https://github.com/VD171/COPG-VD)**: sebuah pemalsu perangkat yang mengubah fingerprint baru menjadi profil yang koheren dan konsisten.
-- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: daemon SSH mandiri dengan akses root (Dropbear).
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: spoofing global fingerprint perangkat / Play Integrity, untuk seluruh perangkat dengan cakupan per aplikasi dan sebuah WebUI.
 - **[VDBackup](https://github.com/VD171/VD-Backup)**: backup dan pemulihan penuh aplikasi dan data sebagai root, dikendalikan sepenuhnya dari sebuah WebUI.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: daemon SSH mandiri dengan akses root (Dropbear).
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: layanan Google Anda (RCS, Wallet, atestasi Play Integrity), dibaca di perangkat Anda tanpa internet.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: sebuah debugger metode perangkat yang membaca setiap item melalui setiap metode yang dapat membacanya dan membandingkannya secara berdampingan.
 - **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: sebuah mesin pembaruan-mandiri inkremental tanpa flash, tertanam di dalam modul KernelSU/APatch/Magisk.
+- **[VD-Modules](https://github.com/VD171/VD-Modules)**: repositori modul MMRL/WebUI-X kami (instal semuanya dari manajer root Anda).
+- **[@VictorGabriel7Dev/build.prop](https://github.com/VictorGabriel7Dev/build.prop)**: sebuah dataset fingerprint `build.prop` Pixel (fork dari @T3SL4).
+- **[@VictorGabriel7Dev/mtproto-store](https://github.com/VictorGabriel7Dev/mtproto-store)**: gunakan Telegram sebagai object store dari sebuah CLI Go mungil.
 
 ## Kontak
 
@@ -103,7 +106,7 @@ Panduan berada di [docs/](docs/) dan dicerminkan ke wiki GitHub. Lihat
 - Source         : https://github.com/VD171/VD-Installer
 - GitHub         : [@VD171](https://github.com/VD171)
 - XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/root-webui-v1-00-vd-installer.4809504/)
+- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
 - Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
 - Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
 - Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)

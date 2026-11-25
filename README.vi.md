@@ -89,12 +89,15 @@ Các hướng dẫn nằm trong [docs/](docs/) và được mirror sang GitHub w
 
 ## Xem thêm
 
-- **[VDInfos](https://github.com/VD171/VD-Infos)**: một trình gỡ lỗi phương thức thiết bị, đọc từng mục qua mọi phương thức có thể đọc được nó và so sánh chúng cạnh nhau.
-- **[VDGoogle](https://github.com/VD171/VD-Google)**: các dịch vụ Google của bạn (RCS, Wallet, chứng thực Play Integrity), đọc trên thiết bị của bạn mà không cần internet.
-- **[COPG-VD](https://github.com/VD171/COPG-VD)**: một trình giả lập thiết bị biến một fingerprint mới thành một hồ sơ mạch lạc, nhất quán.
-- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: một SSH daemon độc lập chạy với quyền root (Dropbear).
+- **[COPG-VD](https://github.com/VD171/COPG-VD)**: giả mạo fingerprint thiết bị / Play Integrity toàn cục, trên toàn thiết bị với phạm vi theo từng ứng dụng và một WebUI.
 - **[VDBackup](https://github.com/VD171/VD-Backup)**: sao lưu và khôi phục toàn bộ ứng dụng và dữ liệu với quyền root, điều khiển hoàn toàn từ WebUI.
+- **[VD-dropbear](https://github.com/VD171/VD-dropbear)**: một SSH daemon độc lập chạy với quyền root (Dropbear).
+- **[VDGoogle](https://github.com/VD171/VD-Google)**: các dịch vụ Google của bạn (RCS, Wallet, chứng thực Play Integrity), đọc trên thiết bị của bạn mà không cần internet.
+- **[VDInfos](https://github.com/VD171/VD-Infos)**: một trình gỡ lỗi phương thức thiết bị, đọc từng mục qua mọi phương thức có thể đọc được nó và so sánh chúng cạnh nhau.
 - **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate)**: một engine tự cập nhật tăng dần không cần flash, được nhúng vào các module KernelSU/APatch/Magisk.
+- **[VD-Modules](https://github.com/VD171/VD-Modules)**: kho mô-đun MMRL/WebUI-X của chúng tôi (cài đặt tất cả chúng từ trình quản lý root của bạn).
+- **[@VictorGabriel7Dev/build.prop](https://github.com/VictorGabriel7Dev/build.prop)**: một tập dữ liệu fingerprint `build.prop` của Pixel (fork của @T3SL4).
+- **[@VictorGabriel7Dev/mtproto-store](https://github.com/VictorGabriel7Dev/mtproto-store)**: dùng Telegram làm object store từ một CLI Go nhỏ gọn.
 
 ## Liên hệ
 
@@ -103,7 +106,7 @@ Các hướng dẫn nằm trong [docs/](docs/) và được mirror sang GitHub w
 - Source         : https://github.com/VD171/VD-Installer
 - GitHub         : [@VD171](https://github.com/VD171)
 - XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/root-webui-v1-00-vd-installer.4809504/)
+- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
 - Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
 - Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
 - Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)

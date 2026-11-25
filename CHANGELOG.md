@@ -26,6 +26,12 @@
 
 All notable changes to VDInstaller are documented here. This file is English only.
 
+## v1.03
+
+- Updated the VDLU self-update engine to v5: it follows the trust-anchor rule, so a device that already trusts the signing key keeps updating cleanly; it applies safer download size limits (128 MiB per archive, 2 MiB per file), reports clearer TLS diagnostics when an update check fails, and defers the apply step while an install is busy.
+- Auto-update on WebUI open is now on by default, so the module keeps itself current without a manual check.
+- Hardened the release and CI tooling (blocking ShellCheck, pinned actions, a SELinux staging lint, and a binary-refresh workflow) and standardized the contact banner across every vendored script and workflow.
+
 ## v1.02
 
 - Fixed split and archive installs (`.apkm` / `.apks` / `.xapk` and multi-APK folders): they were failing with "install-write failed" because Android's package installer, running as the system server, could not read the staged files. The APKs are now staged where it can read them, and a failure now reports the installer's real reason.

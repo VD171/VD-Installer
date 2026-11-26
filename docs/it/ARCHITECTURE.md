@@ -28,7 +28,7 @@
 
 # Architettura
 
-VDInstaller è una WebUI sottile sopra un motore shell root. Nulla nell'interfaccia ha privilegi; ogni azione
+VDInstaller è una WebUI sottile sopra un motore shell root. Nulla nell'interfaccia ha privilegi, ogni azione
 privilegiata è una singola chiamata shell che restituisce un singolo oggetto JSON.
 
 ```
@@ -46,7 +46,7 @@ WebUI (webroot/)                scripts/                         Android
   wrapper `pm`/`dumpsys`/`fw` (ambiente pulito, così le librerie Termux incluse non oscurano mai quelle di
   ART), gli helper JSON e `jq`, e l'`xml_edit` ABX-aware.
 - **`scripts/helper.sh`** - il contratto della WebUI: una riga JSON per chiamata. I verbi corti (version,
-  config, browse, scan) vengono eseguiti inline; quelli lunghi (install, uninstall) distaccano un worker e
+  config, browse, scan) vengono eseguiti inline, quelli lunghi (install, uninstall) distaccano un worker e
   restituiscono un `opid`.
 - **`scripts/worker.sh`** - il motore di installazione distaccato: le quattro modalità di installazione,
   l'interruttore del verificatore, la falsificazione dell'origine dell'installazione e l'API di sessione del
@@ -55,31 +55,31 @@ WebUI (webroot/)                scripts/                         Android
 
 ## Punti chiave
 
-- **Già root.** Nessuna richiesta di "concedi su" e nessun azionamento di `sucompat`; il motore gira come
+- **Già root.** Nessuna richiesta di "concedi su" e nessun azionamento di `sucompat`, il motore gira come
   root dal modulo e chiama `pm` / `settings` direttamente.
 - **Installazioni a sessione.** Tutte le modalità usano `pm install-create` / `install-write` /
   `install-commit`, così le app divise si installano correttamente e l'origine dell'installazione (`-i`)
   viene impostata al momento della sessione.
 - **ABX-aware.** La falsificazione dell'iniziatore in `packages.xml` controlla la firma binaria XML `ABX\0`,
   decodifica, modifica, ricodifica, fa un round-trip per validare, esegue un backup byte per byte e scambia
-  in modo atomico; il file dal vivo non viene mai toccato se ogni passo non va a buon fine.
+  in modo atomico, il file dal vivo non viene mai toccato se ogni passo non va a buon fine.
 - **Senza riavvio.** Un modulo WebUI autonomo senza nulla da montare: `customize.sh` lo copia nella
   directory dei moduli attivi così funziona nell'istante in cui viene installato.
 - **Aggiornamenti senza flash.** Il motore **VDLU** incluso aggiorna il modulo scaricando solo i file
   modificati, indirizzati per contenuto e firmati con ed25519 - nessun reflash completo.
-- **Distaccato.** Le operazioni lunghe girano al di fuori della webview; chiudere la WebUI non le interrompe
+- **Distaccato.** Le operazioni lunghe girano al di fuori della webview, chiudere la WebUI non le interrompe
   mai.
 
 ## Garanzia di compatibilità
 
-- `sh` POSIX sul dispositivo (`sh -n` passa; nessun bashism oltre `local`; nessuna dipendenza da `awk`).
+- `sh` POSIX sul dispositivo (`sh -n` passa, nessun bashism oltre `local`, nessuna dipendenza da `awk`).
 - `pm` / `dumpsys` / `settings` / `cmd` sono gli unici strumenti del framework usati, tutti via
   `/system/bin`.
 - I binari inclusi (`jq`, `abx2xml`/`xml2abx`) sono opzionali per il percorso comune e portano la propria
-  provenienza; il convertitore ABX ricade sull'`/system/bin/abx2xml` del dispositivo dove presente.
+  provenienza, il convertitore ABX ricade sull'`/system/bin/abx2xml` del dispositivo dove presente.
 
 <!-- doc-footer -->
 
 ---
 
-> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti; vedi [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti, vedi [CONTRIBUTING.md](CONTRIBUTING.md)._

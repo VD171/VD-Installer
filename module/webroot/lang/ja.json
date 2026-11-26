@@ -1,5 +1,5 @@
 {
-  "app_title": "VDInstaller",
+  "app_title": "VD Installer",
   "app_tagline": "摩擦のない root サイドロードインストーラー",
 
   "nav_install": "インストール",
@@ -53,7 +53,7 @@
   "opt_user": "ターゲットユーザー",
 
   "hma_title": "隠れたままにする",
-  "hma_text": "ステルスのために、HMA-OSS で root マネージャーや機密性の高いアプリを隠すことを検討してください。VDInstaller はあなたの HMA-OSS 設定に一切触れません - 変更したいときは HMA-OSS を開いて自分で行ってください。",
+  "hma_text": "ステルスのために、HMA-OSS で root マネージャーや機密性の高いアプリを隠すことを検討してください。VD Installer はあなたの HMA-OSS 設定に一切触れません、変更したいときは HMA-OSS を開いて自分で行ってください。",
 
   "phase_starting": "開始中",
   "phase_extracting": "展開中",
@@ -62,7 +62,7 @@
   "phase_done": "完了",
   "msg_installed_ok": "インストール完了: ${pkg}",
   "msg_installed_fail": "インストール失敗: ${msg}",
-  "hint_verifier": "Play Protect のベリファイアがブロックしました。オプションでベリファイアのトグルを「元のまま保持」に設定すると、VDInstaller がインストール中にオフにします。",
+  "hint_verifier": "Play Protect のベリファイアがブロックしました。オプションでベリファイアのトグルを「元のまま保持」に設定すると、VD Installer がインストール中にオフにします。",
   "hint_downgrade": "これはインストール済みのものより古いバージョンです。Android はその場でのダウングレードをブロックします。先に現在のアプリをアンインストールしてください (そのデータは失われます)。",
   "hint_storage": "ストレージが不足しています。空き容量を確保してから再試行してください。",
   "hint_signature": "インストール済みのアプリは別の鍵で署名されています。先にアンインストールしてから (そのデータは失われます)、こちらをインストールしてください。",
@@ -81,7 +81,7 @@
   "msg_cancelled": "キャンセルされました。",
 
   "about_version": "バージョン",
-  "about_what": "VDInstaller はサイドロードされた APK を摩擦なく root でインストールします: grant-su のプロンプトも、ターミナルも、Play Protect との戦いもありません。APK を選んでインストールするだけです。",
+  "about_what": "VD Installer はサイドロードされた APK を摩擦なく root でインストールします: grant-su のプロンプトも、ターミナルも、Play Protect との戦いもありません。APK を選んでインストールするだけです。",
   "about_features_head": "できること",
   "about_feat_modes": "単一 APK、フォルダ全体 (バッチ)、分割アーカイブ (.xapk / .apkm / .apks / .zip)、ばらばらの分割フォルダ。",
   "about_feat_verifier": "3 段階の Play Protect ベリファイアトグルにより、INSTALL_FAILED_VERIFICATION_FAILURE に妨げられることがありません。",

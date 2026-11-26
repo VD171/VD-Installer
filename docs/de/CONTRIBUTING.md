@@ -34,23 +34,23 @@ möchte einfach und einladend zum Mitwirken sein.
 ## KI-Mitwirkende willkommen
 
 Beiträge von KI und Agenten sind mit derselben Prüflatte wie bei allen anderen willkommen. Die
-Engine spricht JSON über einen Headless-Kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`); siehe
+Engine spricht JSON über einen Headless-Kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`), siehe
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Steuere den Kontrakt an, scrape nicht die WebUI.
 
 ## Code-Regeln
 
 - **Vollständiges Banner pro Datei** (SPDX + Kontakte) am Anfang jeder Quelldatei. Niemals ein gekürztes.
 - Code, Bezeichner, Logs und Kommentare auf **Englisch**. Kommentare nur, wenn sie etwas hinzufügen.
-- Die Shell ist **POSIX sh** für das Gerät (`sh -n` muss bestehen; keine Bashismen außer `local`; keine `jq`-Abhängigkeit in Code-Pfaden, die laufen müssen, bevor das mitgelieferte `jq` im PATH ist).
-- Die WebUI ist **reines JS**, ohne Framework; hell und dunkel in der gesamten UI.
-- **Niemals** ein Em-Dash oder En-Dash; immer ein Bindestrich `-`.
+- Die Shell ist **POSIX sh** für das Gerät (`sh -n` muss bestehen, keine Bashismen außer `local`, keine `jq`-Abhängigkeit in Code-Pfaden, die laufen müssen, bevor das mitgelieferte `jq` im PATH ist).
+- Die WebUI ist **reines JS**, ohne Framework, hell und dunkel in der gesamten UI.
+- **Niemals** ein Em-Dash oder En-Dash, immer ein Bindestrich `-`.
 - Der Build ist immer **release**, niemals debug.
 - **Schwäche niemals ein echtes Verhalten ab**, um etwas durchzubekommen, und entferne niemals Inhalte.
 
 ## Übersetzungen
 
 Die WebUI-Strings liegen in `module/webroot/lang/<code>.json` (flache Schlüssel, englische Basis in
-`lang/en.js`); die README hat eine `README.<code>.md` pro Sprache. Füge eine Sprache hinzu oder korrigiere sie und öffne einen PR.
+`lang/en.js`), die README hat eine `README.<code>.md` pro Sprache. Füge eine Sprache hinzu oder korrigiere sie und öffne einen PR.
 
 ## Lizenz
 
@@ -60,4 +60,4 @@ Mit deinem Beitrag stimmst du zu, dass dein Beitrag unter der GNU AGPL-3.0-or-la
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

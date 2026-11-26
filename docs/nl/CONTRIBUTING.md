@@ -32,21 +32,21 @@ Bijdragen zijn welkom - issues, pull requests, vertalingen en documentatie. Het 
 
 ## AI-bijdragers welkom
 
-Bijdragen van AI en agents zijn welkom op dezelfde reviewlat als die van iedereen. De engine spreekt JSON over een headless contract (`scripts/helper.sh <verb> <base64(JSON)>`); zie [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Stuur het contract aan, scrape de WebUI niet.
+Bijdragen van AI en agents zijn welkom op dezelfde reviewlat als die van iedereen. De engine spreekt JSON over een headless contract (`scripts/helper.sh <verb> <base64(JSON)>`), zie [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Stuur het contract aan, scrape de WebUI niet.
 
 ## Coderegels
 
 - **Volledige banner per bestand** (SPDX + contacten) bovenaan elk bronbestand. Nooit een ingekorte.
 - Code, identifiers, logs en commentaar in het **Engels**. Commentaar alleen als het iets toevoegt.
-- De shell is **POSIX sh** voor het apparaat (`sh -n` moet slagen; geen bashisms buiten `local`; geen `jq`-afhankelijkheid in codepaden die moeten draaien voordat de meegeleverde `jq` op het PATH staat).
-- De WebUI is **vanilla JS**, geen framework; licht en donker in alle UI.
-- **Nooit** een em-dash of en-dash; altijd een koppelteken `-`.
+- De shell is **POSIX sh** voor het apparaat (`sh -n` moet slagen, geen bashisms buiten `local`, geen `jq`-afhankelijkheid in codepaden die moeten draaien voordat de meegeleverde `jq` op het PATH staat).
+- De WebUI is **vanilla JS**, geen framework, licht en donker in alle UI.
+- **Nooit** een em-dash of en-dash, altijd een koppelteken `-`.
 - De build is altijd **release**, nooit debug.
 - **Verzwak nooit echt gedrag** om iets te laten slagen, en verwijder nooit inhoud.
 
 ## Vertalingen
 
-De WebUI-strings staan in `module/webroot/lang/<code>.json` (platte sleutels, Engelse basis in `lang/en.js`); de README heeft een `README.<code>.md` per taal. Voeg een taal toe of verbeter er een en open een PR.
+De WebUI-strings staan in `module/webroot/lang/<code>.json` (platte sleutels, Engelse basis in `lang/en.js`), de README heeft een `README.<code>.md` per taal. Voeg een taal toe of verbeter er een en open een PR.
 
 ## Licentie
 
@@ -56,4 +56,4 @@ Door bij te dragen ga je ermee akkoord dat je bijdrage wordt gelicentieerd onder
 
 ---
 
-> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom; zie [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md)._

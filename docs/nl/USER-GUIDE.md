@@ -76,7 +76,7 @@ Drie tabbladen:
 
 ## 5. APK's installeren
 
-Je kiest de modus op het tabblad **Install**; VDInstaller gokt nooit.
+Je kiest de modus op het tabblad **Install**, VDInstaller gokt nooit.
 
 | Modus | Jij geeft | Wat er gebeurt |
 |---|---|---|
@@ -92,7 +92,7 @@ ze moeten **samen** in een sessie worden geinstalleerd, wat de Split-modi voor j
 
 **Browse** opent een bestandskiezer die mappen en installeerbare bestanden op een pad toont:
 
-- Tik op een **map** om erin te gaan; **Up** gaat naar de bovenliggende map.
+- Tik op een **map** om erin te gaan, **Up** gaat naar de bovenliggende map.
 - In een bestandsmodus (Single APK / Split archive) tik je op een **bestand** om het te selecteren.
 - In een mapmodus (Folder of APKs / Split folder) navigeer je in de map en tik je op **Use this folder**.
 
@@ -100,7 +100,7 @@ Je kunt ook rechtstreeks een pad typen of plakken (bijvoorbeeld `/sdcard/Downloa
 
 ### 5.2 Voortgang, annuleren, hervatten
 
-Installaties draaien als een **losgekoppeld root-proces**. Een voortgangskaart toont de fase; **Cancel**
+Installaties draaien als een **losgekoppeld root-proces**. Een voortgangskaart toont de fase, **Cancel**
 stopt het. Als je de WebUI halverwege de installatie sluit, gaat de installatie door en koppelt de UI
 zich opnieuw vast op bewerkings-id wanneer je hem heropent.
 
@@ -153,7 +153,7 @@ een schakelaar omzet die niets doet.
 ### 6.5 Verborgen blijven
 
 Overweeg voor stealth om je root-manager en gevoelige apps met HMA-OSS te verbergen. VDInstaller **raakt
-je HMA-OSS-opzet nooit aan** - de hint is slechts een herinnering; je brengt de wijziging zelf aan in
+je HMA-OSS-opzet nooit aan** - de hint is slechts een herinnering, je brengt de wijziging zelf aan in
 HMA-OSS.
 
 ## 7. VDInstaller aansturen vanuit een AI-assistent
@@ -168,7 +168,7 @@ verifier-schakelaar op **Laat zoals het was** (de standaard) zet VDInstaller hem
 en herstelt hem, zodat het niet gebeurt.
 
 **Ik heb de Play Store-bron aangezet maar de app ziet er nog steeds sideloaded uit.** Het installer-deel
-wordt onmiddellijk toegepast; het initiator-deel (`packages.xml`) wordt **na de volgende herstart**
+wordt onmiddellijk toegepast, het initiator-deel (`packages.xml`) wordt **na de volgende herstart**
 toegepast.
 
 **Omzeilt het de Developer Verification van Google?** Dat hoeft niet - een root-installatie is
@@ -177,7 +177,7 @@ vrijgesteld (zie 6.3). Er is geen nepschakelaar voor.
 **Is een herstart nodig?** Nee, behalve de optionele initiator-spoof.
 
 **Verwijdert het deinstalleren van VDInstaller de apps die ik installeerde?** Nee - dat zijn echte
-installaties die eigendom zijn van het systeem; het verwijderen van de module ruimt alleen de eigen staat
+installaties die eigendom zijn van het systeem, het verwijderen van de module ruimt alleen de eigen staat
 van VDInstaller op.
 
 **Is het veilig?** Het installeert APK's die jij kiest en, met de verifier uit, slaat het een malwarescan
@@ -187,4 +187,4 @@ over - installeer alleen APK's die je vertrouwt. Het verzwakt nooit iets stillet
 
 ---
 
-> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom; zie [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md)._

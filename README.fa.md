@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · فارسی · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> نصب‌کننده sideload با روت و بدون دردسر - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">راهنمای کاربر</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">عامل‌های هوش مصنوعی</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">معماری</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">ساختار فایل</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">باینری‌ها</a> ·
+  <a href="CHANGELOG.md">تغییرات</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> نصب‌کننده sideload با روت و بدون دردسر: KernelSU / APatch / Magisk WebUI.
+
+## اسکرین‌شات‌ها
+
+<p align="center">
+  <img src="docs/screenshots/fa/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/fa/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/fa/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/fa/about-dark.png" width="24%" alt="About">
+</p>
 
 ## چرا
 
@@ -38,19 +67,19 @@ Play Protect ممکن است `INSTALL_FAILED_VERIFICATION_FAILURE` بدهد، ا
 
 ## ویژگی‌ها
 
-- **هر شکلی از APK** - یک `.apk` تکی، یک پوشه کامل از APKهای مستقل (batch)، یک آرشیو split گروه‌بندی‌شده
+- **هر شکلی از APK:** یک `.apk` تکی، یک پوشه کامل از APKهای مستقل (batch)، یک آرشیو split گروه‌بندی‌شده
   (`.xapk` / `.apkm` / `.apks` / `.zip`)، یا پوشه‌ای از APKهای split پراکنده.
-- **بدون دیوار بررسی** - یک کلید سه‌حالته برای بررسی‌کننده بسته Play Protect: همان‌طور که بود نگه دار
+- **بدون دیوار بررسی:** یک کلید سه‌حالته برای بررسی‌کننده بسته Play Protect: همان‌طور که بود نگه دار
   (فقط در حین نصب خاموش، دقیقا بازگردانده شود)، همیشه روشن، یا همیشه خاموش.
-- **صادق درباره Developer Verification** - نصب با روت پیشاپیش از Developer Verification سال ۲۰۲۶ اندروید
+- **صادق درباره Developer Verification:** نصب با روت پیشاپیش از Developer Verification سال ۲۰۲۶ اندروید
   معاف است؛ این کلید در حد تلاش است و همین را می‌گوید، نه یک کلید جعلی.
-- **نه "sideloaded"** - به صورت اختیاری منبع نصب را Play Store نشان می‌دهد، هم به عنوان نصب‌کننده (در
+- **نه "sideloaded":** به صورت اختیاری منبع نصب را Play Store نشان می‌دهد، هم به عنوان نصب‌کننده (در
   زمان نصب) و هم به عنوان آغازگر (از طریق یک ویرایش `packages.xml` با آگاهی از ABX).
-- **جدا و قابل ازسرگیری** - نصب‌ها به صورت یک فرآیند روت جدا اجرا می‌شوند؛ بستن WebUI هرگز آن‌ها را قطع
+- **جدا و قابل ازسرگیری:** نصب‌ها به صورت یک فرآیند روت جدا اجرا می‌شوند؛ بستن WebUI هرگز آن‌ها را قطع
   نمی‌کند، و UI با شناسه عملیات دوباره متصل می‌شود.
-- **انتخاب با شماست** - بسته‌های آزمایشی، اعطای همه مجوزهای runtime، کاربر هدف، دور زدن قفل
+- **انتخاب با شماست:** بسته‌های آزمایشی، اعطای همه مجوزهای runtime، کاربر هدف، دور زدن قفل
   target SDK پایین: همه اختیاری هستند.
-- **آفلاین، خودبسنده، بدون ریبوت** - یک ماژول WebUI با باینری‌های همراهش؛ در همان لحظه فلش قابل استفاده
+- **آفلاین، خودبسنده، بدون ریبوت:** یک ماژول WebUI با باینری‌های همراهش؛ در همان لحظه فلش قابل استفاده
   است.
 
 ## عامل‌های هوش مصنوعی
@@ -58,7 +87,7 @@ Play Protect ممکن است `INSTALL_FAILED_VERIFICATION_FAILURE` بدهد، ا
 این پروژه از مشارکت‌کنندگان هوش مصنوعی و عامل‌ها استقبال می‌کند. موتور از طریق یک قرارداد headless کوچک
 (`scripts/helper.sh <verb> <base64(JSON)>`) به JSON صحبت می‌کند که در
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md) مستند شده است، بنابراین یک عامل می‌تواند هر کاری را که WebUI
-می‌تواند انجام دهد - WebUI را scrape نکنید. وصله‌های هوش مصنوعی به همان معیار بازبینی هر وصله دیگری
+می‌تواند انجام دهد, WebUI را scrape نکنید. وصله‌های هوش مصنوعی به همان معیار بازبینی هر وصله دیگری
 پایبند هستند.
 
 ## نصب
@@ -81,6 +110,14 @@ VDInstaller به صورت روت اجرا می‌شود و APKهایی را که
 دریافت می‌کند، هر کدام با یک `PROVENANCE.json`. workflow مربوط به release زیپ‌های قابل فلش را سر هم
 می‌کند، همراهان `.sha256` را می‌نویسد، `update.json` را پر می‌کند و با `github-actions[bot]` منتشر می‌کند.
 
+## به‌روزرسانی‌های تدریجی (VDLU)
+
+VD Installer با موتور **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** عرضه می‌شود (تعبیه‌شده در `module/vdlu/`): ماژول با گرفتن فقط فایل‌هایی که تغییر کرده‌اند خود را به‌روز می‌کند (بلاب‌های آدرس‌دهی‌شده بر پایهٔ محتوا + یک `manifest.json` امضاشده)، به جای دانلود دوبارهٔ کل `.zip`. نمایه **سخت‌سازی‌شده**: امضای ed25519 اجباری است و بازگشت به نسخهٔ پایین‌تر مسدود می‌شود؛ `.zip` کامل همچنان به‌عنوان جایگزین معتبر می‌ماند.
+
+- **فقط LIVE** (بدون راه‌اندازی مجدد): به‌روزرسانی‌ها در بوت بعدی از طریق `service.sh` در پس‌زمینه اعمال می‌شوند، و وقتی هیچ feed در دسترس نباشد کاری انجام نمی‌دهند.
+- **وضعیت** در `/data/adb/vdinstaller/vdlu/`، بیرون از ماژول، تا پس از فلش مجدد باقی بماند.
+- **WebUI:** یک پنل **به‌روزرسانی‌ها** با یک اعلان پیشرفت و دکمهٔ لغو؛ به‌روزرسانی خودکار اختیاری است.
+
 ## مستندات
 
 راهنماها در [docs/](docs/) قرار دارند و به ویکی GitHub آینه می‌شوند. برای قرارداد headless به
@@ -100,16 +137,15 @@ VDInstaller به صورت روت اجرا می‌شود و APKهایی را که
 
 ## تماس‌ها
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## مجوز
 
@@ -127,6 +163,4 @@ Android، KernelSU، APatch، Magisk، Google Play و Play Protect به صاحب
 
 ---
 
-> به کانال بپیوندید: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **برای دریافت به‌روزرسانی‌ها به کانال بپیوندید:** @Priv8_VD https://t.me/Priv8_VD

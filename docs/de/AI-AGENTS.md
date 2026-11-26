@@ -35,9 +35,9 @@ WebUI tut) ruft auf:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-und liest genau ein JSON-Objekt auf stdout. Erfolg ist `{"ok":true,...}`; Fehlschlag ist
+und liest genau ein JSON-Objekt auf stdout. Erfolg ist `{"ok":true,...}`, Fehlschlag ist
 `{"ok":false,"code":"ERR_...","message":"..."}`. Lange Operationen geben eine `opid` zurück, die du
-abfragst. Scrape nicht die WebUI; nutze diesen Vertrag.
+abfragst. Scrape nicht die WebUI, nutze diesen Vertrag.
 
 ## Verben
 
@@ -82,12 +82,12 @@ Abschluss `done:true` mit einem `result` (single/split), einem `results[]`-Array
 
 - Der Verifizierer-Schalter und die `packages.xml`-Bearbeitung sind umkehrbar und auditiert
   (`logs/audit.jsonl`).
-- `install`/`uninstall` ändern den Gerätezustand; bestätige die Absicht vor dem Aufruf, wie es die WebUI
+- `install`/`uninstall` ändern den Gerätezustand, bestätige die Absicht vor dem Aufruf, wie es die WebUI
   tut.
-- Scrape oder automatisiere niemals die WebUI selbst; dieser Vertrag ist die unterstützte Oberfläche.
+- Scrape oder automatisiere niemals die WebUI selbst, dieser Vertrag ist die unterstützte Oberfläche.
 
 <!-- doc-footer -->
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

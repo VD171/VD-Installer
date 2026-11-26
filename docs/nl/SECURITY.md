@@ -30,12 +30,12 @@
 
 ## Dreigingsmodel in één regel
 
-VDInstaller draait als root en installeert APK's die de gebruiker uitdrukkelijk kiest; de Play Protect-verifier uitzetten voor een installatie schakelt een malwarescan uit, dus het is "installatie zonder wrijving", geen "veilige installatie" - installeer alleen APK's die je vertrouwt.
+VDInstaller draait als root en installeert APK's die de gebruiker uitdrukkelijk kiest, de Play Protect-verifier uitzetten voor een installatie schakelt een malwarescan uit, dus het is "installatie zonder wrijving", geen "veilige installatie" - installeer alleen APK's die je vertrouwt.
 
 ## Wat het wel en niet doet
 
 - Het herstelt de package-verifier standaard naar exact zijn vorige staat (een `0`/`1` achterlaten waar er geen was, is zelf een verklikker (tell), dus die wordt opnieuw verwijderd).
-- Het raakt je HMA-OSS-opzet nooit aan; apps verbergen is een aanbeveling die je zelf uitvoert.
+- Het raakt je HMA-OSS-opzet nooit aan, apps verbergen is een aanbeveling die je zelf uitvoert.
 - De bewerking van de installatiebron in `packages.xml` is ABX-bewust, maakt vóór elke wijziging een byte-exacte back-up van het live bestand, valideert via een round-trip en laat het live bestand bij elke fout onaangeroerd.
 - Meegeleverde binaries worden bij de build opgehaald van hun officiële upstream en dragen een `PROVENANCE.json`.
 
@@ -56,4 +56,4 @@ Meld deze eerst privé. Vermeld stappen om te reproduceren, de getroffen versie 
 
 ---
 
-> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom; zie [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md)._

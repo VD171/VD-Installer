@@ -26,6 +26,12 @@
 
 All notable changes to VDInstaller are documented here. This file is English only.
 
+## v1.04
+
+- Updated the VDLU self-update engine to v8: incremental updates are now ABI-aware (the plan skips files for ABIs this device does not use, so updates download less and apply faster), and a stale or out-of-order update plan self-heals on boot instead of risking a downgrade.
+- The module now presents consistently as "VD Installer": the WebUI title, a README wordmark with badges, per-language WebUI screenshots, and the README, language switcher, Contacts block and project links canonicalized across all 22 languages.
+- Hardened the release and CI tooling further: a live-feed verification guard (a release is not declared done until the published update feed serves the new version) plus i18n-parity, provenance and zip-orphan checks.
+
 ## v1.03
 
 - Updated the VDLU self-update engine to v5: it follows the trust-anchor rule, so a device that already trusts the signing key keeps updating cleanly; it applies safer download size limits (128 MiB per archive, 2 MiB per file), reports clearer TLS diagnostics when an update check fails, and defers the apply step while an install is busy.
@@ -58,4 +64,4 @@ All notable changes to VDInstaller are documented here. This file is English onl
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md)._

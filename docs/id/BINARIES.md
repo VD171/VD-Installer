@@ -33,7 +33,7 @@
 - Tidak ada yang buram ikut dikirim. Setiap biner bawaan diambil pada **waktu build dari sumber resmi di
   hulu**, tidak pernah ditarik dari perangkat, dan setiap berkas membawa sha256 sehingga muatannya dapat
   direproduksi.
-- Biner disertakan untuk **keempat ABI** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); installer flash
+- Biner disertakan untuk **keempat ABI** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), installer flash
   memangkasnya menjadi satu milik perangkat.
 - Mereka berjalan mandiri: closure pustaka bersama tiap biner dikirim bersamanya dan mesin menyetel
   `LD_LIBRARY_PATH` ke folder `lib/` bawaan, sehingga tidak ada ketergantungan pada Termux yang terpasang.
@@ -75,4 +75,4 @@ Menemukan ketidakcocokan atau kekhawatiran tentang provenans? Laporkan secara pr
 
 ---
 
-> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan; lihat [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan, lihat [CONTRIBUTING.md](CONTRIBUTING.md)._

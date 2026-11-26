@@ -28,7 +28,7 @@
 
 # Architecture
 
-VDInstaller is a thin WebUI over a root shell engine. Nothing in the UI has privilege; every
+VDInstaller is a thin WebUI over a root shell engine. Nothing in the UI has privilege, every
 privileged action is one shell call that returns one JSON object.
 
 ```
@@ -46,29 +46,29 @@ WebUI (webroot/)                scripts/                         Android
   `pm`/`dumpsys`/`fw` wrappers (clean env so the bundled Termux libs never shadow ART's), the JSON and
   `jq` helpers, and the ABX-aware `xml_edit`.
 - **`scripts/helper.sh`** - the WebUI contract: one JSON line per call. Short verbs (version, config,
-  browse, scan) run inline; long ones (install, uninstall) detach a worker and return an `opid`.
+  browse, scan) run inline, long ones (install, uninstall) detach a worker and return an `opid`.
 - **`scripts/worker.sh`** - the detached install engine: the four install modes, the verifier toggle,
   the install-source spoof, and the package-manager session API. It writes progress to a file the
   WebUI polls, and survives the WebUI being closed (`setsid`, and it escapes the app freezer).
 
 ## Key points
 
-- **Already root.** No "grant su" prompt and no `sucompat` toggling; the engine runs as root from the
+- **Already root.** No "grant su" prompt and no `sucompat` toggling, the engine runs as root from the
   module and calls `pm` / `settings` directly.
 - **Session installs.** All modes use `pm install-create` / `install-write` / `install-commit`, so
   split apps install correctly and the install source (`-i`) is set at session time.
 - **ABX-aware.** The `packages.xml` initiator spoof checks for the `ABX\0` binary-XML magic, decodes,
-  edits, re-encodes, round-trips to validate, backs up byte-exact and swaps atomically; the live file
+  edits, re-encodes, round-trips to validate, backs up byte-exact and swaps atomically, the live file
   is never touched unless every step passes.
 - **Reboot-free.** A self-contained WebUI module with nothing to mount: `customize.sh` copies it into
   the active modules dir so it works the moment it is flashed.
 - **Flashless updates.** The vendored **VDLU** engine updates the module by downloading only the
   changed, content-addressed, ed25519-signed files - no full reflash.
-- **Detached.** Long operations run outside the webview; closing the WebUI never interrupts them.
+- **Detached.** Long operations run outside the webview, closing the WebUI never interrupts them.
 
 ## Compatibility guarantee
 
-- POSIX `sh` on the device (`sh -n` passes; no bashisms beyond `local`; no `awk` dependency).
+- POSIX `sh` on the device (`sh -n` passes, no bashisms beyond `local`, no `awk` dependency).
 - `pm` / `dumpsys` / `settings` / `cmd` are the only framework tools used, all via `/system/bin`.
 - Bundled binaries (`jq`, `abx2xml`/`xml2abx`) are optional for the common path and carry provenance;
   the ABX converter falls back to the device's own `/system/bin/abx2xml` where present.
@@ -77,4 +77,4 @@ WebUI (webroot/)                scripts/                         Android
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](../CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](../CONTRIBUTING.md)._

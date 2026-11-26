@@ -34,23 +34,23 @@
 ## AI योगदानकर्ताओं का स्वागत है
 
 AI और agent योगदानों का स्वागत उसी समीक्षा मानक पर है जो सबके लिए है। इंजन एक headless contract पर JSON
-बोलता है (`scripts/helper.sh <verb> <base64(JSON)>`); देखें
+बोलता है (`scripts/helper.sh <verb> <base64(JSON)>`), देखें
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md)। contract को चलाएं, WebUI को scrape न करें।
 
 ## कोड नियम
 
 - प्रत्येक source फ़ाइल के शीर्ष पर **पूर्ण प्रति-फ़ाइल banner** (SPDX + contacts)। कभी भी कटा-छटा नहीं।
 - कोड, identifiers, logs और टिप्पणियाँ **अंग्रेज़ी** में। टिप्पणियाँ केवल तब जब वे कुछ जोड़ें।
-- डिवाइस के लिए Shell **POSIX sh** है (`sh -n` पास होना चाहिए; `local` से परे कोई bashism नहीं; उन कोड पथों में कोई `jq` निर्भरता नहीं जो bundled `jq` के PATH पर आने से पहले चलने चाहिए)।
-- WebUI **vanilla JS** है, कोई framework नहीं; सभी UI में light और dark।
-- em-dash या en-dash **कभी नहीं**; हमेशा एक hyphen `-`।
+- डिवाइस के लिए Shell **POSIX sh** है (`sh -n` पास होना चाहिए, `local` से परे कोई bashism नहीं, उन कोड पथों में कोई `jq` निर्भरता नहीं जो bundled `jq` के PATH पर आने से पहले चलने चाहिए)।
+- WebUI **vanilla JS** है, कोई framework नहीं, सभी UI में light और dark।
+- em-dash या en-dash **कभी नहीं**, हमेशा एक hyphen `-`।
 - Build हमेशा **release** होता है, कभी debug नहीं।
 - किसी चीज़ को पास कराने के लिए किसी वास्तविक व्यवहार को **कभी कमज़ोर न करें**, और कभी सामग्री न हटाएं।
 
 ## अनुवाद
 
 WebUI strings `module/webroot/lang/<code>.json` में रहती हैं (flat keys, अंग्रेज़ी आधार
-`lang/en.js` में); README में प्रति भाषा एक `README.<code>.md` है। कोई भाषा जोड़ें या ठीक करें और एक PR खोलें।
+`lang/en.js` में), README में प्रति भाषा एक `README.<code>.md` है। कोई भाषा जोड़ें या ठीक करें और एक PR खोलें।
 
 ## लाइसेंस
 
@@ -60,4 +60,4 @@ WebUI strings `module/webroot/lang/<code>.json` में रहती हैं
 
 ---
 
-> _यह दस्तावेज़ Claude (Anthropic) से तैयार किया गया है और इसे VD171 द्वारा अनुरक्षित किया जाता है। सुधार और संशोधन का स्वागत है; देखें [CONTRIBUTING.md](CONTRIBUTING.md)।_
+> _यह दस्तावेज़ Claude (Anthropic) से तैयार किया गया है और इसे VD171 द्वारा अनुरक्षित किया जाता है। सुधार और संशोधन का स्वागत है, देखें [CONTRIBUTING.md](CONTRIBUTING.md)।_

@@ -30,7 +30,7 @@
 
 ## Model zagrożeń w jednym zdaniu
 
-VDInstaller działa jako root i instaluje pliki APK, które użytkownik wyraźnie wybiera; wyłączenie
+VDInstaller działa jako root i instaluje pliki APK, które użytkownik wyraźnie wybiera, wyłączenie
 weryfikatora Play Protect na czas instalacji wyłącza skanowanie w poszukiwaniu złośliwego
 oprogramowania, więc jest to "instalacja bez tarcia", a nie "instalacja bezpieczna" - instaluj tylko te
 pliki APK, którym ufasz.
@@ -39,7 +39,7 @@ pliki APK, którym ufasz.
 
 - Domyślnie przywraca weryfikator pakietów do jego dokładnego poprzedniego stanu (pozostawienie `0`/`1`
   tam, gdzie wcześniej nic nie było, samo w sobie zdradza, więc jest ponownie usuwane).
-- Nigdy nie ingeruje w Twoją konfigurację HMA-OSS; ukrywanie aplikacji to zalecenie, które realizujesz samodzielnie.
+- Nigdy nie ingeruje w Twoją konfigurację HMA-OSS, ukrywanie aplikacji to zalecenie, które realizujesz samodzielnie.
 - Edycja źródła instalacji w `packages.xml` uwzględnia ABX, tworzy kopię zapasową aktywnego pliku co do
   bajta przed jakąkolwiek zmianą, wykonuje pełny cykl w celu walidacji i pozostawia aktywny plik
   nienaruszony w razie jakiegokolwiek niepowodzenia.
@@ -62,4 +62,4 @@ Prosimy najpierw o zgłoszenie prywatne. Dołącz kroki do odtworzenia, wersję,
 
 ---
 
-> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane; zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane, zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._

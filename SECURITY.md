@@ -30,7 +30,7 @@
 
 ## Threat model in one line
 
-VDInstaller runs as root and installs APKs the user explicitly chooses; turning the Play Protect
+VDInstaller runs as root and installs APKs the user explicitly chooses, turning the Play Protect
 verifier off for an install disables a malware scan, so it is "frictionless install", not "safe
 install" - install only APKs you trust.
 
@@ -38,7 +38,7 @@ install" - install only APKs you trust.
 
 - It restores the package verifier to its exact prior state by default (leaving a `0`/`1` where
   there was none is itself a tell, so it is deleted again).
-- It never touches your HMA-OSS setup; hiding apps is a recommendation you act on yourself.
+- It never touches your HMA-OSS setup, hiding apps is a recommendation you act on yourself.
 - The `packages.xml` install-source edit is ABX-aware, backs up the live file byte-exact before
   any change, round-trips to validate, and leaves the live file untouched on any failure.
 - Bundled binaries are fetched at build from their official upstream and carry a `PROVENANCE.json`.
@@ -60,4 +60,4 @@ Please report privately first. Include steps to reproduce, affected version, and
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md)._

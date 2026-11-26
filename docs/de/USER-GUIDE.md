@@ -77,7 +77,7 @@ Drei Tabs:
 
 ## 5. APKs installieren
 
-Den Modus wählst du im Tab **Install**; VDInstaller rät nie.
+Den Modus wählst du im Tab **Install**, VDInstaller rät nie.
 
 | Modus | Du gibst an | Was passiert |
 |---|---|---|
@@ -87,14 +87,14 @@ Den Modus wählst du im Tab **Install**; VDInstaller rät nie.
 | **Split folder** | ein Ordner mit den losen Split-`.apk`-Dateien einer App | die Splits werden als eine App in einer einzigen Sitzung installiert. |
 
 Eine "Split"-App ist eine APK, die in eine Basis plus Konfigurations-APKs pro Dichte / pro ABI / pro
-Sprache aufgeteilt ist; sie müssen **zusammen** in einer Sitzung installiert werden, was die Split-Modi
+Sprache aufgeteilt ist, sie müssen **zusammen** in einer Sitzung installiert werden, was die Split-Modi
 für dich erledigen.
 
 ### 5.1 Der Browse-Dialog
 
 **Browse** öffnet einen Dateiauswähler, der Ordner und installierbare Dateien an einem Pfad auflistet:
 
-- Tippe auf einen **Ordner**, um ihn zu öffnen; **Up** geht zum übergeordneten Ordner.
+- Tippe auf einen **Ordner**, um ihn zu öffnen, **Up** geht zum übergeordneten Ordner.
 - In einem Dateimodus (Single APK / Split archive) tippe auf eine **Datei**, um sie auszuwählen.
 - In einem Ordnermodus (Folder of APKs / Split folder) navigiere in den Ordner und tippe auf **Use this folder**.
 
@@ -156,7 +156,7 @@ täuscht nie vor, einen Schalter umzulegen, der nichts bewirkt.
 
 Für Stealth kannst du in Betracht ziehen, deinen Root-Manager und sensible Apps mit HMA-OSS zu
 verstecken. VDInstaller **rührt deine HMA-OSS-Einrichtung niemals an** - der Hinweis ist nur eine
-Erinnerung; die Änderung nimmst du selbst in HMA-OSS vor.
+Erinnerung, die Änderung nimmst du selbst in HMA-OSS vor.
 
 ## 7. VDInstaller über einen KI-Assistenten steuern
 
@@ -171,7 +171,7 @@ Wenn der Verifizierer-Schalter auf **So lassen, wie es war** steht (der Standard
 ihn für die Installation aus und stellt ihn wieder her, sodass es nicht passiert.
 
 **Ich habe die Play-Store-Quelle aktiviert, aber die App sieht immer noch nach Sideload aus.** Der
-Installer-Teil gilt sofort; der Initiator-Teil (`packages.xml`) gilt **nach dem nächsten Neustart**.
+Installer-Teil gilt sofort, der Initiator-Teil (`packages.xml`) gilt **nach dem nächsten Neustart**.
 
 **Umgeht es Googles Developer Verification?** Das muss es nicht - eine Root-Installation ist ausgenommen
 (siehe 6.3). Es gibt keinen Fake-Schalter dafür.
@@ -179,7 +179,7 @@ Installer-Teil gilt sofort; der Initiator-Teil (`packages.xml`) gilt **nach dem 
 **Braucht es einen Neustart?** Nein, außer bei der optionalen Initiator-Fälschung.
 
 **Entfernt das Deinstallieren von VDInstaller die Apps, die ich installiert habe?** Nein - das sind echte
-Installationen, die dem System gehören; das Entfernen des Moduls räumt nur VDInstallers eigenen Zustand
+Installationen, die dem System gehören, das Entfernen des Moduls räumt nur VDInstallers eigenen Zustand
 auf.
 
 **Ist es sicher?** Es installiert APKs deiner Wahl und überspringt, mit ausgeschaltetem Verifizierer,
@@ -189,4 +189,4 @@ einen Malware-Scan - installiere nur APKs, denen du vertraust. Es schwächt niem
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

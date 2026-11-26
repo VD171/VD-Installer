@@ -75,7 +75,7 @@
     if (_vdluReady || !window.VDLU) return;
     _vdluReady = true;
     loadVdluI18n(currentUiLang()).then(function (dict) {
-      var opts = { exec: vdluExec, moduleDir: MOD, vdluDir: VDLU_STATE_DIR, modid: "vdinstaller", module: "VDInstaller" };
+      var opts = { exec: vdluExec, moduleDir: MOD, vdluDir: VDLU_STATE_DIR, modid: "vdinstaller", module: "VD Installer" };
       if (dict) opts.i18n = dict;
       VDLU.init(opts);
       VDLU.onWebUIOpen().catch(function () {});

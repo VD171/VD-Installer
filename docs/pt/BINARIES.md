@@ -33,7 +33,7 @@
 - Nada opaco é distribuído. Todo binário embutido é obtido em **tempo de build de seu upstream oficial**,
   nunca extraído de um dispositivo, e cada arquivo carrega um sha256 para que o payload possa ser
   reproduzido.
-- Os binários são embutidos para **todas as quatro ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); o
+- Os binários são embutidos para **todas as quatro ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), o
   instalador de flash reduz para a única ABI do dispositivo.
 - Eles rodam de forma autônoma: o fecho de bibliotecas compartilhadas de cada binário é distribuído junto e
   o motor define `LD_LIBRARY_PATH` para o `lib/` embutido, então não há dependência de o Termux estar
@@ -64,7 +64,7 @@ de ABI no dispositivo, então a trilha de auditoria é distribuída com o própr
 3. Extraia e compare o sha256 de cada arquivo com o manifesto.
 
 O zip flasheável adicionalmente carrega um arquivo companheiro `.sha256` ao lado de cada arquivo
-distribuído; `customize.sh` os verifica no momento do flash e **aborta** em qualquer divergência (um zip
+distribuído, `customize.sh` os verifica no momento do flash e **aborta** em qualquer divergência (um zip
 corrompido ou truncado).
 
 ## Reportando
@@ -76,4 +76,4 @@ Encontrou uma divergência ou uma preocupação de procedência? Reporte em priv
 
 ---
 
-> _Esta documentação foi gerada com o Claude (Anthropic) e é mantida por VD171. Correções e melhorias são bem-vindas; veja [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Esta documentação foi gerada com o Claude (Anthropic) e é mantida por VD171. Correções e melhorias são bem-vindas, veja [CONTRIBUTING.md](CONTRIBUTING.md)._

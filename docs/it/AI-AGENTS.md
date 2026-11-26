@@ -35,9 +35,9 @@ chiama:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-e legge esattamente un oggetto JSON su stdout. Il successo è `{"ok":true,...}`; il fallimento è
+e legge esattamente un oggetto JSON su stdout. Il successo è `{"ok":true,...}`, il fallimento è
 `{"ok":false,"code":"ERR_...","message":"..."}`. Le operazioni lunghe restituiscono un `opid` che interroghi.
-Non fare scraping della WebUI; usa questo contratto.
+Non fare scraping della WebUI, usa questo contratto.
 
 ## Verbi
 
@@ -81,12 +81,12 @@ completamento `done:true` con un `result` (single/split), un array `results[]` (
 
 - L'interruttore del verificatore e la modifica di `packages.xml` sono reversibili e verificati
   (`logs/audit.jsonl`).
-- `install`/`uninstall` modificano lo stato del dispositivo; conferma l'intenzione prima di chiamarli, come
+- `install`/`uninstall` modificano lo stato del dispositivo, conferma l'intenzione prima di chiamarli, come
   fa la WebUI.
-- Non fare mai scraping o automazione della WebUI stessa; questo contratto è la superficie supportata.
+- Non fare mai scraping o automazione della WebUI stessa, questo contratto è la superficie supportata.
 
 <!-- doc-footer -->
 
 ---
 
-> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti; vedi [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti, vedi [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · हिन्दी · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> बिना झंझट के रूट साइडलोड इंस्टॉलर - KernelSU / APatch / Magisk WebUI।
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">उपयोक्ता मार्गदर्शिका</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">एआई एजेंट</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">आर्किटेक्चर</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">फ़ाइल संरचना</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">बाइनरी</a> ·
+  <a href="CHANGELOG.md">बदलाव सूची</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> बिना झंझट के रूट साइडलोड इंस्टॉलर: KernelSU / APatch / Magisk WebUI।
+
+## स्क्रीनशॉट
+
+<p align="center">
+  <img src="docs/screenshots/hi/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/hi/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/hi/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/hi/about-dark.png" width="24%" alt="About">
+</p>
 
 ## क्यों
 
@@ -38,26 +67,26 @@
 
 ## विशेषताएँ
 
-- **APK के हर रूप** - एक अकेला `.apk`, स्वतंत्र APK का पूरा फ़ोल्डर (batch), एक समूहित स्प्लिट आर्काइव
+- **APK के हर रूप:** एक अकेला `.apk`, स्वतंत्र APK का पूरा फ़ोल्डर (batch), एक समूहित स्प्लिट आर्काइव
   (`.xapk` / `.apkm` / `.apks` / `.zip`), या अलग-अलग स्प्लिट APK का फ़ोल्डर।
-- **कोई वेरिफ़िकेशन दीवार नहीं** - Play Protect पैकेज वेरिफ़ायर के लिए 3-तरफ़ा टॉगल: जैसा था वैसा रखें
+- **कोई वेरिफ़िकेशन दीवार नहीं:** Play Protect पैकेज वेरिफ़ायर के लिए 3-तरफ़ा टॉगल: जैसा था वैसा रखें
   (केवल इंस्टॉल के दौरान बंद, फिर ठीक वैसे ही बहाल), हमेशा चालू, या हमेशा बंद।
-- **Developer Verification के बारे में ईमानदार** - एक रूट इंस्टॉल Android की 2026 Developer Verification से
-  पहले से ही मुक्त है; यह टॉगल best-effort है और ऐसा कहता भी है, कभी नकली स्विच नहीं।
-- **"sideloaded" नहीं** - वैकल्पिक रूप से इंस्टॉल स्रोत को Play Store के रूप में दिखाता है, इंस्टॉलर के रूप
+- **Developer Verification के बारे में ईमानदार:** एक रूट इंस्टॉल Android की 2026 Developer Verification से
+  पहले से ही मुक्त है, यह टॉगल best-effort है और ऐसा कहता भी है, कभी नकली स्विच नहीं।
+- **"sideloaded" नहीं:** वैकल्पिक रूप से इंस्टॉल स्रोत को Play Store के रूप में दिखाता है, इंस्टॉलर के रूप
   में भी (इंस्टॉल के समय) और इनिशिएटर के रूप में भी (ABX-सचेत `packages.xml` संपादन के ज़रिए)।
-- **अलग और फिर से शुरू करने योग्य** - इंस्टॉल एक अलग रूट प्रक्रिया के रूप में चलते हैं; WebUI बंद करने से वे
+- **अलग और फिर से शुरू करने योग्य:** इंस्टॉल एक अलग रूट प्रक्रिया के रूप में चलते हैं, WebUI बंद करने से वे
   कभी बाधित नहीं होते, और UI ऑपरेशन id के ज़रिए फिर से जुड़ जाता है।
-- **आपकी मर्ज़ी** - टेस्ट पैकेज, सभी रनटाइम अनुमतियाँ देना, टारगेट उपयोगकर्ता, कम-टारगेट-SDK
+- **आपकी मर्ज़ी:** टेस्ट पैकेज, सभी रनटाइम अनुमतियाँ देना, टारगेट उपयोगकर्ता, कम-टारगेट-SDK
   ब्लॉक को बायपास करना: सब वैकल्पिक।
-- **ऑफ़लाइन, आत्मनिर्भर, रीबूट-मुक्त** - अपने बाइनरी के साथ बंडल किया गया एक WebUI मॉड्यूल; फ़्लैश होते ही
+- **ऑफ़लाइन, आत्मनिर्भर, रीबूट-मुक्त:** अपने बाइनरी के साथ बंडल किया गया एक WebUI मॉड्यूल, फ़्लैश होते ही
   उपयोग करने योग्य।
 
 ## AI एजेंट
 
 यह प्रोजेक्ट AI और एजेंट योगदानकर्ताओं का स्वागत करता है। engine एक छोटे headless कॉन्ट्रैक्ट
 (`scripts/helper.sh <verb> <base64(JSON)>`) के ज़रिए JSON बोलता है, जो [docs/AI-AGENTS.md](docs/AI-AGENTS.md)
-में प्रलेखित है, ताकि एक एजेंट हर वह क्रिया चला सके जो WebUI कर सकती है - WebUI को scrape न करें। AI से आई
+में प्रलेखित है, ताकि एक एजेंट हर वह क्रिया चला सके जो WebUI कर सकती है, WebUI को scrape न करें। AI से आई
 पैच किसी भी अन्य की तरह समान समीक्षा मानक पर रखी जाती हैं।
 
 ## इंस्टॉल
@@ -68,7 +97,7 @@ zip को KernelSU, APatch या Magisk में फ़्लैश करे
 
 ## सुरक्षा
 
-VDInstaller रूट के रूप में चलता है और आपके चुने हुए APK इंस्टॉल करता है; किसी इंस्टॉल के लिए पैकेज वेरिफ़ायर
+VDInstaller रूट के रूप में चलता है और आपके चुने हुए APK इंस्टॉल करता है, किसी इंस्टॉल के लिए पैकेज वेरिफ़ायर
 बंद करने से एक मैलवेयर स्कैन निष्क्रिय हो जाता है, इसलिए केवल वही APK इंस्टॉल करें जिन पर आप भरोसा करते हैं।
 यह कभी चुपचाप डिवाइस की सुरक्षा कमज़ोर नहीं करता: डिफ़ॉल्ट रूप से वेरिफ़ायर अपनी ठीक पिछली स्थिति में बहाल
 कर दिया जाता है, और यह आपकी HMA-OSS सेटअप को कभी नहीं छूता। समस्याओं की रिपोर्ट [SECURITY.md](SECURITY.md)
@@ -80,6 +109,14 @@ VDInstaller रूट के रूप में चलता है और आ�
 साझा-लाइब्रेरी क्लोज़र सहित) और स्टैंडअलोन `abx2xml` / `xml2abx` कन्वर्टर लाता है, चारों ABI के लिए, हर एक
 `PROVENANCE.json` के साथ। release वर्कफ़्लो फ़्लैश करने योग्य zip जोड़ता है, `.sha256` साथी लिखता है,
 `update.json` भरता है और `github-actions[bot]` के रूप में प्रकाशित करता है।
+
+## वृद्धिशील अपडेट (VDLU)
+
+VD Installer **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** इंजन के साथ आता है (`module/vdlu/` में अंतर्निहित): मॉड्यूल पूरे `.zip` को दोबारा डाउनलोड करने के बजाय केवल बदली हुई फ़ाइलों को लाकर खुद को अपडेट करता है (कंटेंट-एड्रेस्ड ब्लॉब्स + एक हस्ताक्षरित `manifest.json`)। **सुदृढ़** प्रोफ़ाइल: ed25519 हस्ताक्षर अनिवार्य है और डाउनग्रेड अवरुद्ध रहते हैं, पूरा `.zip` एक फ़ॉलबैक के रूप में मान्य बना रहता है।
+
+- **केवल LIVE** (कोई रीबूट नहीं): अपडेट अगले बूट पर `service.sh` के ज़रिए पृष्ठभूमि में लागू होते हैं, और जब कोई feed पहुँच योग्य नहीं होता तो कुछ नहीं करते।
+- **स्थिति** `/data/adb/vdinstaller/vdlu/` में है, मॉड्यूल के बाहर, ताकि यह रीफ़्लैश के बाद भी बनी रहे।
+- **WebUI:** प्रगति टोस्ट और रद्द करने वाला एक **अपडेट** पैनल, स्वतः-अपडेट वैकल्पिक (opt-in) है।
 
 ## प्रलेखन
 
@@ -100,16 +137,15 @@ VDInstaller रूट के रूप में चलता है और आ�
 
 ## संपर्क
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## लाइसेंस
 
@@ -127,6 +163,4 @@ Android, KernelSU, APatch, Magisk, Google Play और Play Protect अपने-
 
 ---
 
-> चैनल से जुड़ें: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **अपडेट के लिए चैनल से जुड़ें:** @Priv8_VD https://t.me/Priv8_VD

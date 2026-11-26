@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · Čeština · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> Bezproblémový root instalátor pro sideload - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">Uživatelská příručka</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">AI agenti</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">Architektura</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">Struktura souborů</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">Binárky</a> ·
+  <a href="CHANGELOG.md">Seznam změn</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> Bezproblémový root instalátor pro sideload: KernelSU / APatch / Magisk WebUI.
+
+## Snímky obrazovky
+
+<p align="center">
+  <img src="docs/screenshots/cs/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/cs/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/cs/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/cs/about-dark.png" width="24%" alt="About">
+</p>
 
 ## Proč
 
@@ -38,20 +67,20 @@ udělá za tebe, už jako root, bez výzvy "udělit su" a bez terminálu.
 
 ## Funkce
 
-- **Každá podoba APK** - jedno `.apk`, celá složka nezávislých APK (dávka), seskupený rozdělený archiv
+- **Každá podoba APK:** jedno `.apk`, celá složka nezávislých APK (dávka), seskupený rozdělený archiv
   (`.xapk` / `.apkm` / `.apks` / `.zip`) nebo složka s volnými rozdělenými APK.
-- **Žádná zeď ověřování** - trojpolohový přepínač pro ověřovač balíčků Play Protect: ponechat tak, jak
+- **Žádná zeď ověřování:** trojpolohový přepínač pro ověřovač balíčků Play Protect: ponechat tak, jak
   byl (vypnutý jen během instalace, přesně obnovený), vždy zapnutý nebo vždy vypnutý.
-- **Upřímnost ohledně Developer Verification** - root instalace je už z Androidí Developer
-  Verification 2026 vyňatá; přepínač se o to snaží, jak nejlépe umí, a také to říká, nikdy to není
+- **Upřímnost ohledně Developer Verification:** root instalace je už z Androidí Developer
+  Verification 2026 vyňatá, přepínač se o to snaží, jak nejlépe umí, a také to říká, nikdy to není
   falešné tlačítko.
-- **Ne "ze sideloadu"** - volitelně vydává zdroj instalace za Play Store, jak instalátor (v okamžiku
+- **Ne "ze sideloadu":** volitelně vydává zdroj instalace za Play Store, jak instalátor (v okamžiku
   instalace), tak iniciátora (přes úpravu `packages.xml` s ohledem na ABX).
-- **Odpojené a obnovitelné** - instalace běží jako odpojený root proces; zavření WebUI je nikdy
+- **Odpojené a obnovitelné:** instalace běží jako odpojený root proces, zavření WebUI je nikdy
   nepřeruší a UI se znovu připojí podle ID operace.
-- **Tvoje volba** - testovací balíčky, udělení všech runtime oprávnění, cílový uživatel,
+- **Tvoje volba:** testovací balíčky, udělení všech runtime oprávnění, cílový uživatel,
   obejití blokace nízkého cílového SDK: vše volitelné.
-- **Offline, soběstačný, bez restartu** - WebUI modul s přibalenými binárkami; použitelný ve chvíli,
+- **Offline, soběstačný, bez restartu:** WebUI modul s přibalenými binárkami, použitelný ve chvíli,
   kdy je naflashován.
 
 ## AI agenti
@@ -69,7 +98,7 @@ při poškozeném nebo zkráceném zipu). Android 8.0 (API 26) nebo novější.
 
 ## Bezpečnost
 
-VDInstaller běží jako root a instaluje APK, která zvolíš; vypnutí ověřovače balíčků pro instalaci
+VDInstaller běží jako root a instaluje APK, která zvolíš, vypnutí ověřovače balíčků pro instalaci
 deaktivuje sken malwaru, takže instaluj jen APK, kterým důvěřuješ. Nikdy neoslabuje zabezpečení
 zařízení potichu: ověřovač se ve výchozím nastavení obnoví do přesně předchozího stavu a tvého nastavení
 HMA-OSS se nikdy nedotkne. Problémy hlas podle [SECURITY.md](SECURITY.md).
@@ -80,6 +109,17 @@ Vždy release, nikdy debug. `.github/scripts/build_bin.sh` stáhne `jq` z apt re
 uzávěrem sdílených knihoven) a samostatné konvertory `abx2xml` / `xml2abx`, pro všechny čtyři ABI,
 každý s `PROVENANCE.json`. Release workflow sestaví flashovatelné zipy, zapíše společníky `.sha256`,
 vyplní `update.json` a publikuje jako `github-actions[bot]`.
+
+## Přírůstkové aktualizace (VDLU)
+
+VD Installer obsahuje **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** engine (vestavěný v `module/vdlu/`): modul se aktualizuje tak, že stahuje jen
+soubory, které se změnily (obsahově adresované bloby + podepsaný `manifest.json`), místo opětovného stažení
+celého `.zip`. **Zpevněný** profil: podpis ed25519 je povinný a downgrady jsou blokovány, úplný `.zip`
+zůstává platný jako záloha.
+
+- **Pouze LIVE** (bez restartu): aktualizace se použijí při příštím startu přes `service.sh`, na pozadí, bez efektu, když není dostupný žádný feed.
+- **Stav** v `/data/adb/vdinstaller/vdlu/`, mimo modul, takže přežije přeflashování.
+- **WebUI:** panel **Aktualizace** s toastem průběhu a zrušením, automatická aktualizace je volitelná (opt-in).
 
 ## Dokumentace
 
@@ -100,16 +140,15 @@ Návody jsou v [docs/](docs/) a zrcadlí se do GitHub wiki. Pro bezhlavou smlouv
 
 ## Kontakty
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## Licence
 
@@ -127,6 +166,4 @@ projekt je nezávislý a není s nimi spojen ani jimi podporován.
 
 ---
 
-> Přidej se ke kanálu: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **Připojte se ke kanálu pro aktualizace:** @Priv8_VD https://t.me/Priv8_VD

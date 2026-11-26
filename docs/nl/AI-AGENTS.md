@@ -35,9 +35,9 @@ roept aan:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-en leest precies een JSON-object op stdout. Succes is `{"ok":true,...}`; mislukking is
+en leest precies een JSON-object op stdout. Succes is `{"ok":true,...}`, mislukking is
 `{"ok":false,"code":"ERR_...","message":"..."}`. Lange bewerkingen geven een `opid` terug die je pollt.
-Scrape de WebUI niet; gebruik dit contract.
+Scrape de WebUI niet, gebruik dit contract.
 
 ## Verbs
 
@@ -80,12 +80,12 @@ voltooiing `done:true` met een `result` (single/split), een `results[]`-array (b
 ## Veiligheidsrails
 
 - De verifier-schakelaar en de `packages.xml`-bewerking zijn omkeerbaar en geaudit (`logs/audit.jsonl`).
-- `install`/`uninstall` wijzigen de apparaatstaat; bevestig de bedoeling voor het aanroepen, zoals de
+- `install`/`uninstall` wijzigen de apparaatstaat, bevestig de bedoeling voor het aanroepen, zoals de
   WebUI doet.
-- Scrape of automatiseer de WebUI zelf nooit; dit contract is het ondersteunde oppervlak.
+- Scrape of automatiseer de WebUI zelf nooit, dit contract is het ondersteunde oppervlak.
 
 <!-- doc-footer -->
 
 ---
 
-> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom; zie [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md)._

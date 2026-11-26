@@ -41,16 +41,16 @@ consulta [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Usa el contrato, no hagas scrap
 
 - **Banner completo por archivo** (SPDX + contactos) al inicio de cada archivo fuente. Nunca uno recortado.
 - Codigo, identificadores, logs y comentarios en **ingles**. Comentarios solo cuando aportan algo.
-- El shell es **POSIX sh** para el dispositivo (`sh -n` debe pasar; sin bashismos mas alla de `local`; sin dependencia de `jq` en rutas de codigo que deben ejecutarse antes de que el `jq` incluido este en el PATH).
-- La WebUI es **JS puro**, sin framework; modo claro y oscuro en toda la interfaz.
-- **Nunca** una raya larga ni corta; siempre un guion `-`.
+- El shell es **POSIX sh** para el dispositivo (`sh -n` debe pasar, sin bashismos mas alla de `local`, sin dependencia de `jq` en rutas de codigo que deben ejecutarse antes de que el `jq` incluido este en el PATH).
+- La WebUI es **JS puro**, sin framework, modo claro y oscuro en toda la interfaz.
+- **Nunca** una raya larga ni corta, siempre un guion `-`.
 - La compilacion es siempre **release**, nunca debug.
 - **Nunca debilites un comportamiento real** para que algo pase, y nunca elimines contenido.
 
 ## Traducciones
 
 Las cadenas de la WebUI viven en `module/webroot/lang/<code>.json` (claves planas, base en ingles en
-`lang/en.js`); el README tiene un `README.<code>.md` por idioma. Agrega o corrige un idioma y abre un PR.
+`lang/en.js`), el README tiene un `README.<code>.md` por idioma. Agrega o corrige un idioma y abre un PR.
 
 ## Licencia
 
@@ -60,4 +60,4 @@ Al contribuir aceptas que tu contribucion se licencia bajo la GNU AGPL-3.0-or-la
 
 ---
 
-> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas; consulta [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas, consulta [CONTRIBUTING.md](CONTRIBUTING.md)._

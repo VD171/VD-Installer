@@ -76,7 +76,7 @@ Trzy karty:
 
 ## 5. Instalowanie APK
 
-Tryb wybierasz na karcie **Install**; VDInstaller nigdy nie zgaduje.
+Tryb wybierasz na karcie **Install**, VDInstaller nigdy nie zgaduje.
 
 | Tryb | Co podajesz | Co się dzieje |
 |---|---|---|
@@ -86,13 +86,13 @@ Tryb wybierasz na karcie **Install**; VDInstaller nigdy nie zgaduje.
 | **Split folder** | folder z luźnymi plikami `.apk` splitów jednej aplikacji | splity instalowane jako jedna aplikacja w jednej sesji. |
 
 Aplikacja "split" to jeden APK podzielony na bazę plus konfiguracyjne pakiety APK per gęstość / per ABI
-/ per język; muszą być instalowane **razem** w jednej sesji, co tryby Split robią za ciebie.
+/ per język, muszą być instalowane **razem** w jednej sesji, co tryby Split robią za ciebie.
 
 ### 5.1 Okno Browse
 
 **Browse** otwiera selektor plików, który pokazuje foldery i instalowalne pliki w danej ścieżce:
 
-- Dotknij **folder**, aby do niego wejść; **Up** przechodzi do katalogu nadrzędnego.
+- Dotknij **folder**, aby do niego wejść, **Up** przechodzi do katalogu nadrzędnego.
 - W trybie plikowym (Single APK / Split archive) dotknij **plik**, aby go wybrać.
 - W trybie folderowym (Folder of APKs / Split folder) wejdź do folderu i dotknij **Use this folder**.
 
@@ -100,7 +100,7 @@ Możesz też wpisać lub wkleić ścieżkę bezpośrednio (na przykład `/sdcard
 
 ### 5.2 Postęp, anulowanie, wznawianie
 
-Instalacje działają jako **odłączony proces root**. Karta postępu pokazuje fazę; **Cancel** zatrzymuje
+Instalacje działają jako **odłączony proces root**. Karta postępu pokazuje fazę, **Cancel** zatrzymuje
 proces. Jeśli zamkniesz WebUI w trakcie instalacji, instalacja trwa dalej, a interfejs ponownie się do
 niej podłącza po identyfikatorze operacji, gdy go znowu otworzysz.
 
@@ -154,7 +154,7 @@ istnieje, i nigdy nie udaje, że przełącza coś, co nic nie robi.
 ### 6.5 Pozostawanie w ukryciu
 
 Dla trybu stealth rozważ ukrycie menedżera root i wrażliwych aplikacji za pomocą HMA-OSS. VDInstaller
-**nigdy nie dotyka twojej konfiguracji HMA-OSS** - wskazówka jest tylko przypomnieniem; zmianę
+**nigdy nie dotyka twojej konfiguracji HMA-OSS** - wskazówka jest tylko przypomnieniem, zmianę
 wprowadzasz sam w HMA-OSS.
 
 ## 7. Sterowanie VDInstaller z asystenta AI
@@ -169,7 +169,7 @@ przełączniku weryfikatora ustawionym na **Keep as it was** (domyślnie) VDInst
 instalacji i przywraca, więc to się nie dzieje.
 
 **Włączyłem źródło Play Store, ale aplikacja nadal wygląda na zainstalowaną spoza sklepu.** Część
-dotycząca instalatora działa natychmiast; część dotycząca inicjatora (`packages.xml`) działa **po
+dotycząca instalatora działa natychmiast, część dotycząca inicjatora (`packages.xml`) działa **po
 następnym restarcie**.
 
 **Czy omija Weryfikację deweloperską Google?** Nie musi - instalacja z roota jest zwolniona (zobacz
@@ -178,7 +178,7 @@ następnym restarcie**.
 **Czy wymaga restartu?** Nie, poza opcjonalnym podszyciem się pod inicjatora.
 
 **Czy odinstalowanie VDInstaller usunie zainstalowane przeze mnie aplikacje?** Nie - to są prawdziwe
-instalacje należące do systemu; usunięcie modułu czyści tylko własny stan VDInstaller.
+instalacje należące do systemu, usunięcie modułu czyści tylko własny stan VDInstaller.
 
 **Czy to bezpieczne?** Instaluje wybrane przez ciebie pliki APK i, przy wyłączonym weryfikatorze,
 pomija skanowanie w poszukiwaniu złośliwego oprogramowania - instaluj tylko APK, którym ufasz. Nigdy
@@ -188,4 +188,4 @@ niczego nie osłabia po cichu.
 
 ---
 
-> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane; zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane, zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -32,7 +32,7 @@
 
 - Nothing opaque ships. Every bundled binary is fetched at **build time from its official upstream**,
   never pulled from a device, and every file carries a sha256 so the payload can be reproduced.
-- Binaries are bundled for **all four ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); the flash
+- Binaries are bundled for **all four ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), the flash
   installer prunes to the device's one.
 - They run standalone: each binary's shared-library closure is shipped alongside and the engine sets
   `LD_LIBRARY_PATH` to the bundled `lib/`, so there is no dependency on Termux being installed.
@@ -61,7 +61,7 @@ so the audit trail ships with the module itself.
 2. Re-fetch each pinned source from the URL it records.
 3. Extract and compare the sha256 of each file against the manifest.
 
-The flashable zip additionally carries a `.sha256` companion next to every shipped file; `customize.sh`
+The flashable zip additionally carries a `.sha256` companion next to every shipped file, `customize.sh`
 verifies them at flash time and **aborts** on any mismatch (a corrupted or truncated zip).
 
 ## Reporting
@@ -72,4 +72,4 @@ Found a mismatch or a provenance concern? Report it privately - see [SECURITY.md
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](../CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](../CONTRIBUTING.md)._

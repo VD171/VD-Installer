@@ -29,7 +29,7 @@
 # Mimari
 
 VDInstaller, bir root kabuk motorunun üzerindeki ince bir WebUI'dir. Arayüzdeki hiçbir şeyin ayrıcalığı
-yoktur; her ayrıcalıklı işlem, tek bir JSON nesnesi döndüren tek bir kabuk çağrısıdır.
+yoktur, her ayrıcalıklı işlem, tek bir JSON nesnesi döndüren tek bir kabuk çağrısıdır.
 
 ```
 WebUI (webroot/)                scripts/                         Android
@@ -46,7 +46,7 @@ WebUI (webroot/)                scripts/                         Android
   `pm`/`dumpsys`/`fw` sarmalayıcıları (paketlenmiş Termux kitaplıkları ART'ınkileri asla gölgelemesin
   diye temiz ortam), JSON ve `jq` yardımcıları ve ABX-farkında `xml_edit`.
 - **`scripts/helper.sh`** - WebUI sözleşmesi: çağrı başına bir JSON satırı. Kısa fiiller (version,
-  config, browse, scan) satır içi çalışır; uzun olanlar (install, uninstall) bir worker ayırır ve bir
+  config, browse, scan) satır içi çalışır, uzun olanlar (install, uninstall) bir worker ayırır ve bir
   `opid` döndürür.
 - **`scripts/worker.sh`** - ayrılmış kurulum motoru: dört kurulum modu, doğrulayıcı anahtarı, kurulum
   kaynağı taklidi ve paket yöneticisi oturum API'si. WebUI'nin yokladığı bir dosyaya ilerlemeyi yazar
@@ -54,31 +54,31 @@ WebUI (webroot/)                scripts/                         Android
 
 ## Temel noktalar
 
-- **Zaten root.** "su ver" istemi yok ve `sucompat` anahtarlaması yok; motor modülden root olarak
+- **Zaten root.** "su ver" istemi yok ve `sucompat` anahtarlaması yok, motor modülden root olarak
   çalışır ve doğrudan `pm` / `settings` çağırır.
 - **Oturum kurulumları.** Tüm modlar `pm install-create` / `install-write` / `install-commit`
   kullanır, böylece bölünmüş uygulamalar doğru kurulur ve kurulum kaynağı (`-i`) oturum zamanında
   ayarlanır.
 - **ABX-farkında.** `packages.xml` başlatıcı taklidi, `ABX\0` ikili-XML sihirli dizisini kontrol eder,
   çözer, düzenler, yeniden kodlar, doğrulamak için gidip gelir, byte düzeyinde tam yedekler ve atomik
-  olarak takas eder; her adım geçmedikçe canlı dosyaya asla dokunulmaz.
+  olarak takas eder, her adım geçmedikçe canlı dosyaya asla dokunulmaz.
 - **Yeniden başlatma gerektirmez.** Bağlanacak hiçbir şeyi olmayan kendi kendine yeten bir WebUI
   modülü: `customize.sh` onu etkin modül dizinine kopyalar, böylece flashlanır flashlanmaz çalışır.
 - **Flashsız güncellemeler.** Paketlenmiş **VDLU** motoru, modülü yalnızca değişen, içerik adresli,
   ed25519 imzalı dosyaları indirerek günceller - tam bir yeniden flash yok.
-- **Ayrılmış.** Uzun işlemler webview dışında çalışır; WebUI'yi kapatmak onları asla kesmez.
+- **Ayrılmış.** Uzun işlemler webview dışında çalışır, WebUI'yi kapatmak onları asla kesmez.
 
 ## Uyumluluk garantisi
 
-- Cihazda POSIX `sh` (`sh -n` geçer; `local` dışında bashism yok; `awk` bağımlılığı yok).
+- Cihazda POSIX `sh` (`sh -n` geçer, `local` dışında bashism yok, `awk` bağımlılığı yok).
 - Kullanılan tek çerçeve araçları `pm` / `dumpsys` / `settings` / `cmd`'dir, hepsi `/system/bin`
   üzerinden.
 - Paketlenmiş ikili dosyalar (`jq`, `abx2xml`/`xml2abx`) yaygın yol için isteğe bağlıdır ve köken
-  taşır; ABX dönüştürücü, mevcut olduğu yerlerde cihazın kendi `/system/bin/abx2xml` dosyasına geri
+  taşır, ABX dönüştürücü, mevcut olduğu yerlerde cihazın kendi `/system/bin/abx2xml` dosyasına geri
   döner.
 
 <!-- doc-footer -->
 
 ---
 
-> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır; bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır, bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._

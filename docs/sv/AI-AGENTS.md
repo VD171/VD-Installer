@@ -34,9 +34,9 @@ VDInstaller styrs av ett enda skalkontrakt. En agent (som körs som root, precis
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-och läser exakt ett JSON-objekt på stdout. Framgång är `{"ok":true,...}`; fel är
+och läser exakt ett JSON-objekt på stdout. Framgång är `{"ok":true,...}`, fel är
 `{"ok":false,"code":"ERR_...","message":"..."}`. Långa operationer returnerar ett `opid` som du
-pollar. Skrapa inte WebUI; använd det här kontraktet.
+pollar. Skrapa inte WebUI, använd det här kontraktet.
 
 ## Verb
 
@@ -80,11 +80,11 @@ slutförande `done:true` med ett `result` (single/split), en `results[]`-array (
 ## Säkerhetsräcken
 
 - Verifierarväxeln och redigeringen av `packages.xml` är reversibla och granskade (`logs/audit.jsonl`).
-- `install`/`uninstall` ändrar enhetens tillstånd; bekräfta avsikten innan anrop, som WebUI gör.
-- Skrapa eller automatisera aldrig WebUI själv; det här kontraktet är den stödda ytan.
+- `install`/`uninstall` ändrar enhetens tillstånd, bekräfta avsikten innan anrop, som WebUI gör.
+- Skrapa eller automatisera aldrig WebUI själv, det här kontraktet är den stödda ytan.
 
 <!-- doc-footer -->
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

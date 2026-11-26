@@ -30,7 +30,7 @@
 
 ## Hotmodell på en rad
 
-VDInstaller körs som root och installerar APK:er som användaren uttryckligen väljer; att stänga av Play
+VDInstaller körs som root och installerar APK:er som användaren uttryckligen väljer, att stänga av Play
 Protect-verifieraren för en installation inaktiverar en malware-skanning, så det är "friktionsfri
 installation", inte "säker installation" - installera endast APK:er du litar på.
 
@@ -38,7 +38,7 @@ installation", inte "säker installation" - installera endast APK:er du litar p�
 
 - Det återställer paketverifieraren till exakt dess tidigare tillstånd som standard (att lämna en `0`/`1`
   där det inte fanns någon är i sig en avslöjare, så den tas bort igen).
-- Det rör aldrig din HMA-OSS-uppsättning; att dölja appar är en rekommendation du själv agerar på.
+- Det rör aldrig din HMA-OSS-uppsättning, att dölja appar är en rekommendation du själv agerar på.
 - `packages.xml`-redigeringen av installationskällan är ABX-medveten, säkerhetskopierar den aktiva filen
   byte-exakt före någon ändring, gör en round-trip för att validera, och lämnar den aktiva filen orörd vid varje fel.
 - Medföljande binärer hämtas vid bygget från deras officiella uppström och bär en `PROVENANCE.json`.
@@ -60,4 +60,4 @@ Rapportera privat först. Inkludera steg för att återskapa, berörd version oc
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

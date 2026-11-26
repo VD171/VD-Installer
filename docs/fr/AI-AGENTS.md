@@ -35,9 +35,9 @@ WebUI) appelle :
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-et lit exactement un objet JSON sur stdout. Le succès est `{"ok":true,...}` ; l'échec est
+et lit exactement un objet JSON sur stdout. Le succès est `{"ok":true,...}`, l'échec est
 `{"ok":false,"code":"ERR_...","message":"..."}`. Les opérations longues renvoient un `opid` que vous
-interrogez. Ne scrapez pas la WebUI ; utilisez ce contrat.
+interrogez. Ne scrapez pas la WebUI, utilisez ce contrat.
 
 ## Verbes
 
@@ -81,12 +81,12 @@ l'achèvement `done:true` avec un `result` (single/split), un tableau `results[]
 
 - L'interrupteur du vérificateur et l'édition de `packages.xml` sont réversibles et audités
   (`logs/audit.jsonl`).
-- `install`/`uninstall` modifient l'état de l'appareil ; confirmez l'intention avant d'appeler, comme le
+- `install`/`uninstall` modifient l'état de l'appareil, confirmez l'intention avant d'appeler, comme le
   fait la WebUI.
-- Ne scrapez ni n'automatisez jamais la WebUI elle-même ; ce contrat est la surface prise en charge.
+- Ne scrapez ni n'automatisez jamais la WebUI elle-même, ce contrat est la surface prise en charge.
 
 <!-- doc-footer -->
 
 ---
 
-> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues ; voir [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues, voir [CONTRIBUTING.md](CONTRIBUTING.md)._

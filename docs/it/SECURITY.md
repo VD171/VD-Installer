@@ -30,14 +30,14 @@
 
 ## Modello di minaccia in una riga
 
-VDInstaller viene eseguito come root e installa gli APK che l'utente sceglie esplicitamente; disattivare
+VDInstaller viene eseguito come root e installa gli APK che l'utente sceglie esplicitamente, disattivare
 il Play Protect verifier per un'installazione disabilita una scansione malware, quindi e
 "frictionless install", non "safe install" - installa solo gli APK di cui ti fidi.
 
 ## Cosa fa e cosa non fa
 
 - Per impostazione predefinita ripristina il package verifier al suo esatto stato precedente (lasciare uno `0`/`1` dove non ce n'era alcuno e di per se un tell, quindi viene eliminato di nuovo).
-- Non tocca mai la tua configurazione HMA-OSS; nascondere le app e una raccomandazione su cui agisci tu stesso.
+- Non tocca mai la tua configurazione HMA-OSS, nascondere le app e una raccomandazione su cui agisci tu stesso.
 - La modifica dell'install-source di `packages.xml` e ABX-aware, esegue un backup byte-exact del file live prima di qualsiasi modifica, effettua un round-trip per validare, e lascia il file live intatto in caso di qualsiasi errore.
 - I binary inclusi vengono recuperati durante la build dal loro upstream ufficiale e portano con se un `PROVENANCE.json`.
 
@@ -58,4 +58,4 @@ Si prega di segnalare prima in privato. Includi i passaggi per riprodurre, la ve
 
 ---
 
-> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti; vedi [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti, vedi [CONTRIBUTING.md](CONTRIBUTING.md)._

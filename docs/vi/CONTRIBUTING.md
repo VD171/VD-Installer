@@ -34,23 +34,23 @@ thân thiện để đóng góp.
 ## Hoan nghênh người đóng góp là AI
 
 Các đóng góp từ AI và agent được hoan nghênh với cùng một tiêu chuẩn đánh giá như mọi người khác. Engine
-giao tiếp bằng JSON qua một hợp đồng headless (`scripts/helper.sh <verb> <base64(JSON)>`); xem
+giao tiếp bằng JSON qua một hợp đồng headless (`scripts/helper.sh <verb> <base64(JSON)>`), xem
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Hãy điều khiển hợp đồng, đừng cào dữ liệu từ WebUI.
 
 ## Quy tắc mã nguồn
 
 - **Banner đầy đủ cho mỗi tệp** (SPDX + liên hệ) ở đầu mỗi tệp mã nguồn. Không bao giờ được cắt gọn.
 - Mã, định danh, nhật ký và chú thích bằng **tiếng Anh**. Chú thích chỉ khi chúng bổ sung điều gì đó.
-- Shell là **POSIX sh** cho thiết bị (`sh -n` phải đạt; không dùng bashism ngoài `local`; không phụ thuộc vào `jq` trong các đường dẫn mã phải chạy trước khi `jq` đi kèm có mặt trong PATH).
-- WebUI là **vanilla JS**, không framework; sáng và tối trong toàn bộ UI.
-- **Không bao giờ** dùng em-dash hay en-dash; luôn dùng dấu gạch nối `-`.
+- Shell là **POSIX sh** cho thiết bị (`sh -n` phải đạt, không dùng bashism ngoài `local`, không phụ thuộc vào `jq` trong các đường dẫn mã phải chạy trước khi `jq` đi kèm có mặt trong PATH).
+- WebUI là **vanilla JS**, không framework, sáng và tối trong toàn bộ UI.
+- **Không bao giờ** dùng em-dash hay en-dash, luôn dùng dấu gạch nối `-`.
 - Build luôn là **release**, không bao giờ là debug.
 - **Không bao giờ làm suy yếu một hành vi thực tế** để một thứ gì đó vượt qua được, và không bao giờ xóa nội dung.
 
 ## Bản dịch
 
 Các chuỗi WebUI nằm trong `module/webroot/lang/<code>.json` (khóa phẳng, nền tiếng Anh ở
-`lang/en.js`); README có một `README.<code>.md` cho mỗi ngôn ngữ. Hãy thêm hoặc sửa một ngôn ngữ và mở một PR.
+`lang/en.js`), README có một `README.<code>.md` cho mỗi ngôn ngữ. Hãy thêm hoặc sửa một ngôn ngữ và mở một PR.
 
 ## Giấy phép
 
@@ -60,4 +60,4 @@ Bằng việc đóng góp, bạn đồng ý rằng đóng góp của bạn đư�
 
 ---
 
-> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến; xem [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến, xem [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -35,9 +35,9 @@ VDInstaller tek bir kabuk sözleşmesiyle yürütülür. Bir ajan (WebUI'nin yap
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-ve stdout üzerinde tam olarak bir JSON nesnesi okur. Başarı `{"ok":true,...}`; başarısızlık
+ve stdout üzerinde tam olarak bir JSON nesnesi okur. Başarı `{"ok":true,...}`, başarısızlık
 `{"ok":false,"code":"ERR_...","message":"..."}` şeklindedir. Uzun işlemler yokladığınız bir `opid`
-döndürür. WebUI'yi kazımayın; bu sözleşmeyi kullanın.
+döndürür. WebUI'yi kazımayın, bu sözleşmeyi kullanın.
 
 ## Fiiller
 
@@ -82,12 +82,12 @@ birlikte `done:true` taşır.
 
 - Doğrulayıcı anahtarı ve `packages.xml` düzenlemesi geri alınabilir ve denetlenir
   (`logs/audit.jsonl`).
-- `install`/`uninstall` cihaz durumunu değiştirir; WebUI'nin yaptığı gibi, çağırmadan önce niyeti
+- `install`/`uninstall` cihaz durumunu değiştirir, WebUI'nin yaptığı gibi, çağırmadan önce niyeti
   onaylayın.
-- WebUI'nin kendisini asla kazımayın veya otomatikleştirmeyin; bu sözleşme, desteklenen yüzeydir.
+- WebUI'nin kendisini asla kazımayın veya otomatikleştirmeyin, bu sözleşme, desteklenen yüzeydir.
 
 <!-- doc-footer -->
 
 ---
 
-> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır; bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır, bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._

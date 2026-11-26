@@ -34,23 +34,23 @@ być łatwy i zachęcający do współtworzenia.
 ## Współtwórcy AI mile widziani
 
 Wkład AI i agentów jest mile widziany na tym samym poziomie weryfikacji co wszystkich innych. Silnik
-komunikuje się w JSON poprzez bezgłowy kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`); zobacz
+komunikuje się w JSON poprzez bezgłowy kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`), zobacz
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Korzystaj z kontraktu, nie zbieraj danych z WebUI.
 
 ## Zasady dotyczące kodu
 
 - **Kompletny baner w każdym pliku** (SPDX + kontakty) na początku każdego pliku źródłowego. Nigdy skrócony.
 - Kod, identyfikatory, logi i komentarze po **angielsku**. Komentarze tylko wtedy, gdy coś wnoszą.
-- Powłoka to **POSIX sh** dla urządzenia (`sh -n` musi przechodzić; żadnych bashizmów poza `local`; żadnej zależności od `jq` w ścieżkach kodu, które muszą działać, zanim dołączony `jq` znajdzie się w PATH).
-- WebUI to **vanilla JS**, bez frameworka; jasny i ciemny motyw w całym interfejsie.
-- **Nigdy** myślnik ani półpauza; zawsze łącznik `-`.
+- Powłoka to **POSIX sh** dla urządzenia (`sh -n` musi przechodzić, żadnych bashizmów poza `local`, żadnej zależności od `jq` w ścieżkach kodu, które muszą działać, zanim dołączony `jq` znajdzie się w PATH).
+- WebUI to **vanilla JS**, bez frameworka, jasny i ciemny motyw w całym interfejsie.
+- **Nigdy** myślnik ani półpauza, zawsze łącznik `-`.
 - Kompilacja zawsze w trybie **release**, nigdy debug.
 - **Nigdy nie osłabiaj rzeczywistego zachowania**, aby coś przeszło, i nigdy nie usuwaj treści.
 
 ## Tłumaczenia
 
 Ciągi znaków WebUI znajdują się w `module/webroot/lang/<code>.json` (płaskie klucze, angielska baza w
-`lang/en.js`); README ma plik `README.<code>.md` dla każdego języka. Dodaj lub popraw język i otwórz PR.
+`lang/en.js`), README ma plik `README.<code>.md` dla każdego języka. Dodaj lub popraw język i otwórz PR.
 
 ## Licencja
 
@@ -60,4 +60,4 @@ Wnosząc wkład, zgadzasz się, że Twój wkład jest licencjonowany na warunkac
 
 ---
 
-> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane; zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane, zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._

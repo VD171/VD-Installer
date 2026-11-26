@@ -34,23 +34,23 @@ a etre simple et accueillant pour contribuer.
 ## Contributeurs IA bienvenus
 
 Les contributions de l'IA et des agents sont les bienvenues au meme niveau d'exigence de revue que pour tout
-le monde. Le moteur parle JSON via un contrat headless (`scripts/helper.sh <verb> <base64(JSON)>`); voir
+le monde. Le moteur parle JSON via un contrat headless (`scripts/helper.sh <verb> <base64(JSON)>`), voir
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Utilisez le contrat, ne faites pas de scraping de la WebUI.
 
 ## Regles de code
 
 - **Banniere complete par fichier** (SPDX + contacts) en haut de chaque fichier source. Jamais une version tronquee.
 - Code, identifiants, logs et commentaires en **anglais**. Des commentaires seulement quand ils apportent quelque chose.
-- Le shell est du **POSIX sh** pour l'appareil (`sh -n` doit passer; pas de bashismes au-dela de `local`; pas de dependance a `jq` dans les chemins de code qui doivent s'executer avant que le `jq` embarque soit dans le PATH).
-- La WebUI est en **JS pur**, sans framework; theme clair et sombre dans toute l'interface.
-- **Jamais** de tiret cadratin ni demi-cadratin; toujours un trait d'union `-`.
+- Le shell est du **POSIX sh** pour l'appareil (`sh -n` doit passer, pas de bashismes au-dela de `local`, pas de dependance a `jq` dans les chemins de code qui doivent s'executer avant que le `jq` embarque soit dans le PATH).
+- La WebUI est en **JS pur**, sans framework, theme clair et sombre dans toute l'interface.
+- **Jamais** de tiret cadratin ni demi-cadratin, toujours un trait d'union `-`.
 - La compilation est toujours en **release**, jamais en debug.
 - **Ne jamais affaiblir un comportement reel** pour faire passer quelque chose, et ne jamais supprimer de contenu.
 
 ## Traductions
 
 Les chaines de la WebUI se trouvent dans `module/webroot/lang/<code>.json` (cles plates, base anglaise dans
-`lang/en.js`); le README a un `README.<code>.md` par langue. Ajoutez ou corrigez une langue et ouvrez une PR.
+`lang/en.js`), le README a un `README.<code>.md` par langue. Ajoutez ou corrigez une langue et ouvrez une PR.
 
 ## Licence
 
@@ -60,4 +60,4 @@ En contribuant, vous acceptez que votre contribution soit sous licence GNU AGPL-
 
 ---
 
-> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues ; voir [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues, voir [CONTRIBUTING.md](CONTRIBUTING.md)._

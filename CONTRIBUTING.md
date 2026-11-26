@@ -34,23 +34,23 @@ easy and inviting to contribute to.
 ## AI contributors welcome
 
 AI and agent contributions are welcome at the same review bar as everyone else. The engine speaks
-JSON over a headless contract (`scripts/helper.sh <verb> <base64(JSON)>`); see
+JSON over a headless contract (`scripts/helper.sh <verb> <base64(JSON)>`), see
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Drive the contract, do not scrape the WebUI.
 
 ## Code rules
 
 - **Complete per-file banner** (SPDX + contacts) at the top of every source file. Never a trimmed one.
 - Code, identifiers, logs and comments in **English**. Comments only when they add something.
-- Shell is **POSIX sh** for the device (`sh -n` must pass; no bashisms beyond `local`; no `jq` dependency in code paths that must run before the bundled `jq` is on PATH).
-- WebUI is **vanilla JS**, no framework; light and dark in all UI.
-- **Never** an em-dash or en-dash; always a hyphen `-`.
+- Shell is **POSIX sh** for the device (`sh -n` must pass, no bashisms beyond `local`, no `jq` dependency in code paths that must run before the bundled `jq` is on PATH).
+- WebUI is **vanilla JS**, no framework, light and dark in all UI.
+- **Never** an em-dash or en-dash, always a hyphen `-`.
 - Build is always **release**, never debug.
 - **Never weaken a real behavior** to make something pass, and never remove content.
 
 ## Translations
 
 The WebUI strings live in `module/webroot/lang/<code>.json` (flat keys, English base in
-`lang/en.js`); the README has a `README.<code>.md` per language. Add or fix a language and open a PR.
+`lang/en.js`), the README has a `README.<code>.md` per language. Add or fix a language and open a PR.
 
 ## License
 
@@ -60,4 +60,4 @@ By contributing you agree your contribution is licensed under the GNU AGPL-3.0-o
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md)._

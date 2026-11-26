@@ -32,7 +32,7 @@
 
 - Nic neprůhledného se nedodává. Každá přibalená binárka je získána **v době buildu z jejího oficiálního
   upstreamu**, nikdy stažena ze zařízení, a každý soubor nese sha256, takže payload lze reprodukovat.
-- Binárky jsou přibaleny pro **všechny čtyři ABI** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); flash
+- Binárky jsou přibaleny pro **všechny čtyři ABI** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), flash
   instalátor je ořeže na tu jednu zařízení.
 - Běží samostatně: závěr sdílených knihoven každé binárky je dodán spolu s ní a engine nastaví
   `LD_LIBRARY_PATH` na přibalené `lib/`, takže není žádná závislost na nainstalovaném Termuxu.
@@ -61,7 +61,7 @@ auditní stopa se dodává se samotným modulem.
 2. Znovu stáhněte každý připnutý zdroj z URL, kterou zaznamenává.
 3. Extrahujte a porovnejte sha256 každého souboru s manifestem.
 
-Flashovatelný zip navíc nese `.sha256` společníka vedle každého dodaného souboru; `customize.sh` je ověří
+Flashovatelný zip navíc nese `.sha256` společníka vedle každého dodaného souboru, `customize.sh` je ověří
 při flashnutí a **přeruší** proces při jakékoli neshodě (poškozený nebo zkrácený zip).
 
 ## Hlášení
@@ -72,4 +72,4 @@ Našli jste neshodu nebo problém s proveniencí? Nahlaste jej soukromě - viz [
 
 ---
 
-> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány; viz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány, viz [CONTRIBUTING.md](CONTRIBUTING.md)._

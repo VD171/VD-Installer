@@ -63,7 +63,7 @@ di ABI sul dispositivo, così la traccia di verifica viene distribuita con il mo
 2. Riscarica ogni fonte fissata dall'URL che registra.
 3. Estrai e confronta lo sha256 di ogni file con il manifesto.
 
-Lo zip flashabile porta inoltre un compagno `.sha256` accanto a ogni file distribuito; `customize.sh` li
+Lo zip flashabile porta inoltre un compagno `.sha256` accanto a ogni file distribuito, `customize.sh` li
 verifica al momento del flash e **interrompe** su qualsiasi discordanza (uno zip corrotto o troncato).
 
 ## Segnalazione
@@ -75,4 +75,4 @@ Hai trovato una discordanza o un dubbio sulla provenienza? Segnalalo in privato 
 
 ---
 
-> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti; vedi [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti, vedi [CONTRIBUTING.md](CONTRIBUTING.md)._

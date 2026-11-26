@@ -35,9 +35,9 @@ memanggil:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-dan membaca tepat satu objek JSON di stdout. Keberhasilan adalah `{"ok":true,...}`; kegagalan adalah
+dan membaca tepat satu objek JSON di stdout. Keberhasilan adalah `{"ok":true,...}`, kegagalan adalah
 `{"ok":false,"code":"ERR_...","message":"..."}`. Operasi panjang mengembalikan `opid` yang Anda pantau.
-Jangan scrape WebUI; gunakan kontrak ini.
+Jangan scrape WebUI, gunakan kontrak ini.
 
 ## Verb
 
@@ -82,12 +82,12 @@ selesai `done:true` dengan sebuah `result` (single/split), sebuah array `results
 
 - Sakelar verifikator dan penyuntingan `packages.xml` dapat dikembalikan dan diaudit
   (`logs/audit.jsonl`).
-- `install`/`uninstall` mengubah keadaan perangkat; konfirmasikan niat sebelum memanggilnya, seperti yang
+- `install`/`uninstall` mengubah keadaan perangkat, konfirmasikan niat sebelum memanggilnya, seperti yang
   dilakukan WebUI.
-- Jangan pernah scrape atau mengotomatiskan WebUI itu sendiri; kontrak ini adalah permukaan yang didukung.
+- Jangan pernah scrape atau mengotomatiskan WebUI itu sendiri, kontrak ini adalah permukaan yang didukung.
 
 <!-- doc-footer -->
 
 ---
 
-> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan; lihat [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan, lihat [CONTRIBUTING.md](CONTRIBUTING.md)._

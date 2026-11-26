@@ -63,7 +63,7 @@ l'appareil, de sorte que la piste d'audit est livrée avec le module lui-même.
 2. Récupérez à nouveau chaque source épinglée depuis l'URL qu'elle enregistre.
 3. Extrayez et comparez le sha256 de chaque fichier au manifeste.
 
-Le zip flashable porte en plus un compagnon `.sha256` à côté de chaque fichier livré ; `customize.sh` les
+Le zip flashable porte en plus un compagnon `.sha256` à côté de chaque fichier livré, `customize.sh` les
 vérifie au moment du flash et **avorte** à la moindre divergence (un zip corrompu ou tronqué).
 
 ## Signalement
@@ -75,4 +75,4 @@ Vous avez trouvé une divergence ou une préoccupation de provenance ? Signalez-
 
 ---
 
-> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues ; voir [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues, voir [CONTRIBUTING.md](CONTRIBUTING.md)._

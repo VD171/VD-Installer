@@ -33,7 +33,7 @@
 - No se incluye nada opaco. Cada binario incluido se obtiene en **tiempo de compilación desde su upstream
   oficial**, nunca se extrae de un dispositivo, y cada archivo lleva un sha256 para que la carga pueda
   reproducirse.
-- Los binarios se incluyen para las **cuatro ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); el
+- Los binarios se incluyen para las **cuatro ABIs** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), el
   instalador de flasheo los recorta a la única del dispositivo.
 - Se ejecutan de forma autónoma: el cierre de bibliotecas compartidas de cada binario se envía junto a él
   y el motor establece `LD_LIBRARY_PATH` al `lib/` incluido, así que no hay dependencia de que Termux esté
@@ -64,7 +64,7 @@ el dispositivo, así que el rastro de auditoría se envía con el propio módulo
 2. Vuelve a obtener cada origen fijado desde la URL que registra.
 3. Extrae y compara el sha256 de cada archivo con el manifiesto.
 
-El zip flasheable lleva además un acompañante `.sha256` junto a cada archivo enviado; `customize.sh` los
+El zip flasheable lleva además un acompañante `.sha256` junto a cada archivo enviado, `customize.sh` los
 verifica en el momento del flasheo y **aborta** ante cualquier discrepancia (un zip corrupto o truncado).
 
 ## Informar
@@ -76,4 +76,4 @@ verifica en el momento del flasheo y **aborta** ante cualquier discrepancia (un 
 
 ---
 
-> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas; consulta [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas, consulta [CONTRIBUTING.md](CONTRIBUTING.md)._

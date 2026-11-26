@@ -28,7 +28,7 @@
 
 # Arkitektur
 
-VDInstaller är ett tunt WebUI ovanpå en root-skalmotor. Inget i gränssnittet har privilegier; varje
+VDInstaller är ett tunt WebUI ovanpå en root-skalmotor. Inget i gränssnittet har privilegier, varje
 privilegierad åtgärd är ett skalanrop som returnerar ett JSON-objekt.
 
 ```
@@ -46,7 +46,7 @@ WebUI (webroot/)                scripts/                         Android
   omslagen för `pm`/`dumpsys`/`fw` (ren miljö så att de medföljande Termux-biblioteken aldrig
   skuggar ART:s), JSON- och `jq`-hjälparna, samt den ABX-medvetna `xml_edit`.
 - **`scripts/helper.sh`** - WebUI-kontraktet: en JSON-rad per anrop. Korta verb (version, config,
-  browse, scan) körs inline; långa (install, uninstall) frikopplar en worker och returnerar ett `opid`.
+  browse, scan) körs inline, långa (install, uninstall) frikopplar en worker och returnerar ett `opid`.
 - **`scripts/worker.sh`** - den frikopplade installationsmotorn: de fyra installationslägena,
   verifierarväxeln, installationskälleförfalskningen och pakethanterarens sessions-API. Den skriver
   förlopp till en fil som WebUI pollar, och överlever att WebUI stängs (`setsid`, och den undgår
@@ -54,24 +54,24 @@ WebUI (webroot/)                scripts/                         Android
 
 ## Nyckelpunkter
 
-- **Redan root.** Ingen "bevilja su"-fråga och ingen `sucompat`-växling; motorn körs som root från
+- **Redan root.** Ingen "bevilja su"-fråga och ingen `sucompat`-växling, motorn körs som root från
   modulen och anropar `pm` / `settings` direkt.
 - **Sessionsinstallationer.** Alla lägen använder `pm install-create` / `install-write` /
   `install-commit`, så delade appar installeras korrekt och installationskällan (`-i`) sätts vid
   sessionens start.
 - **ABX-medveten.** Initiator-förfalskningen i `packages.xml` kontrollerar efter den binära XML-
   magin `ABX\0`, avkodar, redigerar, omkodar, går tur och retur för att validera, säkerhetskopierar
-  byte-exakt och växlar atomärt; den aktiva filen rörs aldrig om inte varje steg lyckas.
+  byte-exakt och växlar atomärt, den aktiva filen rörs aldrig om inte varje steg lyckas.
 - **Omstartsfri.** En fristående WebUI-modul utan något att montera: `customize.sh` kopierar in den i
   den aktiva modulkatalogen så att den fungerar i samma ögonblick den flashas.
 - **Flashlösa uppdateringar.** Den medföljande **VDLU**-motorn uppdaterar modulen genom att bara
   ladda ner de ändrade, innehållsadresserade, ed25519-signerade filerna - ingen fullständig
   omflashning.
-- **Frikopplad.** Långa operationer körs utanför webviewen; att stänga WebUI avbryter dem aldrig.
+- **Frikopplad.** Långa operationer körs utanför webviewen, att stänga WebUI avbryter dem aldrig.
 
 ## Kompatibilitetsgaranti
 
-- POSIX `sh` på enheten (`sh -n` går igenom; inga bashismer utöver `local`; inget `awk`-beroende).
+- POSIX `sh` på enheten (`sh -n` går igenom, inga bashismer utöver `local`, inget `awk`-beroende).
 - `pm` / `dumpsys` / `settings` / `cmd` är de enda ramverksverktygen som används, alla via
   `/system/bin`.
 - Medföljande binärer (`jq`, `abx2xml`/`xml2abx`) är valfria för den vanliga vägen och bär proveniens;
@@ -81,4 +81,4 @@ WebUI (webroot/)                scripts/                         Android
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

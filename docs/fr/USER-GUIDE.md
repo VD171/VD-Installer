@@ -77,7 +77,7 @@ Trois onglets :
 
 ## 5. Installer des APK
 
-Vous choisissez le mode dans l'onglet **Install** ; VDInstaller ne devine jamais.
+Vous choisissez le mode dans l'onglet **Install**, VDInstaller ne devine jamais.
 
 | Mode | Ce que vous fournissez | Ce qui se passe |
 |---|---|---|
@@ -87,7 +87,7 @@ Vous choisissez le mode dans l'onglet **Install** ; VDInstaller ne devine jamais
 | **Dossier split** | un dossier avec les fichiers `.apk` split épars d'une appli | les splits installés comme une appli en une seule session. |
 
 Une appli "split" est un APK divisé en une base plus des APK de configuration par densité / par ABI / par
-langue ; ils doivent être installés **ensemble** en une seule session, ce que font pour vous les modes
+langue, ils doivent être installés **ensemble** en une seule session, ce que font pour vous les modes
 Split.
 
 ### 5.1 La boîte de dialogue Browse
@@ -95,7 +95,7 @@ Split.
 **Browse** ouvre un sélecteur de fichiers qui liste les dossiers et les fichiers installables à un
 chemin :
 
-- Touchez un **dossier** pour y entrer ; **Up** remonte au parent.
+- Touchez un **dossier** pour y entrer, **Up** remonte au parent.
 - Dans un mode fichier (APK unique / Archive split), touchez un **fichier** pour le sélectionner.
 - Dans un mode dossier (Dossier d'APK / Dossier split), naviguez dans le dossier et touchez **Use this folder**.
 
@@ -104,7 +104,7 @@ Vous pouvez aussi saisir ou coller un chemin directement (par exemple `/sdcard/D
 ### 5.2 Progression, annuler, reprendre
 
 Les installations s'exécutent comme un **processus root détaché**. Une carte de progression affiche la
-phase ; **Cancel** l'arrête. Si vous fermez la WebUI en pleine installation, celle-ci continue et
+phase, **Cancel** l'arrête. Si vous fermez la WebUI en pleine installation, celle-ci continue et
 l'interface se rattache par id d'opération quand vous la rouvrez.
 
 ## 6. Options
@@ -156,7 +156,7 @@ interrupteur qui ne fait rien.
 ### 6.5 Rester caché
 
 Pour la furtivité, envisagez de masquer votre gestionnaire de root et les applis sensibles avec HMA-OSS.
-VDInstaller **ne touche jamais à votre configuration HMA-OSS** - l'indication n'est qu'un rappel ; vous
+VDInstaller **ne touche jamais à votre configuration HMA-OSS** - l'indication n'est qu'un rappel, vous
 faites le changement vous-même dans HMA-OSS.
 
 ## 7. Piloter VDInstaller depuis un assistant IA
@@ -171,7 +171,7 @@ Avec l'interrupteur du vérificateur laissé sur **Garder tel quel** (le défaut
 pour l'installation et le restaure, donc cela n'arrive pas.
 
 **J'ai activé la source Play Store mais l'appli paraît encore chargée latéralement.** La partie
-installateur s'applique immédiatement ; la partie initiateur (`packages.xml`) s'applique **après le
+installateur s'applique immédiatement, la partie initiateur (`packages.xml`) s'applique **après le
 prochain redémarrage**.
 
 **Est-ce qu'il contourne la Developer Verification de Google ?** Il n'en a pas besoin - une installation
@@ -180,7 +180,7 @@ root en est exemptée (voir 6.3). Il n'y a aucun faux interrupteur pour elle.
 **A-t-il besoin d'un redémarrage ?** Non, sauf la falsification facultative de l'initiateur.
 
 **Désinstaller VDInstaller supprimera-t-il les applis que j'ai installées ?** Non - ce sont de vraies
-installations possédées par le système ; retirer le module ne nettoie que l'état propre de VDInstaller.
+installations possédées par le système, retirer le module ne nettoie que l'état propre de VDInstaller.
 
 **Est-ce sûr ?** Il installe les APK que vous choisissez et, avec le vérificateur désactivé, saute une
 analyse de malware - n'installez que des APK de confiance. Il n'affaiblit jamais rien en silence.
@@ -189,4 +189,4 @@ analyse de malware - n'installez que des APK de confiance. Il n'affaiblit jamais
 
 ---
 
-> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues ; voir [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues, voir [CONTRIBUTING.md](CONTRIBUTING.md)._

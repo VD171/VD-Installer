@@ -46,7 +46,7 @@ WebUI (webroot/)                scripts/                         Android
   `pm`/`dumpsys`/`fw` (lingkungan bersih sehingga pustaka Termux bawaan tidak pernah menutupi pustaka ART),
   helper JSON dan `jq`, serta `xml_edit` yang ABX-aware.
 - **`scripts/helper.sh`** - kontrak WebUI: satu baris JSON per panggilan. Verb pendek (version, config,
-  browse, scan) berjalan inline; yang panjang (install, uninstall) memisahkan sebuah worker dan
+  browse, scan) berjalan inline, yang panjang (install, uninstall) memisahkan sebuah worker dan
   mengembalikan `opid`.
 - **`scripts/worker.sh`** - mesin pemasangan terpisah: keempat mode pemasangan, sakelar verifikator,
   pemalsuan sumber pemasangan, dan API sesi pengelola paket. Ia menulis progres ke sebuah berkas yang
@@ -54,23 +54,23 @@ WebUI (webroot/)                scripts/                         Android
 
 ## Poin penting
 
-- **Sudah root.** Tanpa perintah "berikan su" dan tanpa mengutak-atik `sucompat`; mesin berjalan sebagai
+- **Sudah root.** Tanpa perintah "berikan su" dan tanpa mengutak-atik `sucompat`, mesin berjalan sebagai
   root dari modul dan memanggil `pm` / `settings` secara langsung.
 - **Pemasangan sesi.** Semua mode memakai `pm install-create` / `install-write` / `install-commit`,
   sehingga aplikasi split terpasang dengan benar dan sumber pemasangan (`-i`) disetel pada waktu sesi.
 - **ABX-aware.** Pemalsuan inisiator di `packages.xml` memeriksa magic XML biner `ABX\0`, mendekode,
   menyunting, mengenkode ulang, melakukan round-trip untuk validasi, mencadangkan byte-persis dan menukar
-  secara atomik; berkas yang hidup tidak pernah disentuh kecuali setiap langkah berhasil.
+  secara atomik, berkas yang hidup tidak pernah disentuh kecuali setiap langkah berhasil.
 - **Tanpa reboot.** Modul WebUI mandiri tanpa ada yang perlu dimuat (mount): `customize.sh` menyalinnya ke
   direktori modul aktif sehingga ia bekerja pada saat ia dipasang.
 - **Pembaruan tanpa flash.** Mesin **VDLU** bawaan memperbarui modul dengan mengunduh hanya berkas yang
   berubah, dialamatkan berdasarkan konten, dan ditandatangani ed25519 - tanpa flash ulang penuh.
-- **Terpisah (detached).** Operasi panjang berjalan di luar webview; menutup WebUI tidak pernah
+- **Terpisah (detached).** Operasi panjang berjalan di luar webview, menutup WebUI tidak pernah
   menyelanya.
 
 ## Jaminan kompatibilitas
 
-- `sh` POSIX di perangkat (`sh -n` lolos; tanpa bashism selain `local`; tanpa ketergantungan pada `awk`).
+- `sh` POSIX di perangkat (`sh -n` lolos, tanpa bashism selain `local`, tanpa ketergantungan pada `awk`).
 - `pm` / `dumpsys` / `settings` / `cmd` adalah satu-satunya alat framework yang dipakai, semuanya lewat
   `/system/bin`.
 - Biner bawaan (`jq`, `abx2xml`/`xml2abx`) bersifat opsional untuk jalur umum dan membawa provenans-nya;
@@ -80,4 +80,4 @@ WebUI (webroot/)                scripts/                         Android
 
 ---
 
-> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan; lihat [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan, lihat [CONTRIBUTING.md](CONTRIBUTING.md)._

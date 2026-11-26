@@ -76,7 +76,7 @@ Tres pestañas:
 
 ## 5. Instalar APKs
 
-Eliges el modo en la pestaña **Install**; VDInstaller nunca adivina.
+Eliges el modo en la pestaña **Install**, VDInstaller nunca adivina.
 
 | Modo | Lo que proporcionas | Qué ocurre |
 |---|---|---|
@@ -86,13 +86,13 @@ Eliges el modo en la pestaña **Install**; VDInstaller nunca adivina.
 | **Carpeta split** | una carpeta con los archivos `.apk` split sueltos de una app | los splits se instalan como una app en una sola sesión. |
 
 Una app "split" es un APK dividido en una base más APKs de configuración por densidad / por ABI / por
-idioma; deben instalarse **juntos** en una sola sesión, que es lo que hacen por ti los modos Split.
+idioma, deben instalarse **juntos** en una sola sesión, que es lo que hacen por ti los modos Split.
 
 ### 5.1 El diálogo Browse
 
 **Browse** abre un selector de archivos que lista carpetas y archivos instalables en una ruta:
 
-- Toca una **carpeta** para entrar en ella; **Up** va al directorio superior.
+- Toca una **carpeta** para entrar en ella, **Up** va al directorio superior.
 - En un modo de archivo (APK individual / Archivo split), toca un **archivo** para seleccionarlo.
 - En un modo de carpeta (Carpeta de APKs / Carpeta split), navega hasta la carpeta y toca **Use this folder**.
 
@@ -101,7 +101,7 @@ También puedes escribir o pegar una ruta directamente (por ejemplo `/sdcard/Dow
 ### 5.2 Progreso, cancelar, reanudar
 
 Las instalaciones se ejecutan como un **proceso root desacoplado**. Una tarjeta de progreso muestra la
-fase; **Cancel** la detiene. Si cierras la WebUI a mitad de la instalación, esta continúa y la interfaz
+fase, **Cancel** la detiene. Si cierras la WebUI a mitad de la instalación, esta continúa y la interfaz
 se reconecta por id de operación cuando la vuelves a abrir.
 
 ## 6. Opciones
@@ -153,7 +153,7 @@ aplica una perilla real solo si existe y nunca finge accionar un interruptor que
 ### 6.5 Mantenerse oculto
 
 Para el sigilo, considera ocultar tu gestor de root y las apps sensibles con HMA-OSS. VDInstaller
-**nunca toca tu configuración de HMA-OSS** - la sugerencia es solo un recordatorio; el cambio lo haces tú
+**nunca toca tu configuración de HMA-OSS** - la sugerencia es solo un recordatorio, el cambio lo haces tú
 mismo en HMA-OSS.
 
 ## 7. Controlar VDInstaller desde un asistente de IA
@@ -169,7 +169,7 @@ Con el interruptor del verificador en **Mantener como estaba** (el valor por def
 desactiva durante la instalación y lo restaura, así que no ocurre.
 
 **Activé el origen Play Store pero la app sigue pareciendo cargada de forma lateral.** La parte del
-instalador se aplica de inmediato; la parte del iniciador (`packages.xml`) se aplica **tras el siguiente
+instalador se aplica de inmediato, la parte del iniciador (`packages.xml`) se aplica **tras el siguiente
 reinicio**.
 
 **¿Evita la Developer Verification de Google?** No lo necesita - una instalación root está exenta
@@ -178,7 +178,7 @@ reinicio**.
 **¿Necesita reinicio?** No, salvo el falseo opcional del iniciador.
 
 **¿Desinstalar VDInstaller elimina las apps que instalé?** No - esas son instalaciones reales propiedad
-del sistema; quitar el módulo solo limpia el propio estado de VDInstaller.
+del sistema, quitar el módulo solo limpia el propio estado de VDInstaller.
 
 **¿Es seguro?** Instala los APKs que elijas y, con el verificador desactivado, se salta un escaneo de
 malware - instala solo APKs en los que confíes. Nunca debilita nada de forma silenciosa.
@@ -187,4 +187,4 @@ malware - instala solo APKs en los que confíes. Nunca debilita nada de forma si
 
 ---
 
-> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas; consulta [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Esta documentación se generó con Claude (Anthropic) y la mantiene VD171. Las correcciones y mejoras son bienvenidas, consulta [CONTRIBUTING.md](CONTRIBUTING.md)._

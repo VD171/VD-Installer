@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · Italiano · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> Installatore di sideload con permessi di root senza attriti - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">Guida utente</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">Agenti IA</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">Architettura</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">Struttura dei file</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">Binari inclusi</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> Installatore di sideload con permessi di root senza attriti: KernelSU / APatch / Magisk WebUI.
+
+## Schermate
+
+<p align="center">
+  <img src="docs/screenshots/it/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/it/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/it/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/it/about-dark.png" width="24%" alt="About">
+</p>
 
 ## Perché
 
@@ -38,22 +67,22 @@ questo al posto tuo, già con permessi di root, senza richieste di "concedi su" 
 
 ## Funzionalità
 
-- **Ogni forma di APK** - un singolo `.apk`, un'intera cartella di APK indipendenti (batch), un archivio
+- **Ogni forma di APK:** un singolo `.apk`, un'intera cartella di APK indipendenti (batch), un archivio
   split raggruppato (`.xapk` / `.apkm` / `.apks` / `.zip`), o una cartella di APK split sciolti.
-- **Nessun muro di verifica** - un selettore a 3 vie per il verificatore di pacchetti di Play Protect:
+- **Nessun muro di verifica:** un selettore a 3 vie per il verificatore di pacchetti di Play Protect:
   lascialo com'era (spento solo durante l'installazione, ripristinato esattamente), sempre acceso, o
   sempre spento.
-- **Onesto sulla Developer Verification** - un'installazione con root è già esente dalla Developer
-  Verification di Android del 2026; il selettore è best-effort e lo dichiara, non è mai un interruttore
+- **Onesto sulla Developer Verification:** un'installazione con root è già esente dalla Developer
+  Verification di Android del 2026, il selettore è best-effort e lo dichiara, non è mai un interruttore
   finto.
-- **Non "sideloaded"** - presenta facoltativamente l'origine di installazione come Play Store, sia come
+- **Non "sideloaded":** presenta facoltativamente l'origine di installazione come Play Store, sia come
   installatore (al momento dell'installazione) sia come iniziatore (tramite una modifica di
   `packages.xml` consapevole di ABX).
-- **Distaccato e ripristinabile** - le installazioni girano come processo root distaccato; chiudere la
+- **Distaccato e ripristinabile:** le installazioni girano come processo root distaccato, chiudere la
   WebUI non le interrompe mai, e l'interfaccia si riaggancia tramite l'id dell'operazione.
-- **Scelta tua** - pacchetti di test, concessione di tutti i permessi di runtime, utente di
+- **Scelta tua:** pacchetti di test, concessione di tutti i permessi di runtime, utente di
   destinazione, aggirare il blocco per target SDK basso: tutto facoltativo.
-- **Offline, autonomo, senza riavvio** - un modulo WebUI con i suoi binari inclusi; utilizzabile nel
+- **Offline, autonomo, senza riavvio:** un modulo WebUI con i suoi binari inclusi, utilizzabile nel
   momento in cui viene flashato.
 
 ## Agenti AI
@@ -61,7 +90,7 @@ questo al posto tuo, già con permessi di root, senza richieste di "concedi su" 
 Questo progetto accoglie i contributori AI e agent. L'engine parla JSON tramite un piccolo contratto
 headless (`scripts/helper.sh <verb> <base64(JSON)>`), documentato in
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md), così un agent può pilotare ogni azione che la WebUI può
-compiere - non fare scraping della WebUI. Le patch dall'AI sono soggette allo stesso livello di revisione
+compiere, non fare scraping della WebUI. Le patch dall'AI sono soggette allo stesso livello di revisione
 di qualsiasi altra.
 
 ## Installazione
@@ -72,7 +101,7 @@ L'installatore mantiene solo l'ABI del tuo dispositivo ed esegue il gate di inte
 
 ## Sicurezza
 
-VDInstaller gira come root e installa gli APK che scegli; spegnere il verificatore di pacchetti per
+VDInstaller gira come root e installa gli APK che scegli, spegnere il verificatore di pacchetti per
 un'installazione disabilita una scansione malware, quindi installa solo APK di cui ti fidi. Non indebolisce
 mai la sicurezza del dispositivo in silenzio: per impostazione predefinita il verificatore viene ripristinato
 al suo esatto stato precedente, e non tocca mai la tua configurazione di HMA-OSS. Segnala i problemi secondo
@@ -84,6 +113,17 @@ Sempre release, mai debug. `.github/scripts/build_bin.sh` scarica `jq` dal repos
 sua chiusura di librerie condivise) e i convertitori standalone `abx2xml` / `xml2abx`, per tutti e quattro
 gli ABI, ciascuno con un `PROVENANCE.json`. Il workflow di release assembla gli zip flashabili, scrive i
 companion `.sha256`, compila `update.json` e pubblica come `github-actions[bot]`.
+
+## Aggiornamenti incrementali (VDLU)
+
+VD Installer include l'engine **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** (incorporato in `module/vdlu/`): il modulo si aggiorna scaricando solo i
+file che sono cambiati (blob indirizzati per contenuto + un `manifest.json` firmato), invece di riscaricare
+l'intero `.zip`. Profilo **irrobustito**: la firma ed25519 è obbligatoria e i downgrade sono bloccati, il
+`.zip` completo resta valido come ripiego.
+
+- **Solo LIVE** (senza riavvio): gli aggiornamenti si applicano al boot successivo tramite `service.sh`, in background, senza effetto quando nessun feed è raggiungibile.
+- **Stato** in `/data/adb/vdinstaller/vdlu/`, fuori dal modulo, così da sopravvivere a un reflash.
+- **WebUI:** un pannello **Aggiornamenti** con un toast di avanzamento e annullamento, l'aggiornamento automatico è opt-in.
 
 ## Documentazione
 
@@ -104,16 +144,15 @@ Le guide si trovano in [docs/](docs/) e si rispecchiano nella wiki di GitHub. Ve
 
 ## Contatti
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## Licenza
 
@@ -131,6 +170,4 @@ Questo progetto è indipendente e non è affiliato a loro né approvato da loro.
 
 ---
 
-> Unisciti al canale: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **Unisciti al canale per gli aggiornamenti:** @Priv8_VD https://t.me/Priv8_VD

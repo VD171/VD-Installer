@@ -33,7 +33,7 @@
 - Niets ondoorzichtigs wordt meegeleverd. Elke gebundelde binary wordt op **buildtijd van zijn officiele
   upstream** opgehaald, nooit van een apparaat getrokken, en elk bestand draagt een sha256 zodat de
   payload gereproduceerd kan worden.
-- Binaries worden gebundeld voor **alle vier de ABI's** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); de
+- Binaries worden gebundeld voor **alle vier de ABI's** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), de
   flash-installer snoeit tot die van het apparaat.
 - Ze draaien zelfstandig: de gedeelde-bibliotheek-closure van elke binary wordt ernaast meegeleverd en de
   engine stelt `LD_LIBRARY_PATH` in op de gebundelde `lib/`, dus er is geen afhankelijkheid van een
@@ -63,7 +63,7 @@ op het apparaat, dus het audittraject wordt met de module zelf meegeleverd.
 2. Haal elke vastgepinde bron opnieuw op van de URL die het registreert.
 3. Pak uit en vergelijk de sha256 van elk bestand met het manifest.
 
-De flashbare zip draagt daarnaast een `.sha256`-metgezel naast elk meegeleverd bestand; `customize.sh`
+De flashbare zip draagt daarnaast een `.sha256`-metgezel naast elk meegeleverd bestand, `customize.sh`
 verifieert ze bij het flashen en **breekt af** bij elke mismatch (een beschadigde of afgekapte zip).
 
 ## Melden
@@ -74,4 +74,4 @@ Een mismatch of een herkomstbezwaar gevonden? Meld het privaat - zie [SECURITY.m
 
 ---
 
-> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom; zie [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Deze documentatie is gegenereerd met Claude (Anthropic) en wordt onderhouden door VD171. Correcties en verbeteringen zijn welkom, zie [CONTRIBUTING.md](CONTRIBUTING.md)._

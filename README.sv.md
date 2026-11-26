@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · Svenska · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> Friktionsfri root-installerare för sidoladdade APK - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">Användarguide</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">AI-agenter</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">Arkitektur</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">Filstruktur</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">Binärer</a> ·
+  <a href="CHANGELOG.md">Ändringslogg</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> Friktionsfri root-installerare för sidoladdade APK: KernelSU / APatch / Magisk WebUI.
+
+## Skärmbilder
+
+<p align="center">
+  <img src="docs/screenshots/sv/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/sv/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/sv/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/sv/about-dark.png" width="24%" alt="About">
+</p>
 
 ## Varför
 
@@ -38,26 +67,26 @@ su"-dialog och utan terminal.
 
 ## Funktioner
 
-- **Varje form av APK** - en enskild `.apk`, en hel mapp med fristående APK:er (batch), ett grupperat
+- **Varje form av APK:** en enskild `.apk`, en hel mapp med fristående APK:er (batch), ett grupperat
   split-arkiv (`.xapk` / `.apkm` / `.apks` / `.zip`) eller en mapp med lösa split-APK:er.
-- **Ingen verifieringsmur** - en 3-lägesväxel för Play Protects paketverifierare: behåll som det var
+- **Ingen verifieringsmur:** en 3-lägesväxel för Play Protects paketverifierare: behåll som det var
   (av endast under installationen, återställd exakt), alltid på eller alltid av.
-- **Ärlig om Developer Verification** - en root-installation är redan undantagen från Androids Developer
-  Verification från 2026; växeln gör sitt bästa och säger det, aldrig en falsk omkopplare.
-- **Inte "sideloaded"** - presenterar valfritt installationskällan som Play Store, både installeraren
+- **Ärlig om Developer Verification:** en root-installation är redan undantagen från Androids Developer
+  Verification från 2026, växeln gör sitt bästa och säger det, aldrig en falsk omkopplare.
+- **Inte "sideloaded":** presenterar valfritt installationskällan som Play Store, både installeraren
   (vid installationstillfället) och initieraren (via en ABX-medveten `packages.xml`-redigering).
-- **Fristående och återupptagbar** - installationer kör som en fristående root-process; att stänga WebUI:t
+- **Fristående och återupptagbar:** installationer kör som en fristående root-process, att stänga WebUI:t
   avbryter dem aldrig, och gränssnittet återansluter via operations-id.
-- **Ditt val** - testpaket, bevilja alla körningsbehörigheter, målanvändare, kringgå
+- **Ditt val:** testpaket, bevilja alla körningsbehörigheter, målanvändare, kringgå
   blockeringen för låg mål-SDK: allt valfritt.
-- **Offline, fristående, omstartsfri** - en WebUI-modul med sina binärer medföljande; användbar i samma
+- **Offline, fristående, omstartsfri:** en WebUI-modul med sina binärer medföljande, användbar i samma
   stund den flashas.
 
 ## AI-agenter
 
 Detta projekt välkomnar bidragsgivare som är AI och agenter. Motorn talar JSON över ett litet huvudlöst
 kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`), dokumenterat i
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md), så att en agent kan driva varje åtgärd som WebUI:t kan - skrapa
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md), så att en agent kan driva varje åtgärd som WebUI:t kan, skrapa
 inte WebUI:t. Patchar från AI hålls till samma granskningskrav som alla andra.
 
 ## Installera
@@ -68,7 +97,7 @@ Installeraren behåller endast din enhets ABI och kör den obligatoriska `.sha25
 
 ## Säkerhet
 
-VDInstaller kör som root och installerar APK:er du väljer; att stänga av paketverifieraren för en
+VDInstaller kör som root och installerar APK:er du väljer, att stänga av paketverifieraren för en
 installation inaktiverar en skadeprogramsökning, så installera endast APK:er du litar på. Den försvagar
 aldrig enhetens säkerhet i tysthet: verifieraren återställs som standard till sitt exakta tidigare
 tillstånd, och den rör aldrig din HMA-OSS-inställning. Rapportera problem enligt [SECURITY.md](SECURITY.md).
@@ -79,6 +108,17 @@ Alltid release, aldrig debug. `.github/scripts/build_bin.sh` hämtar `jq` från 
 (med dess slutna mängd delade bibliotek) och de fristående konverterarna `abx2xml` / `xml2abx`,
 för alla fyra ABI, var och en med en `PROVENANCE.json`. Release-arbetsflödet sammanställer de flashbara
 zip-filerna, skriver `.sha256`-följeslagare, fyller i `update.json` och publicerar som `github-actions[bot]`.
+
+## Inkrementella uppdateringar (VDLU)
+
+VD Installer levereras med **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)**-motorn (inbäddad i `module/vdlu/`): modulen uppdaterar sig själv genom att bara
+hämta de filer som har ändrats (innehållsadresserade blobbar + en signerad `manifest.json`), i stället för att
+ladda ner hela `.zip`-filen igen. **Härdad** profil: ed25519-signaturen är obligatorisk och nedgraderingar
+blockeras, den fullständiga `.zip`-filen förblir giltig som reservalternativ.
+
+- **Endast LIVE** (ingen omstart): uppdateringar tillämpas vid nästa start via `service.sh`, i bakgrunden, en no-op när ingen feed går att nå.
+- **Tillstånd** i `/data/adb/vdinstaller/vdlu/`, utanför modulen, så att det överlever en omflashning.
+- **WebUI:** en **Uppdateringar**-panel med en förloppstoast och avbryt, automatisk uppdatering är opt-in.
 
 ## Dokumentation
 
@@ -99,16 +139,15 @@ Guider finns i [docs/](docs/) och speglas till GitHub-wikin. Se
 
 ## Kontakter
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## Licens
 
@@ -126,6 +165,4 @@ Detta projekt är oberoende och inte anslutet till eller stött av dem.
 
 ---
 
-> Gå med i kanalen: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **Gå med i kanalen för uppdateringar:** @Priv8_VD https://t.me/Priv8_VD

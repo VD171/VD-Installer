@@ -34,23 +34,23 @@ mudah dan ramah untuk dikontribusikan.
 ## Kontributor AI diterima
 
 Kontribusi AI dan agent diterima dengan standar peninjauan yang sama seperti semua orang. Engine
-berbicara JSON melalui headless contract (`scripts/helper.sh <verb> <base64(JSON)>`); lihat
+berbicara JSON melalui headless contract (`scripts/helper.sh <verb> <base64(JSON)>`), lihat
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Jalankan contract-nya, jangan scrape WebUI.
 
 ## Aturan kode
 
 - **Banner per-file lengkap** (SPDX + contacts) di bagian atas setiap file sumber. Jangan pernah yang dipangkas.
 - Kode, identifier, log dan komentar dalam **bahasa Inggris**. Komentar hanya jika menambahkan sesuatu.
-- Shell adalah **POSIX sh** untuk perangkat (`sh -n` harus lolos; tidak ada bashism di luar `local`; tidak ada dependensi `jq` pada jalur kode yang harus berjalan sebelum `jq` bawaan ada di PATH).
-- WebUI adalah **vanilla JS**, tanpa framework; terang dan gelap di semua UI.
-- **Jangan pernah** em-dash atau en-dash; selalu hyphen `-`.
+- Shell adalah **POSIX sh** untuk perangkat (`sh -n` harus lolos, tidak ada bashism di luar `local`, tidak ada dependensi `jq` pada jalur kode yang harus berjalan sebelum `jq` bawaan ada di PATH).
+- WebUI adalah **vanilla JS**, tanpa framework, terang dan gelap di semua UI.
+- **Jangan pernah** em-dash atau en-dash, selalu hyphen `-`.
 - Build selalu **release**, tidak pernah debug.
 - **Jangan pernah melemahkan perilaku nyata** agar sesuatu lolos, dan jangan pernah menghapus konten.
 
 ## Terjemahan
 
 String WebUI berada di `module/webroot/lang/<code>.json` (flat keys, basis bahasa Inggris di
-`lang/en.js`); README memiliki satu `README.<code>.md` per bahasa. Tambahkan atau perbaiki bahasa dan buka PR.
+`lang/en.js`), README memiliki satu `README.<code>.md` per bahasa. Tambahkan atau perbaiki bahasa dan buka PR.
 
 ## Lisensi
 
@@ -60,4 +60,4 @@ Dengan berkontribusi, Anda setuju bahwa kontribusi Anda dilisensikan di bawah GN
 
 ---
 
-> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan; lihat [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan, lihat [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -35,9 +35,9 @@ wywołuje:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-i odczytuje dokładnie jeden obiekt JSON na stdout. Powodzenie to `{"ok":true,...}`; niepowodzenie to
+i odczytuje dokładnie jeden obiekt JSON na stdout. Powodzenie to `{"ok":true,...}`, niepowodzenie to
 `{"ok":false,"code":"ERR_...","message":"..."}`. Długie operacje zwracają `opid`, który odpytujesz. Nie
-zeskrobuj WebUI; używaj tego kontraktu.
+zeskrobuj WebUI, używaj tego kontraktu.
 
 ## Czasowniki
 
@@ -80,12 +80,12 @@ Odpytuj `progress` z `opid`. Obiekt niesie `percent`, `phase`
 ## Bariery bezpieczeństwa
 
 - Przełącznik weryfikatora i edycja `packages.xml` są odwracalne i audytowane (`logs/audit.jsonl`).
-- `install`/`uninstall` zmieniają stan urządzenia; potwierdź intencję przed wywołaniem, tak jak robi to
+- `install`/`uninstall` zmieniają stan urządzenia, potwierdź intencję przed wywołaniem, tak jak robi to
   WebUI.
-- Nigdy nie zeskrobuj ani nie automatyzuj samego WebUI; tym wspieranym interfejsem jest ten kontrakt.
+- Nigdy nie zeskrobuj ani nie automatyzuj samego WebUI, tym wspieranym interfejsem jest ten kontrakt.
 
 <!-- doc-footer -->
 
 ---
 
-> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane; zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Ta dokumentacja została wygenerowana za pomocą Claude (Anthropic) i jest utrzymywana przez VD171. Poprawki i ulepszenia są mile widziane, zobacz [CONTRIBUTING.md](CONTRIBUTING.md)._

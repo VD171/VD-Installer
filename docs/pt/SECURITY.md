@@ -30,7 +30,7 @@
 
 ## Modelo de ameaças em uma linha
 
-O VDInstaller roda como root e instala APKs que o usuário escolhe explicitamente; desligar o
+O VDInstaller roda como root e instala APKs que o usuário escolhe explicitamente, desligar o
 verificador do Play Protect para uma instalação desativa uma varredura de malware, então é "instalação
 sem atrito", não "instalação segura" - instale apenas APKs em que você confia.
 
@@ -38,7 +38,7 @@ sem atrito", não "instalação segura" - instale apenas APKs em que você confi
 
 - Por padrão, ele restaura o verificador de pacotes ao seu exato estado anterior (deixar um `0`/`1`
   onde não havia nenhum já é um indício, então ele é apagado novamente).
-- Ele nunca mexe na sua configuração do HMA-OSS; ocultar apps é uma recomendação que você mesmo executa.
+- Ele nunca mexe na sua configuração do HMA-OSS, ocultar apps é uma recomendação que você mesmo executa.
 - A edição da origem de instalação no `packages.xml` reconhece ABX, faz backup do arquivo ativo byte a
   byte antes de qualquer alteração, faz o round-trip para validar e deixa o arquivo ativo intacto em
   caso de qualquer falha.
@@ -61,4 +61,4 @@ Por favor, reporte primeiro de forma privada. Inclua os passos para reproduzir, 
 
 ---
 
-> _Esta documentação foi gerada com o Claude (Anthropic) e é mantida por VD171. Correções e melhorias são bem-vindas; veja [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Esta documentação foi gerada com o Claude (Anthropic) e é mantida por VD171. Correções e melhorias são bem-vindas, veja [CONTRIBUTING.md](CONTRIBUTING.md)._

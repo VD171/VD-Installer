@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · 中文
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> 无摩擦的 root 旁加载安装器 - KernelSU / APatch / Magisk WebUI。
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">用户指南</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">AI 代理</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">架构</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">文件结构</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">二进制文件</a> ·
+  <a href="CHANGELOG.md">更新日志</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> 无摩擦的 root 旁加载安装器: KernelSU / APatch / Magisk WebUI。
+
+## 截图
+
+<p align="center">
+  <img src="docs/screenshots/zh/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/zh/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/zh/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/zh/about-dark.png" width="24%" alt="About">
+</p>
 
 ## 为什么
 
@@ -37,24 +66,24 @@ session API，而刚装好的应用会向每一个读取其安装来源的应用
 
 ## 特性
 
-- **各种形态的 APK** - 单个 `.apk`、一整个装有独立 APK 的文件夹（批量）、一个成组的分包归档
+- **各种形态的 APK:** 单个 `.apk`、一整个装有独立 APK 的文件夹（批量）、一个成组的分包归档
   （`.xapk` / `.apkm` / `.apks` / `.zip`），或一个装有散落的 split APK 的文件夹。
-- **没有验证墙** - 针对 Play Protect 软件包验证器的三态开关：保持原样（仅在安装期间关闭，之后精确恢复）、
+- **没有验证墙:** 针对 Play Protect 软件包验证器的三态开关：保持原样（仅在安装期间关闭，之后精确恢复）、
   始终开启，或始终关闭。
-- **对 Developer Verification 诚实** - 一次 root 安装本就已被豁免于 Android 的 2026 Developer
+- **对 Developer Verification 诚实:** 一次 root 安装本就已被豁免于 Android 的 2026 Developer
   Verification；该开关是尽力而为的，并会如实说明，绝非一个假开关。
-- **不是 "sideloaded"** - 可选地将安装来源呈现为 Play Store，既包括安装者（在安装时），也包括发起者
+- **不是 "sideloaded":** 可选地将安装来源呈现为 Play Store，既包括安装者（在安装时），也包括发起者
   （通过一次可识别 ABX 的 `packages.xml` 编辑）。
-- **可分离且可续传** - 安装以一个分离的 root 进程运行；关闭 WebUI 绝不会打断它们，界面会按 operation id
+- **可分离且可续传:** 安装以一个分离的 root 进程运行；关闭 WebUI 绝不会打断它们，界面会按 operation id
   重新连接。
-- **由你决定** - 测试包、授予所有运行时权限、目标用户、绕过低目标 SDK 拦截：全部可选。
-- **离线、自成一体、无需重启** - 一个自带二进制文件的 WebUI 模块；刷入即可使用。
+- **由你决定:** 测试包、授予所有运行时权限、目标用户、绕过低目标 SDK 拦截：全部可选。
+- **离线、自成一体、无需重启:** 一个自带二进制文件的 WebUI 模块；刷入即可使用。
 
 ## AI 代理
 
 本项目欢迎 AI 和代理贡献者。引擎通过一份小巧的无头契约
 （`scripts/helper.sh <verb> <base64(JSON)>`）以 JSON 通信，记录于
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md)，因此代理可以驱动 WebUI 能做的每一个动作 - 请勿抓取 WebUI。
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md)，因此代理可以驱动 WebUI 能做的每一个动作, 请勿抓取 WebUI。
 来自 AI 的补丁与其他任何贡献受同样的审查标准约束。
 
 ## 安装
@@ -76,6 +105,14 @@ HMA-OSS 配置。请按 [SECURITY.md](SECURITY.md) 报告问题。
 工作流组装可刷入的 zip、写出 `.sha256` 伴随文件、填充 `update.json`，并以 `github-actions[bot]` 的身份
 发布。
 
+## 增量更新 (VDLU)
+
+VD Installer 附带 **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** 引擎 (内置于 `module/vdlu/`)：模块只获取已更改的文件 (内容寻址的 blob + 一个带签名的 `manifest.json`) 来自我更新，而不是重新下载整个 `.zip`。**加固**配置：ed25519 签名是强制的，降级被阻止；完整的 `.zip` 仍作为回退保持有效。
+
+- **仅 LIVE** (无需重启)：更新会在下次启动时通过 `service.sh` 在后台应用，当没有可达的 feed 时则为空操作。
+- **状态**位于 `/data/adb/vdinstaller/vdlu/`，在模块之外，因此重新刷入后仍然保留。
+- **WebUI:** 一个带有进度 toast 和取消的 **更新** 面板；自动更新为可选 (opt-in)。
+
 ## 文档
 
 指南位于 [docs/](docs/) 并镜像到 GitHub wiki。关于无头契约，参见
@@ -95,16 +132,15 @@ HMA-OSS 配置。请按 [SECURITY.md](SECURITY.md) 报告问题。
 
 ## 联系方式
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## 许可证
 
@@ -122,6 +158,4 @@ Android、KernelSU、APatch、Magisk、Google Play 和 Play Protect 归各自所
 
 ---
 
-> 加入频道：[@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **加入频道以获取更新：** @Priv8_VD https://t.me/Priv8_VD

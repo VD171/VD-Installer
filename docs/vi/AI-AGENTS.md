@@ -35,9 +35,9 @@ WebUI vẫn làm) gọi:
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-và đọc đúng một đối tượng JSON trên stdout. Thành công là `{"ok":true,...}`; thất bại là
+và đọc đúng một đối tượng JSON trên stdout. Thành công là `{"ok":true,...}`, thất bại là
 `{"ok":false,"code":"ERR_...","message":"..."}`. Các thao tác dài trả về một `opid` để bạn thăm dò.
-Đừng cào WebUI; hãy dùng hợp đồng này.
+Đừng cào WebUI, hãy dùng hợp đồng này.
 
 ## Các verb
 
@@ -81,11 +81,11 @@ tất là `done:true` cùng một `result` (single/split), một mảng `results
 
 - Công tắc trình xác minh và việc chỉnh sửa `packages.xml` đều có thể đảo ngược và được kiểm toán
   (`logs/audit.jsonl`).
-- `install`/`uninstall` thay đổi trạng thái thiết bị; hãy xác nhận ý định trước khi gọi, như WebUI làm.
-- Không bao giờ cào hoặc tự động hóa chính WebUI; hợp đồng này là bề mặt được hỗ trợ.
+- `install`/`uninstall` thay đổi trạng thái thiết bị, hãy xác nhận ý định trước khi gọi, như WebUI làm.
+- Không bao giờ cào hoặc tự động hóa chính WebUI, hợp đồng này là bề mặt được hỗ trợ.
 
 <!-- doc-footer -->
 
 ---
 
-> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến; xem [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến, xem [CONTRIBUTING.md](CONTRIBUTING.md)._

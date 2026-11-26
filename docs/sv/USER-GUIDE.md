@@ -76,7 +76,7 @@ Tre flikar:
 
 ## 5. Installera APK-filer
 
-Du väljer läget på fliken **Install**; VDInstaller gissar aldrig.
+Du väljer läget på fliken **Install**, VDInstaller gissar aldrig.
 
 | Läge | Du anger | Vad som händer |
 |---|---|---|
@@ -86,13 +86,13 @@ Du väljer läget på fliken **Install**; VDInstaller gissar aldrig.
 | **Delmapp** | en mapp med de lösa delade `.apk`-filerna för en app | delarna installeras som en app i en enda session. |
 
 En "delad" app är en APK uppdelad i en bas plus konfigurations-APK:er per densitet / per ABI / per
-språk; de måste installeras **tillsammans** i en session, vilket de delade lägena gör åt dig.
+språk, de måste installeras **tillsammans** i en session, vilket de delade lägena gör åt dig.
 
 ### 5.1 Bläddra-dialogen
 
 **Browse** öppnar en filväljare som listar mappar och installerbara filer i en sökväg:
 
-- Tryck på en **mapp** för att gå in i den; **Up** går till den överordnade.
+- Tryck på en **mapp** för att gå in i den, **Up** går till den överordnade.
 - I ett fil-läge (Enskild APK / Delat arkiv), tryck på en **fil** för att välja den.
 - I ett mapp-läge (Mapp med APK-filer / Delmapp), navigera in i mappen och tryck på **Use this folder**.
 
@@ -100,7 +100,7 @@ Du kan också skriva eller klistra in en sökväg direkt (till exempel `/sdcard/
 
 ### 5.2 Förlopp, avbryt, återuppta
 
-Installationer körs som en **frikopplad root-process**. Ett förloppskort visar fasen; **Cancel**
+Installationer körs som en **frikopplad root-process**. Ett förloppskort visar fasen, **Cancel**
 stoppar den. Om du stänger WebUI mitt i en installation fortsätter installationen, och gränssnittet
 återansluter via operations-id när du öppnar det igen.
 
@@ -153,7 +153,7 @@ något.
 ### 6.5 Att förbli dold
 
 För stealth, överväg att dölja din root-hanterare och känsliga appar med HMA-OSS. VDInstaller **rör
-aldrig din HMA-OSS-uppsättning** - tipset är bara en påminnelse; du gör ändringen själv i HMA-OSS.
+aldrig din HMA-OSS-uppsättning** - tipset är bara en påminnelse, du gör ändringen själv i HMA-OSS.
 
 ## 7. Styra VDInstaller från en AI-assistent
 
@@ -167,7 +167,7 @@ verifierarväxeln kvar på **Behåll som det var** (standard) stänger VDInstall
 installationen och återställer den, så det inträffar inte.
 
 **Jag slog på Play Store-källan men appen ser fortfarande sidladdad ut.** Installerar-delen gäller
-omedelbart; initiator-delen (`packages.xml`) gäller **efter nästa omstart**.
+omedelbart, initiator-delen (`packages.xml`) gäller **efter nästa omstart**.
 
 **Kringgår den Googles Utvecklarverifiering?** Den behöver inte - en root-installation är undantagen
 (se 6.3). Det finns ingen falsk brytare för den.
@@ -175,7 +175,7 @@ omedelbart; initiator-delen (`packages.xml`) gäller **efter nästa omstart**.
 **Behöver den en omstart?** Nej, förutom den valfria initiator-förfalskningen.
 
 **Tar avinstallation av VDInstaller bort apparna jag installerade?** Nej - de är riktiga
-installationer som ägs av systemet; att ta bort modulen rensar bara VDInstallers eget tillstånd.
+installationer som ägs av systemet, att ta bort modulen rensar bara VDInstallers eget tillstånd.
 
 **Är den säker?** Den installerar APK-filer du väljer och, med verifieraren av, hoppar över en
 skadeprogramskanning - installera bara APK-filer du litar på. Den försvagar aldrig något i tysthet.
@@ -184,4 +184,4 @@ skadeprogramskanning - installera bara APK-filer du litar på. Den försvagar al
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

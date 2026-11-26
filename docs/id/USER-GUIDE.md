@@ -76,7 +76,7 @@ Tiga tab:
 
 ## 5. Memasang APK
 
-Anda memilih mode di tab **Install**; VDInstaller tidak pernah menebak.
+Anda memilih mode di tab **Install**, VDInstaller tidak pernah menebak.
 
 | Mode | Yang Anda berikan | Yang terjadi |
 |---|---|---|
@@ -86,14 +86,14 @@ Anda memilih mode di tab **Install**; VDInstaller tidak pernah menebak.
 | **Folder split** | sebuah folder berisi berkas `.apk` split lepas dari satu aplikasi | split dipasang sebagai satu aplikasi dalam satu sesi. |
 
 Aplikasi "split" adalah satu APK yang dibagi menjadi sebuah base ditambah APK konfigurasi per-kepadatan /
-per-ABI / per-bahasa; semuanya harus dipasang **bersama** dalam satu sesi, yang dilakukan oleh mode split
+per-ABI / per-bahasa, semuanya harus dipasang **bersama** dalam satu sesi, yang dilakukan oleh mode split
 untuk Anda.
 
 ### 5.1 Dialog Browse
 
 **Browse** membuka pemilih berkas yang menampilkan folder dan berkas yang dapat dipasang di suatu jalur:
 
-- Ketuk sebuah **folder** untuk masuk ke dalamnya; **Up** naik ke folder induk.
+- Ketuk sebuah **folder** untuk masuk ke dalamnya, **Up** naik ke folder induk.
 - Pada mode berkas (APK tunggal / Arsip split), ketuk sebuah **berkas** untuk memilihnya.
 - Pada mode folder (Folder APK / Folder split), masuk ke dalam folder lalu ketuk **Use this folder**.
 
@@ -154,7 +154,7 @@ melakukan apa-apa.
 ### 6.5 Tetap tersembunyi
 
 Untuk stealth, pertimbangkan menyembunyikan pengelola root dan aplikasi sensitif Anda dengan HMA-OSS.
-VDInstaller **tidak pernah menyentuh pengaturan HMA-OSS Anda** - petunjuk ini hanya pengingat; perubahannya
+VDInstaller **tidak pernah menyentuh pengaturan HMA-OSS Anda** - petunjuk ini hanya pengingat, perubahannya
 Anda lakukan sendiri di HMA-OSS.
 
 ## 7. Mengendalikan VDInstaller dari asisten AI
@@ -170,7 +170,7 @@ verifikator dibiarkan pada **Biarkan apa adanya** (default), VDInstaller mematik
 memulihkannya, jadi hal itu tidak terjadi.
 
 **Saya mengaktifkan sumber Play Store tetapi aplikasi masih tampak hasil sideload.** Bagian installer
-berlaku segera; bagian inisiator (`packages.xml`) berlaku **setelah reboot berikutnya**.
+berlaku segera, bagian inisiator (`packages.xml`) berlaku **setelah reboot berikutnya**.
 
 **Apakah ia melewati Developer Verification Google?** Tidak perlu - pemasangan sebagai root dikecualikan
 (lihat 6.3). Tidak ada sakelar palsu untuknya.
@@ -178,7 +178,7 @@ berlaku segera; bagian inisiator (`packages.xml`) berlaku **setelah reboot berik
 **Apakah perlu reboot?** Tidak, kecuali pemalsuan inisiator yang opsional.
 
 **Apakah menghapus VDInstaller akan menghapus aplikasi yang saya pasang?** Tidak - itu adalah pemasangan
-nyata milik sistem; menghapus modul hanya membersihkan keadaan internal VDInstaller sendiri.
+nyata milik sistem, menghapus modul hanya membersihkan keadaan internal VDInstaller sendiri.
 
 **Apakah aman?** Ia memasang APK yang Anda pilih dan, dengan verifikator mati, melewati pemindaian malware -
 pasang hanya APK yang Anda percayai. Ia tidak pernah melemahkan apa pun secara diam-diam.
@@ -187,4 +187,4 @@ pasang hanya APK yang Anda percayai. Ia tidak pernah melemahkan apa pun secara d
 
 ---
 
-> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan; lihat [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Dokumentasi ini dibuat dengan Claude (Anthropic) dan dikelola oleh VD171. Koreksi dan perbaikan dipersilakan, lihat [CONTRIBUTING.md](CONTRIBUTING.md)._

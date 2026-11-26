@@ -31,13 +31,13 @@
 ## एक पंक्ति में खतरा मॉडल
 
 VDInstaller root के रूप में चलता है और उन APKs को install करता है जिन्हें उपयोगकर्ता स्पष्ट रूप से चुनता
-है; किसी install के लिए Play Protect verifier बंद करना एक malware scan को निष्क्रिय कर देता है, इसलिए यह
+है, किसी install के लिए Play Protect verifier बंद करना एक malware scan को निष्क्रिय कर देता है, इसलिए यह
 "frictionless install" है, "safe install" नहीं - केवल उन्हीं APKs को install करें जिन पर आप भरोसा करते हैं।
 
 ## यह क्या करता है और क्या नहीं करता
 
 - यह डिफ़ॉल्ट रूप से package verifier को उसकी ठीक पिछली स्थिति में बहाल करता है (जहाँ कोई मान नहीं था वहाँ `0`/`1` छोड़ना स्वयं एक tell है, इसलिए इसे फिर से हटा दिया जाता है)।
-- यह आपके HMA-OSS setup को कभी नहीं छूता; apps को छिपाना एक अनुशंसा है जिस पर आप स्वयं कार्य करते हैं।
+- यह आपके HMA-OSS setup को कभी नहीं छूता, apps को छिपाना एक अनुशंसा है जिस पर आप स्वयं कार्य करते हैं।
 - `packages.xml` install-source संपादन ABX-aware है, किसी भी परिवर्तन से पहले live फ़ाइल का byte-exact backup लेता है, मान्य करने के लिए round-trip करता है, और किसी भी विफलता पर live फ़ाइल को अछूता छोड़ देता है।
 - Bundled binaries build के समय उनके आधिकारिक upstream से लाए जाते हैं और एक `PROVENANCE.json` रखते हैं।
 
@@ -58,4 +58,4 @@ VDInstaller root के रूप में चलता है और उन AP
 
 ---
 
-> _यह दस्तावेज़ Claude (Anthropic) से तैयार किया गया है और इसे VD171 द्वारा अनुरक्षित किया जाता है। सुधार और संशोधन का स्वागत है; देखें [CONTRIBUTING.md](CONTRIBUTING.md)।_
+> _यह दस्तावेज़ Claude (Anthropic) से तैयार किया गया है और इसे VD171 द्वारा अनुरक्षित किया जाता है। सुधार और संशोधन का स्वागत है, देखें [CONTRIBUTING.md](CONTRIBUTING.md)।_

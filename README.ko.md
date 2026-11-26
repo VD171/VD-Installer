@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · 한국어 · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> 마찰 없는 root 사이드로드 설치 프로그램 - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">사용자 가이드</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">AI 에이전트</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">아키텍처</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">파일 구조</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">포함된 바이너리</a> ·
+  <a href="CHANGELOG.md">변경 이력</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> 마찰 없는 root 사이드로드 설치 프로그램: KernelSU / APatch / Magisk WebUI.
+
+## 스크린샷
+
+<p align="center">
+  <img src="docs/screenshots/ko/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/ko/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/ko/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/ko/about-dark.png" width="24%" alt="About">
+</p>
 
 ## 이유
 
@@ -38,19 +67,19 @@ root 화된 휴대폰에서 사이드로드한 APK를 설치하는 것은 필요
 
 ## 기능
 
-- **모든 형태의 APK** - 단일 `.apk`, 독립적인 APK로 이루어진 폴더 전체(배치), 그룹화된 분할
+- **모든 형태의 APK:** 단일 `.apk`, 독립적인 APK로 이루어진 폴더 전체(배치), 그룹화된 분할
   아카이브(`.xapk` / `.apkm` / `.apks` / `.zip`), 또는 낱개 분할 APK의 폴더.
-- **검증의 벽 없음** - Play Protect 패키지 검증기를 위한 3방향 토글: 원래대로 유지(설치 중에만 끄고
+- **검증의 벽 없음:** Play Protect 패키지 검증기를 위한 3방향 토글: 원래대로 유지(설치 중에만 끄고
   정확히 복원), 항상 켜기, 또는 항상 끄기.
-- **개발자 인증에 대해 정직함** - root 설치는 이미 Android의 2026년 개발자 인증에서 면제됩니다. 이
+- **개발자 인증에 대해 정직함:** root 설치는 이미 Android의 2026년 개발자 인증에서 면제됩니다. 이
   토글은 최선의 노력이며 그 점을 밝히며, 결코 가짜 스위치가 아닙니다.
-- **"사이드로드됨"이 아님** - 선택적으로 설치 소스를 Play 스토어로 제시합니다. 설치 프로그램(설치
+- **"사이드로드됨"이 아님:** 선택적으로 설치 소스를 Play 스토어로 제시합니다. 설치 프로그램(설치
   시점)과 개시자(ABX를 인식하는 `packages.xml` 편집을 통해) 모두.
-- **분리 가능하고 재개 가능** - 설치는 분리된 root 프로세스로 실행됩니다. WebUI를 닫아도 중단되지
+- **분리 가능하고 재개 가능:** 설치는 분리된 root 프로세스로 실행됩니다. WebUI를 닫아도 중단되지
   않으며, UI는 작업 ID로 다시 연결됩니다.
-- **당신의 선택** - 테스트 패키지, 모든 런타임 권한 부여, 대상 사용자, 낮은 타겟 SDK
+- **당신의 선택:** 테스트 패키지, 모든 런타임 권한 부여, 대상 사용자, 낮은 타겟 SDK
   차단 우회: 모두 선택 사항입니다.
-- **오프라인, 자체 완결, 재부팅 불필요** - 바이너리가 번들된 WebUI 모듈. 플래시하는 순간부터
+- **오프라인, 자체 완결, 재부팅 불필요:** 바이너리가 번들된 WebUI 모듈. 플래시하는 순간부터
   사용할 수 있습니다.
 
 ## AI 에이전트
@@ -58,7 +87,7 @@ root 화된 휴대폰에서 사이드로드한 APK를 설치하는 것은 필요
 이 프로젝트는 AI 및 에이전트 기여자를 환영합니다. 엔진은 작은 헤드리스 계약
 (`scripts/helper.sh <verb> <base64(JSON)>`) 위에서 JSON으로 통신하며, 이는
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md)에 문서화되어 있어 에이전트가 WebUI가 할 수 있는 모든
-작업을 구동할 수 있습니다 - WebUI를 스크레이프하지 마세요. AI의 패치도 다른 것과 동일한 검토
+작업을 구동할 수 있습니다, WebUI를 스크레이프하지 마세요. AI의 패치도 다른 것과 동일한 검토
 기준으로 다룹니다.
 
 ## 설치
@@ -81,6 +110,14 @@ VDInstaller는 root로 실행되며 당신이 선택한 APK를 설치합니다. 
 각각 `PROVENANCE.json`과 함께 가져옵니다. 릴리스 워크플로는 플래시 가능한 zip을 조립하고 `.sha256`
 동반 파일을 쓰고 `update.json`을 채우며 `github-actions[bot]`로 게시합니다.
 
+## 증분 업데이트 (VDLU)
+
+VD Installer는 **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** 엔진을 포함합니다 (`module/vdlu/`에 내장). 모듈은 전체 `.zip`을 다시 내려받는 대신 변경된 파일만 가져와 자신을 업데이트합니다 (콘텐츠 주소 지정 블롭 + 서명된 `manifest.json`). **강화된** 프로파일: ed25519 서명이 필수이며 다운그레이드는 차단됩니다. 전체 `.zip`은 폴백으로 계속 유효합니다.
+
+- **LIVE 전용** (재부팅 없음): 업데이트는 `service.sh`를 통해 다음 부팅 시 백그라운드로 적용되며, 도달 가능한 피드가 없으면 아무 작업도 하지 않습니다.
+- **상태**는 `/data/adb/vdinstaller/vdlu/`에 있으며, 모듈 외부에 있으므로 재플래시 후에도 유지됩니다.
+- **WebUI:** 진행 토스트와 취소가 있는 **업데이트** 패널이며, 자동 업데이트는 옵트인입니다.
+
 ## 문서
 
 가이드는 [docs/](docs/)에 있으며 GitHub wiki에 미러됩니다. 헤드리스 계약에 대해서는
@@ -100,16 +137,15 @@ VDInstaller는 root로 실행되며 당신이 선택한 APK를 설치합니다. 
 
 ## 연락처
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## 라이선스
 
@@ -127,6 +163,4 @@ Android, KernelSU, APatch, Magisk, Google Play 및 Play Protect는 각 소유자
 
 ---
 
-> 채널에 참여하세요: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **업데이트를 받으려면 채널에 참여하세요:** @Priv8_VD https://t.me/Priv8_VD

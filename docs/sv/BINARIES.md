@@ -33,7 +33,7 @@
 - Inget ogenomskinligt levereras. Varje medföljande binär hämtas vid **byggtid från sin officiella
   uppström**, aldrig dragen från en enhet, och varje fil bär en sha256 så att nyttolasten kan
   reproduceras.
-- Binärer levereras för **alla fyra ABI:er** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); flash-
+- Binärer levereras för **alla fyra ABI:er** (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), flash-
   installeraren beskär till enhetens enda.
 - De körs fristående: varje binärs delade biblioteksslutning levereras bredvid och motorn sätter
   `LD_LIBRARY_PATH` till den medföljande `lib/`, så det finns inget beroende av att Termux är
@@ -75,4 +75,4 @@ Hittade du en avvikelse eller en proveniensoro? Rapportera den privat - se [SECU
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

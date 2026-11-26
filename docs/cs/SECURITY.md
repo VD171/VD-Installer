@@ -30,7 +30,7 @@
 
 ## Model hrozeb v jedné větě
 
-VDInstaller běží jako root a instaluje APK, které si uživatel výslovně zvolí; vypnutí verifikátoru
+VDInstaller běží jako root a instaluje APK, které si uživatel výslovně zvolí, vypnutí verifikátoru
 Play Protect pro instalaci deaktivuje kontrolu malwaru, takže jde o "instalaci bez tření", nikoli
 o "bezpečnou instalaci" - instalujte pouze APK, kterým důvěřujete.
 
@@ -38,7 +38,7 @@ o "bezpečnou instalaci" - instalujte pouze APK, kterým důvěřujete.
 
 - Ve výchozím nastavení obnoví verifikátor balíčků přesně do jeho předchozího stavu (ponechání
   `0`/`1` tam, kde nebylo nic, je samo o sobě prozrazením, proto se opět smaže).
-- Nikdy nezasahuje do vašeho nastavení HMA-OSS; skrývání aplikací je doporučení, které provedete sami.
+- Nikdy nezasahuje do vašeho nastavení HMA-OSS, skrývání aplikací je doporučení, které provedete sami.
 - Úprava zdroje instalace v `packages.xml` zohledňuje ABX, bajt po bajtu zazálohuje živý soubor
   před jakoukoli změnou, provede obousměrný převod pro ověření a při jakémkoli selhání ponechá
   živý soubor nedotčený.
@@ -61,4 +61,4 @@ Nahlaste ji prosím nejprve soukromě. Uveďte kroky k reprodukci, dotčenou ver
 
 ---
 
-> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány; viz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány, viz [CONTRIBUTING.md](CONTRIBUTING.md)._

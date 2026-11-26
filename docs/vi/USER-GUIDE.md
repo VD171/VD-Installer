@@ -76,7 +76,7 @@ Ba thẻ:
 
 ## 5. Cài đặt APK
 
-Bạn chọn chế độ trên thẻ **Install**; VDInstaller không bao giờ đoán.
+Bạn chọn chế độ trên thẻ **Install**, VDInstaller không bao giờ đoán.
 
 | Chế độ | Bạn cung cấp | Điều gì xảy ra |
 |---|---|---|
@@ -86,14 +86,14 @@ Bạn chọn chế độ trên thẻ **Install**; VDInstaller không bao giờ �
 | **Split folder** | một thư mục chứa các tập tin split `.apk` rời rạc của một ứng dụng | các split được cài làm một ứng dụng trong một phiên duy nhất. |
 
 Một ứng dụng "split" là một APK được chia thành một bản base cộng với các APK cấu hình theo từng mật độ
-/ từng ABI / từng ngôn ngữ; chúng phải được cài đặt **cùng nhau** trong một phiên, điều mà các chế độ
+/ từng ABI / từng ngôn ngữ, chúng phải được cài đặt **cùng nhau** trong một phiên, điều mà các chế độ
 Split làm thay cho bạn.
 
 ### 5.1 Hộp thoại Browse
 
 **Browse** mở trình chọn tập tin, liệt kê các thư mục và các tập tin có thể cài đặt tại một đường dẫn:
 
-- Chạm vào một **thư mục** để đi vào trong đó; **Up** quay về thư mục cha.
+- Chạm vào một **thư mục** để đi vào trong đó, **Up** quay về thư mục cha.
 - Trong chế độ tập tin (Single APK / Split archive), chạm vào một **tập tin** để chọn nó.
 - Trong chế độ thư mục (Folder of APKs / Split folder), điều hướng vào thư mục rồi chạm
   **Use this folder**.
@@ -155,7 +155,7 @@ bật một công tắc chẳng làm gì.
 ### 6.5 Giữ ẩn
 
 Để ẩn danh, hãy cân nhắc ẩn trình quản lý root và các ứng dụng nhạy cảm của bạn bằng HMA-OSS.
-VDInstaller **không bao giờ đụng đến thiết lập HMA-OSS của bạn** - gợi ý chỉ là một lời nhắc; bạn tự
+VDInstaller **không bao giờ đụng đến thiết lập HMA-OSS của bạn** - gợi ý chỉ là một lời nhắc, bạn tự
 thực hiện thay đổi đó trong HMA-OSS.
 
 ## 7. Điều khiển VDInstaller từ trợ lý AI
@@ -170,7 +170,7 @@ tắc trình xác minh để ở **Keep as it was** (mặc định), VDInstaller
 phục, nên điều đó không xảy ra.
 
 **Tôi đã bật nguồn Play Store nhưng ứng dụng vẫn trông giống được sideload.** Phần trình cài đặt áp dụng
-ngay lập tức; phần trình khởi tạo (`packages.xml`) áp dụng **sau lần khởi động lại kế tiếp**.
+ngay lập tức, phần trình khởi tạo (`packages.xml`) áp dụng **sau lần khởi động lại kế tiếp**.
 
 **Nó có vượt qua Developer Verification của Google không?** Nó không cần - một lần cài đặt bằng root
 được miễn (xem 6.3). Không có công tắc giả nào cho nó.
@@ -178,7 +178,7 @@ ngay lập tức; phần trình khởi tạo (`packages.xml`) áp dụng **sau l
 **Nó có cần khởi động lại không?** Không, trừ việc giả mạo trình khởi tạo tùy chọn.
 
 **Gỡ cài đặt VDInstaller có xóa các ứng dụng tôi đã cài không?** Không - đó là những lần cài đặt thật sự
-do hệ thống sở hữu; gỡ mô-đun chỉ dọn dẹp trạng thái riêng của VDInstaller.
+do hệ thống sở hữu, gỡ mô-đun chỉ dọn dẹp trạng thái riêng của VDInstaller.
 
 **Nó có an toàn không?** Nó cài các APK mà bạn chọn và, khi tắt trình xác minh, bỏ qua một lần quét phần
 mềm độc hại - chỉ cài những APK mà bạn tin tưởng. Nó không bao giờ âm thầm làm yếu bất cứ thứ gì.
@@ -187,4 +187,4 @@ mềm độc hại - chỉ cài những APK mà bạn tin tưởng. Nó không b
 
 ---
 
-> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến; xem [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tài liệu này được tạo bằng Claude (Anthropic) và được duy trì bởi VD171. Chúng tôi hoan nghênh các chỉnh sửa và cải tiến, xem [CONTRIBUTING.md](CONTRIBUTING.md)._

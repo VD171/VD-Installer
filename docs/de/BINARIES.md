@@ -33,7 +33,7 @@
 - Nichts Undurchsichtiges wird ausgeliefert. Jede mitgelieferte Binary wird zur **Build-Zeit von ihrem
   offiziellen Upstream** bezogen, nie von einem Gerät gezogen, und jede Datei trägt eine sha256, sodass
   die Nutzlast reproduziert werden kann.
-- Binaries werden für **alle vier ABIs** mitgeliefert (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`); der
+- Binaries werden für **alle vier ABIs** mitgeliefert (`arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64`), der
   Flash-Installer reduziert auf die eine des Geräts.
 - Sie laufen eigenständig: der Shared-Library-Abschluss jeder Binary wird mitgeliefert und die Engine
   setzt `LD_LIBRARY_PATH` auf das mitgelieferte `lib/`, sodass keine Abhängigkeit von einem installierten
@@ -76,4 +76,4 @@ Eine Abweichung oder ein Herkunftsproblem gefunden? Melde es privat - siehe [SEC
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -21,7 +21,7 @@
    E-mail         : vd.priv8@pm.me
   ======================================================================
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="VDInstaller">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="VD Installer">
   <rect x="2" y="2" width="44" height="44" rx="11" fill="#1e2126"/>
   <path d="M24 9 v17 m0 0 l-7.5 -7.5 M24 26 l7.5 -7.5" fill="none" stroke="#2ecc71" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M12.5 30 v5.5 a3.5 3.5 0 0 0 3.5 3.5 h16 a3.5 3.5 0 0 0 3.5 -3.5 V30" fill="none" stroke="#e8eaed" stroke-width="3.6" stroke-linecap="round"/>

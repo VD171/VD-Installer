@@ -76,7 +76,7 @@ güncellemeler boyunca korunur.
 
 ## 5. APK kurma
 
-Modu **Install** sekmesinde siz seçersiniz; VDInstaller asla tahmin etmez.
+Modu **Install** sekmesinde siz seçersiniz, VDInstaller asla tahmin etmez.
 
 | Mod | Siz verirsiniz | Ne olur |
 |---|---|---|
@@ -86,14 +86,14 @@ Modu **Install** sekmesinde siz seçersiniz; VDInstaller asla tahmin etmez.
 | **Bölüm klasörü** | tek bir uygulamanın dağınık bölünmüş `.apk` dosyalarını içeren bir klasör | bölümler tek bir oturumda tek uygulama olarak kurulur. |
 
 "Bölünmüş" bir uygulama, bir tabana artı yoğunluk başına / ABI başına / dil başına yapılandırma
-APK'lerine ayrılmış bir APK'dir; bunlar bir oturumda **birlikte** kurulmalıdır ve bölme modları bunu
+APK'lerine ayrılmış bir APK'dir, bunlar bir oturumda **birlikte** kurulmalıdır ve bölme modları bunu
 sizin için yapar.
 
 ### 5.1 Gözat iletişim kutusu
 
 **Browse**, bir yoldaki klasörleri ve kurulabilir dosyaları listeleyen bir dosya seçici açar:
 
-- İçine girmek için bir **klasöre** dokunun; **Up** üst klasöre gider.
+- İçine girmek için bir **klasöre** dokunun, **Up** üst klasöre gider.
 - Bir dosya modunda (Tek APK / Bölünmüş arşiv), seçmek için bir **dosyaya** dokunun.
 - Bir klasör modunda (APK klasörü / Bölüm klasörü), klasörün içine gidin ve **Use this folder**'a
   dokunun.
@@ -102,7 +102,7 @@ Ayrıca bir yolu doğrudan yazabilir veya yapıştırabilirsiniz (örneğin `/sd
 
 ### 5.2 İlerleme, iptal, sürdürme
 
-Kurulumlar **ayrılmış bir root işlemi** olarak çalışır. Bir ilerleme kartı aşamayı gösterir; **Cancel**
+Kurulumlar **ayrılmış bir root işlemi** olarak çalışır. Bir ilerleme kartı aşamayı gösterir, **Cancel**
 onu durdurur. Kurulumun ortasında WebUI'yi kapatırsanız kurulum devam eder ve arayüz yeniden
 açtığınızda işlem kimliğine göre yeniden bağlanır.
 
@@ -155,7 +155,7 @@ yapan ve dürüsttür**: gerçek bir düğme yalnızca varsa uygular ve hiçbir 
 ### 6.5 Gizli kalmak
 
 Stealth için root yöneticinizi ve hassas uygulamalarınızı HMA-OSS ile gizlemeyi düşünün. VDInstaller
-**HMA-OSS kurulumunuza asla dokunmaz** - bu ipucu yalnızca bir hatırlatmadır; değişikliği HMA-OSS
+**HMA-OSS kurulumunuza asla dokunmaz** - bu ipucu yalnızca bir hatırlatmadır, değişikliği HMA-OSS
 içinde kendiniz yaparsınız.
 
 ## 7. VDInstaller'ı bir yapay zeka asistanıyla kullanma
@@ -171,7 +171,7 @@ Doğrulayıcı anahtarı **Olduğu gibi bırak** (varsayılan) konumundayken VDI
 kapatır ve geri yükler, böylece bu olmaz.
 
 **Play Store kaynağını açtım ama uygulama hâlâ sideload edilmiş görünüyor.** Kurucu kısmı hemen
-uygulanır; başlatıcı kısmı (`packages.xml`) **bir sonraki yeniden başlatmadan sonra** uygulanır.
+uygulanır, başlatıcı kısmı (`packages.xml`) **bir sonraki yeniden başlatmadan sonra** uygulanır.
 
 **Google'ın Developer Verification özelliğini atlıyor mu?** Buna gerek yok - bir root kurulumu muaftır
 (bkz. 6.3). Bunun için sahte bir anahtar yoktur.
@@ -179,7 +179,7 @@ uygulanır; başlatıcı kısmı (`packages.xml`) **bir sonraki yeniden başlatm
 **Yeniden başlatma gerektiriyor mu?** İsteğe bağlı başlatıcı taklidi dışında hayır.
 
 **VDInstaller'ı kaldırmak kurduğum uygulamaları siler mi?** Hayır - bunlar sistemin sahip olduğu
-gerçek kurulumlardır; modülü kaldırmak yalnızca VDInstaller'ın kendi durumunu temizler.
+gerçek kurulumlardır, modülü kaldırmak yalnızca VDInstaller'ın kendi durumunu temizler.
 
 **Güvenli mi?** Seçtiğiniz APK'leri kurar ve doğrulayıcı kapalıyken bir kötü amaçlı yazılım taramasını
 atlar - yalnızca güvendiğiniz APK'leri kurun. Hiçbir şeyi asla sessizce zayıflatmaz.
@@ -188,4 +188,4 @@ atlar - yalnızca güvendiğiniz APK'leri kurun. Hiçbir şeyi asla sessizce zay
 
 ---
 
-> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır; bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır, bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._

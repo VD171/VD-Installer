@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · Українська · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> Безперешкодний root-інсталятор sideload - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">Посібник користувача</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">Агенти ШІ</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">Архітектура</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">Структура файлів</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">Бінарні файли</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> Безперешкодний root-інсталятор sideload: KernelSU / APatch / Magisk WebUI.
+
+## Знімки екрана
+
+<p align="center">
+  <img src="docs/screenshots/uk/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/uk/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/uk/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/uk/about-dark.png" width="24%" alt="About">
+</p>
 
 ## Навіщо
 
@@ -38,28 +67,28 @@ Play Protect може видати `INSTALL_FAILED_VERIFICATION_FAILURE`, split-
 
 ## Можливості
 
-- **Будь-яка форма APK** - окремий `.apk`, ціла папка незалежних APK (пакетно), згрупований
+- **Будь-яка форма APK:** окремий `.apk`, ціла папка незалежних APK (пакетно), згрупований
   split-архів (`.xapk` / `.apkm` / `.apks` / `.zip`) або папка окремих split-APK.
-- **Жодної стіни верифікації** - перемикач на 3 стани для верифікатора пакунків Play Protect:
+- **Жодної стіни верифікації:** перемикач на 3 стани для верифікатора пакунків Play Protect:
   залишити як було (вимкнено лише під час встановлення, відновлюється точно), завжди увімкнено або
   завжди вимкнено.
-- **Чесно щодо Developer Verification** - root-встановлення вже звільнене від Android Developer
-  Verification 2026 року; перемикач працює за найкращих зусиль і каже про це, він ніколи не є
+- **Чесно щодо Developer Verification:** root-встановлення вже звільнене від Android Developer
+  Verification 2026 року, перемикач працює за найкращих зусиль і каже про це, він ніколи не є
   фальшивим.
-- **Не "sideload"** - за бажанням подає джерело встановлення як Play Store, як інсталятора (під час
+- **Не "sideload":** за бажанням подає джерело встановлення як Play Store, як інсталятора (під час
   встановлення), так і ініціатора (через ABX-сумісне редагування `packages.xml`).
-- **Відокремлене й відновлюване** - встановлення виконуються як відокремлений root-процес; закриття
+- **Відокремлене й відновлюване:** встановлення виконуються як відокремлений root-процес, закриття
   WebUI ніколи їх не перериває, а інтерфейс повторно під'єднується за ідентифікатором операції.
-- **Ваше рішення** - тестові пакунки, надання всіх дозволів часу виконання,
+- **Ваше рішення:** тестові пакунки, надання всіх дозволів часу виконання,
   цільовий користувач, обхід блокування низького цільового SDK: усе необов'язкове.
-- **Офлайн, самодостатній, без перезавантаження** - WebUI-модуль із вбудованими двійковими файлами;
+- **Офлайн, самодостатній, без перезавантаження:** WebUI-модуль із вбудованими двійковими файлами,
   придатний до використання одразу після прошивки.
 
 ## Агенти ШІ
 
 Цей проєкт вітає внески ШІ та агентів. Рушій спілкується у форматі JSON через невеликий
 headless-контракт (`scripts/helper.sh <verb> <base64(JSON)>`), задокументований у
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md), тож агент може виконувати будь-яку дію, доступну WebUI - не
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md), тож агент може виконувати будь-яку дію, доступну WebUI, не
 скрейпте WebUI. Патчі від ШІ проходять ту саму планку рецензування, що й будь-які інші.
 
 ## Встановлення
@@ -70,7 +99,7 @@ headless-контракт (`scripts/helper.sh <verb> <base64(JSON)>`), задо�
 
 ## Безпека
 
-VDInstaller працює як root і встановлює вибрані вами APK; вимкнення верифікатора пакунків для
+VDInstaller працює як root і встановлює вибрані вами APK, вимкнення верифікатора пакунків для
 встановлення вимикає сканування на шкідливе ПЗ, тож встановлюйте лише APK, яким довіряєте. Він
 ніколи не послаблює безпеку пристрою потайки: за замовчуванням верифікатор відновлюється до точного
 попереднього стану, і він ніколи не торкається вашого налаштування HMA-OSS. Повідомляйте про
@@ -82,6 +111,17 @@ VDInstaller працює як root і встановлює вибрані вам
 (разом із замиканням спільних бібліотек) і автономні конвертери `abx2xml` / `xml2abx` для всіх
 чотирьох ABI, кожен із `PROVENANCE.json`. Робочий процес випуску збирає прошивані zip, записує
 супутні `.sha256`, заповнює `update.json` і публікує як `github-actions[bot]`.
+
+## Інкрементні оновлення (VDLU)
+
+VD Installer постачається з рушієм **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** (вбудований у `module/vdlu/`): модуль оновлює себе, завантажуючи лише ті
+файли, що змінилися (адресовані за вмістом блоби + підписаний `manifest.json`), замість повторного
+завантаження всього `.zip`. **Посилений** профіль: підпис ed25519 обов'язковий, а пониження версії
+блокуються, повний `.zip` залишається дійсним як запасний варіант.
+
+- **Лише LIVE** (без перезавантаження): оновлення застосовуються під час наступного завантаження через `service.sh`, у фоні, і нічого не роблять, коли жоден feed недоступний.
+- **Стан** у `/data/adb/vdinstaller/vdlu/`, поза модулем, тож він переживає перепрошивку.
+- **WebUI:** панель **Оновлення** зі спливним сповіщенням про прогрес і скасуванням, автоматичне оновлення вмикається за бажанням.
 
 ## Документація
 
@@ -102,16 +142,15 @@ VDInstaller працює як root і встановлює вибрані вам
 
 ## Contacts
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## Ліцензія
 
@@ -129,6 +168,4 @@ Android, KernelSU, APatch, Magisk, Google Play і Play Protect належать 
 
 ---
 
-> Приєднуйтесь до каналу: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **Приєднуйтесь до каналу для оновлень:** @Priv8_VD https://t.me/Priv8_VD

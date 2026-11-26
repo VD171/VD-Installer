@@ -34,23 +34,23 @@ efter att vara enkelt och inbjudande att bidra till.
 ## AI-bidragsgivare är välkomna
 
 AI- och agentbidrag är välkomna på samma granskningsnivå som alla andra. Motorn talar JSON över ett
-headless-kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`); se
+headless-kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`), se
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Driv kontraktet, skrapa inte WebUI:t.
 
 ## Kodregler
 
 - **Fullständig banner per fil** (SPDX + kontakter) överst i varje källfil. Aldrig en nedkortad.
 - Kod, identifierare, loggar och kommentarer på **engelska**. Kommentarer endast när de tillför något.
-- Skalet är **POSIX sh** för enheten (`sh -n` måste passera; inga bashismer utöver `local`; inget `jq`-beroende i kodvägar som måste köras innan den medföljande `jq` finns på PATH).
-- WebUI:t är **vanilla JS**, inget ramverk; ljust och mörkt i hela gränssnittet.
-- **Aldrig** ett em-streck eller en-streck; alltid ett bindestreck `-`.
+- Skalet är **POSIX sh** för enheten (`sh -n` måste passera, inga bashismer utöver `local`, inget `jq`-beroende i kodvägar som måste köras innan den medföljande `jq` finns på PATH).
+- WebUI:t är **vanilla JS**, inget ramverk, ljust och mörkt i hela gränssnittet.
+- **Aldrig** ett em-streck eller en-streck, alltid ett bindestreck `-`.
 - Bygget är alltid **release**, aldrig debug.
 - **Försvaga aldrig ett verkligt beteende** för att få något att passera, och ta aldrig bort innehåll.
 
 ## Översättningar
 
 WebUI-strängarna finns i `module/webroot/lang/<code>.json` (platta nycklar, engelsk bas i
-`lang/en.js`); README har en `README.<code>.md` per språk. Lägg till eller åtgärda ett språk och öppna en PR.
+`lang/en.js`), README har en `README.<code>.md` per språk. Lägg till eller åtgärda ett språk och öppna en PR.
 
 ## Licens
 
@@ -60,4 +60,4 @@ Genom att bidra godkänner du att ditt bidrag licensieras under GNU AGPL-3.0-or-
 
 ---
 
-> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas; se [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Denna dokumentation genererades med Claude (Anthropic) och underhålls av VD171. Rättelser och förbättringar välkomnas, se [CONTRIBUTING.md](CONTRIBUTING.md)._

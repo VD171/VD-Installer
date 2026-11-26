@@ -112,6 +112,17 @@ Push `vdlu-feed/{manifest.json,blobs/}` to the Pages tree of `VD-Modules` under 
 spaced batch (never file-by-file live - the GitHub write rules, `MODULO_VDLU.md` §2/§13). Keep the
 previous release's feed around to pass as `--prev` next time so `delete[]` prunes removed paths.
 
+**MANDATORY after the push (HARD, STANDARDS 7.2):** prove the LIVE feed head actually advanced, else a
+stale feed downgrades devices on boot. Run:
+
+```
+.github/scripts/verify-live-feed.sh VD-Installer <versionCode>
+```
+
+`verify-live-feed` curls the live `manifest.json` and FAILS if its head != the released `versionCode`. The
+feed-name is the VD-Modules DIR name `VD-Installer`, NOT the module id `vdinstaller` (they diverge). A 0
+exit is the only proof the feed moved - do not declare the release done until it passes.
+
 ## Key rotation
 
 Add the new `vd-<year>.pub` to `module/vdlu/keyring/` **alongside** the old one and sign with the new

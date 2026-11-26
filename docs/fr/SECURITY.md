@@ -30,7 +30,7 @@
 
 ## Modele de menace en une ligne
 
-VDInstaller s'execute en tant que root et installe des APKs que l'utilisateur choisit explicitement; couper
+VDInstaller s'execute en tant que root et installe des APKs que l'utilisateur choisit explicitement, couper
 le verificateur Play Protect pour une installation desactive une analyse antimalware, c'est donc une
 "installation sans friction", pas une "installation sure" - n'installez que des APKs de confiance.
 
@@ -38,7 +38,7 @@ le verificateur Play Protect pour une installation desactive une analyse antimal
 
 - Il restaure par defaut le verificateur de paquets a son etat anterieur exact (laisser un `0`/`1` la ou il
   n'y en avait aucun est en soi un indice, il est donc supprime de nouveau).
-- Il ne touche jamais a votre configuration HMA-OSS; masquer des apps est une recommandation que vous
+- Il ne touche jamais a votre configuration HMA-OSS, masquer des apps est une recommandation que vous
   appliquez vous-meme.
 - La modification de la source d'installation dans `packages.xml` reconnait ABX, sauvegarde le fichier actif
   a l'octet pres avant tout changement, effectue un aller-retour pour valider et laisse le fichier actif
@@ -62,4 +62,4 @@ Veuillez signaler d'abord en prive. Incluez les etapes pour reproduire, la versi
 
 ---
 
-> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues ; voir [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Cette documentation a été générée avec Claude (Anthropic) et est maintenue par VD171. Les corrections et améliorations sont les bienvenues, voir [CONTRIBUTING.md](CONTRIBUTING.md)._

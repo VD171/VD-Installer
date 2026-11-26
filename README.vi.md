@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · [العربية](README.ar.md) · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · Tiếng Việt · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> Trình cài sideload qua root không rào cản - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">Hướng dẫn người dùng</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">Tác nhân AI</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">Kiến trúc</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">Cấu trúc tệp</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">Tệp nhị phân</a> ·
+  <a href="CHANGELOG.md">Nhật ký thay đổi</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> Trình cài sideload qua root không rào cản: KernelSU / APatch / Magisk WebUI.
+
+## Ảnh chụp màn hình
+
+<p align="center">
+  <img src="docs/screenshots/vi/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/vi/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/vi/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/vi/about-dark.png" width="24%" alt="About">
+</p>
 
 ## Tại sao
 
@@ -38,20 +67,20 @@ cần dùng session API bằng tay, và một app vừa cài sẽ tự khai là 
 
 ## Tính năng
 
-- **Mọi hình thức APK** - một `.apk` đơn lẻ, cả một thư mục các APK độc lập (batch), một archive chia
+- **Mọi hình thức APK:** một `.apk` đơn lẻ, cả một thư mục các APK độc lập (batch), một archive chia
   nhỏ theo nhóm (`.xapk` / `.apkm` / `.apks` / `.zip`), hoặc một thư mục chứa các split APK rời rạc.
-- **Không còn bức tường xác minh** - một công tắc 3 trạng thái cho trình xác minh gói của Play Protect:
+- **Không còn bức tường xác minh:** một công tắc 3 trạng thái cho trình xác minh gói của Play Protect:
   giữ nguyên như cũ (chỉ tắt trong lúc cài, rồi khôi phục chính xác), luôn bật, hoặc luôn tắt.
-- **Trung thực về Developer Verification** - một bản cài qua root vốn đã được miễn trừ khỏi Developer
-  Verification 2026 của Android; công tắc này chỉ là nỗ lực tối đa và nói rõ điều đó, không bao giờ là một
+- **Trung thực về Developer Verification:** một bản cài qua root vốn đã được miễn trừ khỏi Developer
+  Verification 2026 của Android, công tắc này chỉ là nỗ lực tối đa và nói rõ điều đó, không bao giờ là một
   nút giả.
-- **Không phải "sideloaded"** - tùy chọn trình bày nguồn cài đặt là Play Store, cả phần trình cài (lúc
+- **Không phải "sideloaded":** tùy chọn trình bày nguồn cài đặt là Play Store, cả phần trình cài (lúc
   cài) lẫn phần khởi tạo (qua một chỉnh sửa `packages.xml` có nhận biết ABX).
-- **Tách rời và có thể tiếp tục** - các bản cài chạy như một tiến trình root tách rời; đóng WebUI không
+- **Tách rời và có thể tiếp tục:** các bản cài chạy như một tiến trình root tách rời, đóng WebUI không
   bao giờ làm gián đoạn chúng, và giao diện gắn kết lại theo operation id.
-- **Bạn quyết định** - gói test, cấp mọi quyền runtime, người dùng đích, bỏ qua chặn target
+- **Bạn quyết định:** gói test, cấp mọi quyền runtime, người dùng đích, bỏ qua chặn target
   SDK thấp: tất cả đều tùy chọn.
-- **Offline, tự chứa đủ, không cần khởi động lại** - một module WebUI với các binary đóng kèm; dùng được
+- **Offline, tự chứa đủ, không cần khởi động lại:** một module WebUI với các binary đóng kèm, dùng được
   ngay khi vừa flash.
 
 ## Tác nhân AI
@@ -59,7 +88,7 @@ cần dùng session API bằng tay, và một app vừa cài sẽ tự khai là 
 Dự án này chào đón những người đóng góp là AI và tác nhân. Engine nói JSON qua một hợp đồng headless nhỏ
 (`scripts/helper.sh <verb> <base64(JSON)>`), được mô tả trong
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md), nên một tác nhân có thể điều khiển mọi hành động mà WebUI làm
-được - đừng scrape WebUI. Các bản vá từ AI được đánh giá theo cùng tiêu chuẩn review như bất kỳ đóng góp
+được, đừng scrape WebUI. Các bản vá từ AI được đánh giá theo cùng tiêu chuẩn review như bất kỳ đóng góp
 nào khác.
 
 ## Cài đặt
@@ -70,7 +99,7 @@ bạn. Trình cài chỉ giữ lại ABI của thiết bị bạn và chạy c�
 
 ## Bảo mật
 
-VDInstaller chạy ở chế độ root và cài những APK bạn chọn; tắt trình xác minh gói cho một bản cài sẽ vô
+VDInstaller chạy ở chế độ root và cài những APK bạn chọn, tắt trình xác minh gói cho một bản cài sẽ vô
 hiệu hóa một lần quét mã độc, nên chỉ cài những APK bạn tin tưởng. Nó không bao giờ âm thầm làm yếu đi
 bảo mật thiết bị: theo mặc định trình xác minh được khôi phục về đúng trạng thái trước đó, và nó không
 bao giờ động vào thiết lập HMA-OSS của bạn. Báo lỗi theo [SECURITY.md](SECURITY.md).
@@ -81,6 +110,17 @@ Luôn release, không bao giờ debug. `.github/scripts/build_bin.sh` lấy `jq`
 với bề mặt thư viện chia sẻ của nó) và các trình chuyển đổi `abx2xml` / `xml2abx` độc lập, cho cả bốn
 ABI, mỗi cái kèm một `PROVENANCE.json`. Workflow release lắp ráp các zip flash được, ghi các bản đồng
 hành `.sha256`, điền `update.json` và phát hành dưới danh nghĩa `github-actions[bot]`.
+
+## Cập nhật tăng dần (VDLU)
+
+VD Installer đi kèm engine **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** (được nhúng trong `module/vdlu/`): mô-đun tự cập nhật bằng cách chỉ tải về những
+tệp đã thay đổi (các blob định địa chỉ theo nội dung + một `manifest.json` đã ký), thay vì tải lại toàn bộ
+`.zip`. Hồ sơ **được gia cố**: chữ ký ed25519 là bắt buộc và việc hạ cấp bị chặn, `.zip` đầy đủ vẫn hợp lệ
+như một phương án dự phòng.
+
+- **Chỉ LIVE** (không khởi động lại): các bản cập nhật được áp dụng ở lần khởi động kế tiếp qua `service.sh`, chạy nền, không làm gì khi không có feed nào truy cập được.
+- **Trạng thái** trong `/data/adb/vdinstaller/vdlu/`, bên ngoài mô-đun, nên nó sống sót qua một lần flash lại.
+- **WebUI:** một bảng **Cập nhật** với toast tiến trình và nút hủy, tự động cập nhật là tùy chọn (opt-in).
 
 ## Tài liệu
 
@@ -101,16 +141,15 @@ Các hướng dẫn nằm trong [docs/](docs/) và được mirror sang GitHub w
 
 ## Liên hệ
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## Giấy phép
 
@@ -128,6 +167,4 @@ Dự án này độc lập và không liên kết với hoặc được họ ch�
 
 ---
 
-> Tham gia kênh: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **Tham gia kênh để nhận cập nhật:** @Priv8_VD https://t.me/Priv8_VD

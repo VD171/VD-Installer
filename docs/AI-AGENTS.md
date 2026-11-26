@@ -34,9 +34,9 @@ VDInstaller is driven by one shell contract. An agent (running as root, as the W
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-and reads exactly one JSON object on stdout. Success is `{"ok":true,...}`; failure is
+and reads exactly one JSON object on stdout. Success is `{"ok":true,...}`, failure is
 `{"ok":false,"code":"ERR_...","message":"..."}`. Long operations return an `opid` you poll. Do not
-scrape the WebUI; use this contract.
+scrape the WebUI, use this contract.
 
 ## Verbs
 
@@ -79,11 +79,11 @@ completion `done:true` with a `result` (single/split), a `results[]` array (batc
 ## Safety rails
 
 - The verifier toggle and the `packages.xml` edit are reversible and audited (`logs/audit.jsonl`).
-- `install`/`uninstall` change device state; confirm intent before calling, as the WebUI does.
-- Never scrape or automate the WebUI itself; this contract is the supported surface.
+- `install`/`uninstall` change device state, confirm intent before calling, as the WebUI does.
+- Never scrape or automate the WebUI itself, this contract is the supported surface.
 
 <!-- doc-footer -->
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](../CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](../CONTRIBUTING.md)._

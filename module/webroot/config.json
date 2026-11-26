@@ -1,5 +1,5 @@
 {
-  "title": "VDInstaller",
+  "title": "VD Installer",
   "icon": "assets/logo-icon.svg",
   "backHandler": true,
   "windowResize": true,

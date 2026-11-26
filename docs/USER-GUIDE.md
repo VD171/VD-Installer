@@ -76,7 +76,7 @@ Three tabs:
 
 ## 5. Installing APKs
 
-You pick the mode on the **Install** tab; VDInstaller never guesses.
+You pick the mode on the **Install** tab, VDInstaller never guesses.
 
 | Mode | You give | What happens |
 |---|---|---|
@@ -92,7 +92,7 @@ they must be installed **together** in one session, which the Split modes do for
 
 **Browse** opens a file picker that lists folders and installable files at a path:
 
-- Tap a **folder** to go into it; **Up** goes to the parent.
+- Tap a **folder** to go into it, **Up** goes to the parent.
 - In a file mode (Single APK / Split archive), tap a **file** to select it.
 - In a folder mode (Folder of APKs / Split folder), navigate into the folder and tap **Use this folder**.
 
@@ -100,7 +100,7 @@ You can also type or paste a path directly (for example `/sdcard/Download/app.ap
 
 ### 5.2 Progress, cancel, resume
 
-Installs run as a **detached root process**. A progress card shows the phase; **Cancel** stops it.
+Installs run as a **detached root process**. A progress card shows the phase, **Cancel** stops it.
 If you close the WebUI mid-install, the install keeps going and the UI reattaches by operation id
 when you reopen it.
 
@@ -152,7 +152,7 @@ exists and never pretends to flip a switch that does nothing.
 ### 6.5 Staying hidden
 
 For stealth, consider hiding your root manager and sensitive apps with HMA-OSS. VDInstaller **never
-touches your HMA-OSS setup** - the hint is only a reminder; you make the change yourself in HMA-OSS.
+touches your HMA-OSS setup** - the hint is only a reminder, you make the change yourself in HMA-OSS.
 
 ## 7. Driving VDInstaller from an AI assistant
 
@@ -166,7 +166,7 @@ verifier toggle left at **Keep as it was** (the default), VDInstaller turns it o
 restores it, so it does not happen.
 
 **I turned on the Play Store source but the app still looks sideloaded.** The installer part applies
-immediately; the initiator part (`packages.xml`) applies **after the next reboot**.
+immediately, the initiator part (`packages.xml`) applies **after the next reboot**.
 
 **Does it bypass Google's Developer Verification?** It does not need to - a root install is exempt
 (see 6.3). There is no fake switch for it.
@@ -174,7 +174,7 @@ immediately; the initiator part (`packages.xml`) applies **after the next reboot
 **Does it need a reboot?** No, except the optional initiator spoof.
 
 **Will uninstalling VDInstaller remove the apps I installed?** No - those are real installs owned by
-the system; removing the module only cleans up VDInstaller's own state.
+the system, removing the module only cleans up VDInstaller's own state.
 
 **Is it safe?** It installs APKs you choose and, with the verifier off, skips a malware scan - install
 only APKs you trust. It never weakens anything silently.
@@ -183,4 +183,4 @@ only APKs you trust. It never weakens anything silently.
 
 ---
 
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](../CONTRIBUTING.md)._
+> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome, see [CONTRIBUTING.md](../CONTRIBUTING.md)._

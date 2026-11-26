@@ -46,7 +46,7 @@ WebUI (webroot/)                scripts/                         Android
   ABI/PATH-Auflösung, die `pm`/`dumpsys`/`fw`-Wrapper (saubere Umgebung, damit die mitgelieferten
   Termux-Libs niemals ARTs Libs überdecken), die JSON- und `jq`-Helfer und das ABX-bewusste `xml_edit`.
 - **`scripts/helper.sh`** - der WebUI-Vertrag: eine JSON-Zeile pro Aufruf. Kurze Verben (version, config,
-  browse, scan) laufen inline; lange (install, uninstall) koppeln einen Worker ab und geben eine `opid`
+  browse, scan) laufen inline, lange (install, uninstall) koppeln einen Worker ab und geben eine `opid`
   zurück.
 - **`scripts/worker.sh`** - die abgekoppelte Installations-Engine: die vier Installationsmodi, der
   Verifizierer-Schalter, die Fälschung der Installationsquelle und die Session-API des Package-Managers.
@@ -55,32 +55,32 @@ WebUI (webroot/)                scripts/                         Android
 
 ## Kernpunkte
 
-- **Bereits root.** Keine "grant su"-Abfrage und kein `sucompat`-Umschalten; die Engine läuft als root aus
+- **Bereits root.** Keine "grant su"-Abfrage und kein `sucompat`-Umschalten, die Engine läuft als root aus
   dem Modul und ruft `pm` / `settings` direkt auf.
 - **Session-Installationen.** Alle Modi nutzen `pm install-create` / `install-write` / `install-commit`,
   sodass Split-Apps korrekt installiert werden und die Installationsquelle (`-i`) zur Session-Zeit gesetzt
   wird.
 - **ABX-bewusst.** Die `packages.xml`-Initiator-Fälschung prüft auf das `ABX\0`-Binär-XML-Magic,
   dekodiert, bearbeitet, kodiert erneut, führt einen Round-Trip zur Validierung durch, sichert byte-genau
-  und tauscht atomar; die Live-Datei wird nie angerührt, wenn nicht jeder Schritt gelingt.
+  und tauscht atomar, die Live-Datei wird nie angerührt, wenn nicht jeder Schritt gelingt.
 - **Neustartfrei.** Ein eigenständiges WebUI-Modul mit nichts zu mounten: `customize.sh` kopiert es in das
   aktive Modulverzeichnis, sodass es in dem Moment funktioniert, in dem es geflasht wird.
 - **Flashlose Updates.** Die mitgelieferte **VDLU**-Engine aktualisiert das Modul, indem sie nur die
   geänderten, inhaltsadressierten, ed25519-signierten Dateien herunterlädt - kein vollständiges
   Neu-Flashen.
-- **Abgekoppelt.** Lange Operationen laufen außerhalb der Webview; das Schließen der WebUI unterbricht sie
+- **Abgekoppelt.** Lange Operationen laufen außerhalb der Webview, das Schließen der WebUI unterbricht sie
   nie.
 
 ## Kompatibilitätsgarantie
 
-- POSIX-`sh` auf dem Gerät (`sh -n` besteht; keine Bashismen über `local` hinaus; keine `awk`-Abhängigkeit).
+- POSIX-`sh` auf dem Gerät (`sh -n` besteht, keine Bashismen über `local` hinaus, keine `awk`-Abhängigkeit).
 - `pm` / `dumpsys` / `settings` / `cmd` sind die einzigen genutzten Framework-Tools, alle über
   `/system/bin`.
 - Mitgelieferte Binaries (`jq`, `abx2xml`/`xml2abx`) sind für den gängigen Pfad optional und tragen ihre
-  Herkunft; der ABX-Konverter fällt auf das geräteeigene `/system/bin/abx2xml` zurück, wo vorhanden.
+  Herkunft, der ABX-Konverter fällt auf das geräteeigene `/system/bin/abx2xml` zurück, wo vorhanden.
 
 <!-- doc-footer -->
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

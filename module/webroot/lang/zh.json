@@ -1,5 +1,5 @@
 {
-  "app_title": "VDInstaller",
+  "app_title": "VD Installer",
   "app_tagline": "无摩擦的 root 旁加载安装器",
 
   "nav_install": "安装",
@@ -53,7 +53,7 @@
   "opt_user": "目标用户",
 
   "hma_title": "保持隐藏",
-  "hma_text": "为了隐蔽，可考虑用 HMA-OSS 隐藏你的 root 管理器和敏感应用。VDInstaller 绝不触碰你的 HMA-OSS 配置 - 想要时请自行打开 HMA-OSS 进行更改。",
+  "hma_text": "为了隐蔽，可考虑用 HMA-OSS 隐藏你的 root 管理器和敏感应用。VD Installer 绝不触碰你的 HMA-OSS 配置，想要时请自行打开 HMA-OSS 进行更改。",
 
   "phase_starting": "正在启动",
   "phase_extracting": "正在解压",
@@ -62,7 +62,7 @@
   "phase_done": "完成",
   "msg_installed_ok": "已安装：${pkg}",
   "msg_installed_fail": "安装失败：${msg}",
-  "hint_verifier": "Play Protect 验证器拦截了安装。请在选项中将验证器开关设为“保持原样”，让 VDInstaller 在安装期间将其关闭。",
+  "hint_verifier": "Play Protect 验证器拦截了安装。请在选项中将验证器开关设为“保持原样”，让 VD Installer 在安装期间将其关闭。",
   "hint_downgrade": "这是比已安装版本更旧的版本。Android 会阻止原位降级；请先卸载当前应用（这会丢失其数据）。",
   "hint_storage": "存储空间不足。请释放一些空间后重试。",
   "hint_signature": "已安装的应用由不同的密钥签名。请先卸载它（这会丢失其数据），然后再安装这个。",
@@ -81,7 +81,7 @@
   "msg_cancelled": "已取消。",
 
   "about_version": "版本",
-  "about_what": "VDInstaller 以 root 无摩擦地安装旁加载的 APK：没有 grant-su 提示，没有终端，不用和 Play Protect 较劲。选一个 APK 就安装。",
+  "about_what": "VD Installer 以 root 无摩擦地安装旁加载的 APK：没有 grant-su 提示，没有终端，不用和 Play Protect 较劲。选一个 APK 就安装。",
   "about_features_head": "它能做什么",
   "about_feat_modes": "单个 APK、整个文件夹（批量）、分包归档（.xapk / .apkm / .apks / .zip）以及散落的 split 文件夹。",
   "about_feat_verifier": "一个三态的 Play Protect 验证器开关，让 INSTALL_FAILED_VERIFICATION_FAILURE 永远不会拦住你。",

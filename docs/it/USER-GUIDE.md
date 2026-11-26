@@ -77,7 +77,7 @@ Tre schede:
 
 ## 5. Installare gli APK
 
-Scegli la modalità nella scheda **Installa**; VDInstaller non indovina mai.
+Scegli la modalità nella scheda **Installa**, VDInstaller non indovina mai.
 
 | Modalità | Cosa fornisci | Cosa succede |
 |---|---|---|
@@ -93,7 +93,7 @@ devono essere installati **insieme** in un'unica sessione, cosa che le modalità
 
 **Sfoglia** apre un selettore di file che elenca cartelle e file installabili di un percorso:
 
-- Tocca una **cartella** per entrarci; **Su** risale alla cartella superiore.
+- Tocca una **cartella** per entrarci, **Su** risale alla cartella superiore.
 - In una modalità file (APK singolo / Archivio diviso), tocca un **file** per selezionarlo.
 - In una modalità cartella (Cartella di APK / Cartella di split), entra nella cartella e tocca **Usa questa cartella**.
 
@@ -102,7 +102,7 @@ Puoi anche digitare o incollare direttamente un percorso (ad esempio `/sdcard/Do
 ### 5.2 Avanzamento, annulla, riprendi
 
 Le installazioni vengono eseguite come **processo root distaccato**. Una scheda di avanzamento mostra la
-fase; **Annulla** la ferma. Se chiudi la WebUI a installazione in corso, l'installazione continua e
+fase, **Annulla** la ferma. Se chiudi la WebUI a installazione in corso, l'installazione continua e
 l'interfaccia si riaggancia tramite id di operazione quando la riapri.
 
 ## 6. Opzioni
@@ -154,7 +154,7 @@ non fa nulla.
 ### 6.5 Restare nascosti
 
 Per la stealth, valuta di nascondere il tuo gestore root e le app sensibili con HMA-OSS. VDInstaller **non
-tocca mai la tua configurazione di HMA-OSS** - il suggerimento è solo un promemoria; la modifica la fai tu
+tocca mai la tua configurazione di HMA-OSS** - il suggerimento è solo un promemoria, la modifica la fai tu
 stesso in HMA-OSS.
 
 ## 7. Pilotare VDInstaller da un assistente IA
@@ -170,7 +170,7 @@ l'interruttore del verificatore lasciato su **Lascia com'era** (il default), VDI
 l'installazione e lo ripristina, così non succede.
 
 **Ho attivato l'origine Play Store ma l'app sembra ancora caricata manualmente.** La parte relativa
-all'installatore si applica immediatamente; la parte dell'iniziatore (`packages.xml`) si applica **dopo il
+all'installatore si applica immediatamente, la parte dell'iniziatore (`packages.xml`) si applica **dopo il
 prossimo riavvio**.
 
 **Aggira la Developer Verification di Google?** Non ne ha bisogno - un'installazione come root ne è esente
@@ -179,7 +179,7 @@ prossimo riavvio**.
 **Serve un riavvio?** No, tranne la falsificazione opzionale dell'iniziatore.
 
 **Disinstallare VDInstaller rimuoverà le app che ho installato?** No - quelle sono installazioni reali di
-proprietà del sistema; rimuovere il modulo ripulisce solo lo stato interno di VDInstaller.
+proprietà del sistema, rimuovere il modulo ripulisce solo lo stato interno di VDInstaller.
 
 **È sicuro?** Installa gli APK che scegli tu e, con il verificatore disattivato, salta una scansione
 malware - installa solo APK di cui ti fidi. Non indebolisce mai nulla in silenzio.
@@ -188,4 +188,4 @@ malware - installa solo APK di cui ti fidi. Non indebolisce mai nulla in silenzi
 
 ---
 
-> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti; vedi [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Questa documentazione è stata generata con Claude (Anthropic) ed è gestita da VD171. Correzioni e miglioramenti sono benvenuti, vedi [CONTRIBUTING.md](CONTRIBUTING.md)._

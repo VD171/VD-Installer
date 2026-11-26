@@ -45,6 +45,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Guard doc translations (no ASCII-folded accents, kit guard)
+        run: sh .github/scripts/i18n-accents.sh docs
+
       - name: Mirror docs/ into the wiki
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

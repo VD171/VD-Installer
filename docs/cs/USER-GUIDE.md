@@ -76,7 +76,7 @@ Tři záložky:
 
 ## 5. Instalace APK
 
-Režim vybíráte na záložce **Install**; VDInstaller nikdy nehádá.
+Režim vybíráte na záložce **Install**, VDInstaller nikdy nehádá.
 
 | Režim | Zadáte | Co se stane |
 |---|---|---|
@@ -86,13 +86,13 @@ Režim vybíráte na záložce **Install**; VDInstaller nikdy nehádá.
 | **Split folder** | složka s volnými soubory splitů `.apk` jedné aplikace | splity se nainstalují jako jedna aplikace v jedné relaci. |
 
 "Split" aplikace je jedno APK rozdělené na základ plus konfigurační APK pro jednotlivé hustoty / ABI /
-jazyky; musí se nainstalovat **společně** v jedné relaci, což za vás režimy Split dělají.
+jazyky, musí se nainstalovat **společně** v jedné relaci, což za vás režimy Split dělají.
 
 ### 5.1 Dialog Browse
 
 **Browse** otevře výběr souborů, který na dané cestě zobrazuje složky a instalovatelné soubory:
 
-- Klepnutím na **složku** do ní vejdete; **Up** jde do nadřazené složky.
+- Klepnutím na **složku** do ní vejdete, **Up** jde do nadřazené složky.
 - V souborovém režimu (Single APK / Split archive) klepnutím na **soubor** jej vyberete.
 - Ve složkovém režimu (Folder of APKs / Split folder) přejděte do složky a klepněte na **Use this folder**.
 
@@ -100,7 +100,7 @@ Cestu můžete také přímo napsat nebo vložit (například `/sdcard/Download/
 
 ### 5.2 Průběh, zrušení, pokračování
 
-Instalace běží jako **oddělený root proces**. Karta průběhu zobrazuje fázi; **Cancel** ji zastaví. Pokud
+Instalace běží jako **oddělený root proces**. Karta průběhu zobrazuje fázi, **Cancel** ji zastaví. Pokud
 WebUI uprostřed instalace zavřete, instalace běží dál a rozhraní se po opětovném otevření znovu připojí
 podle ID operace.
 
@@ -152,7 +152,7 @@ tehdy, pokud nějaký existuje, a nikdy nepředstírá přepnutí přepínače, 
 ### 6.5 Zůstat skrytý
 
 Pro stealth zvažte skrytí svého root manageru a citlivých aplikací pomocí HMA-OSS. VDInstaller **nikdy
-nesahá na vaše nastavení HMA-OSS** - nápověda je jen připomínka; změnu provedete sami v HMA-OSS.
+nesahá na vaše nastavení HMA-OSS** - nápověda je jen připomínka, změnu provedete sami v HMA-OSS.
 
 ## 7. Ovládání VDInstaller z AI asistenta
 
@@ -166,7 +166,7 @@ verifikátoru ponechaným na **Ponechat tak, jak bylo** (výchozí) jej VDInstal
 obnoví, takže se to nestane.
 
 **Zapnul jsem zdroj Play Store, ale aplikace stále vypadá sideloadovaně.** Část instalátoru platí
-okamžitě; část iniciátora (`packages.xml`) platí **po příštím restartu**.
+okamžitě, část iniciátora (`packages.xml`) platí **po příštím restartu**.
 
 **Obchází to Developer Verification od Googlu?** Nemusí - root instalace je vyňata (viz 6.3). Není pro to
 žádný falešný přepínač.
@@ -174,7 +174,7 @@ okamžitě; část iniciátora (`packages.xml`) platí **po příštím restartu
 **Vyžaduje to restart?** Ne, kromě volitelného podvrhu iniciátora.
 
 **Odstraní odinstalace VDInstaller aplikace, které jsem nainstaloval?** Ne - to jsou skutečné instalace
-vlastněné systémem; odstranění modulu pouze uklidí vlastní stav VDInstaller.
+vlastněné systémem, odstranění modulu pouze uklidí vlastní stav VDInstaller.
 
 **Je to bezpečné?** Instaluje APK, která zvolíte, a s vypnutým verifikátorem přeskakuje kontrolu malwaru -
 instalujte jen APK, kterým důvěřujete. Nikdy nic tiše neoslabuje.
@@ -183,4 +183,4 @@ instalujte jen APK, kterým důvěřujete. Nikdy nic tiše neoslabuje.
 
 ---
 
-> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány; viz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány, viz [CONTRIBUTING.md](CONTRIBUTING.md)._

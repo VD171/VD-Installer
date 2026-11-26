@@ -30,7 +30,7 @@
 
 ## Tek satırda tehdit modeli
 
-VDInstaller root olarak çalışır ve kullanıcının açıkça seçtiği APK'leri yükler; bir yükleme için Play
+VDInstaller root olarak çalışır ve kullanıcının açıkça seçtiği APK'leri yükler, bir yükleme için Play
 Protect doğrulayıcısını kapatmak bir kötü amaçlı yazılım taramasını devre dışı bırakır, bu nedenle bu
 "güvenli yükleme" değil, "sürtünmesiz yükleme"dir - yalnızca güvendiğiniz APK'leri yükleyin.
 
@@ -38,7 +38,7 @@ Protect doğrulayıcısını kapatmak bir kötü amaçlı yazılım taramasını
 
 - Paket doğrulayıcısını varsayılan olarak tam olarak önceki durumuna geri yükler (hiç olmayan yerde bir
   `0`/`1` bırakmak başlı başına bir ipucudur, bu yüzden tekrar silinir).
-- HMA-OSS kurulumunuza asla dokunmaz; uygulamaları gizlemek sizin uygulayacağınız bir öneridir.
+- HMA-OSS kurulumunuza asla dokunmaz, uygulamaları gizlemek sizin uygulayacağınız bir öneridir.
 - `packages.xml` yükleme kaynağı düzenlemesi ABX-farkındadır, herhangi bir değişiklikten önce canlı dosyayı
   bayt düzeyinde yedekler, doğrulamak için round-trip yapar ve herhangi bir hatada canlı dosyayı dokunulmadan bırakır.
 - Paketlenmiş ikili dosyalar yapı sırasında resmi upstream'lerinden getirilir ve bir `PROVENANCE.json` taşır.
@@ -60,4 +60,4 @@ Lütfen önce özel olarak bildirin. Yeniden oluşturma adımlarını, etkilenen
 
 ---
 
-> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır; bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır, bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -30,7 +30,7 @@
 
 ## Bedrohungsmodell in einem Satz
 
-VDInstaller läuft als root und installiert APKs, die der Benutzer ausdrücklich auswählt; das
+VDInstaller läuft als root und installiert APKs, die der Benutzer ausdrücklich auswählt, das
 Abschalten des Play-Protect-Verifiers für eine Installation deaktiviert einen Malware-Scan, daher
 ist es eine "reibungslose Installation", keine "sichere Installation" - installiere nur APKs, denen
 du vertraust.
@@ -40,7 +40,7 @@ du vertraust.
 - Es stellt den Paket-Verifier standardmäßig in seinen exakten vorherigen Zustand zurück (ein
   `0`/`1` dort zu hinterlassen, wo keines war, ist selbst ein verräterisches Zeichen, daher wird
   es wieder gelöscht).
-- Es rührt niemals dein HMA-OSS-Setup an; das Verbergen von Apps ist eine Empfehlung, die du selbst umsetzt.
+- Es rührt niemals dein HMA-OSS-Setup an, das Verbergen von Apps ist eine Empfehlung, die du selbst umsetzt.
 - Die Bearbeitung der Installationsquelle in `packages.xml` ist ABX-fähig, sichert die Live-Datei
   byte-genau vor jeder Änderung, macht einen Round-Trip zur Validierung und lässt die Live-Datei
   bei jedem Fehler unberührt.
@@ -63,4 +63,4 @@ Bitte zuerst privat melden. Füge Schritte zur Reproduktion, die betroffene Vers
 
 ---
 
-> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen; siehe [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Diese Dokumentation wurde mit Claude (Anthropic) erstellt und wird von VD171 gepflegt. Korrekturen und Verbesserungen sind willkommen, siehe [CONTRIBUTING.md](CONTRIBUTING.md)._

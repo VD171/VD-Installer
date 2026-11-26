@@ -1,5 +1,5 @@
 {
-  "app_title": "VDInstaller",
+  "app_title": "VD Installer",
   "app_tagline": "مُثبِّت sideload بصلاحيات الجذر دون عوائق",
 
   "nav_install": "تثبيت",
@@ -53,7 +53,7 @@
   "opt_user": "المستخدم المُستهدَف",
 
   "hma_title": "ابقَ مخفيًّا",
-  "hma_text": "للتخفّي، فكِّر في إخفاء مدير الجذر والتطبيقات الحساسة باستخدام HMA-OSS. لا يمس VDInstaller إعداد HMA-OSS لديك أبدًا - افتح HMA-OSS وأجرِ التغيير بنفسك متى شئت.",
+  "hma_text": "للتخفّي، فكِّر في إخفاء مدير الجذر والتطبيقات الحساسة باستخدام HMA-OSS. لا يمس VD Installer إعداد HMA-OSS لديك أبدًا، افتح HMA-OSS وأجرِ التغيير بنفسك متى شئت.",
 
   "phase_starting": "يبدأ",
   "phase_extracting": "يستخرج",
@@ -62,7 +62,7 @@
   "phase_done": "تم",
   "msg_installed_ok": "مُثبَّت: ${pkg}",
   "msg_installed_fail": "فشل التثبيت: ${msg}",
-  "hint_verifier": "منع التثبيتَ مُدقِّق Play Protect. في الخيارات، اضبط مفتاح المُدقِّق على 'إبقاؤه كما كان' حتى يُطفئه VDInstaller أثناء التثبيت.",
+  "hint_verifier": "منع التثبيتَ مُدقِّق Play Protect. في الخيارات، اضبط مفتاح المُدقِّق على 'إبقاؤه كما كان' حتى يُطفئه VD Installer أثناء التثبيت.",
   "hint_downgrade": "هذا إصدار أقدم من المُثبَّت. يمنع Android الرجوع إلى إصدار أقدم في مكانه؛ أزِل التطبيق الحالي أولًا (ستفقد بياناته).",
   "hint_storage": "لا توجد مساحة تخزين كافية. حرِّر بعض المساحة وحاول مرة أخرى.",
   "hint_signature": "التطبيق المُثبَّت موقَّع بمفتاح مختلف. أزِله أولًا (ستفقد بياناته)، ثم ثبِّت هذا.",
@@ -81,7 +81,7 @@
   "msg_cancelled": "أُلغي.",
 
   "about_version": "الإصدار",
-  "about_what": "يُثبِّت VDInstaller حزم APK المُحمَّلة عبر sideload بصلاحيات الجذر دون عوائق: دون مطالبة بمنح su، ودون طرفية، ودون صراع مع Play Protect. اختر حزمة APK وثبِّتها.",
+  "about_what": "يُثبِّت VD Installer حزم APK المُحمَّلة عبر sideload بصلاحيات الجذر دون عوائق: دون مطالبة بمنح su، ودون طرفية، ودون صراع مع Play Protect. اختر حزمة APK وثبِّتها.",
   "about_features_head": "ما الذي يفعله",
   "about_feat_modes": "حزم APK مفردة، أو مجلد كامل (دفعة)، أو أرشيفات مُقسَّمة (.xapk / .apkm / .apks / .zip) ومجلدات أجزاء منفصلة.",
   "about_feat_verifier": "مفتاح ثلاثي الحالات لمُدقِّق Play Protect، حتى لا يعيقك INSTALL_FAILED_VERIFICATION_FAILURE أبدًا.",

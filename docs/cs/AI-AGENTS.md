@@ -34,9 +34,9 @@ VDInstaller je řízen jedinou shell smlouvou. Agent (běžící jako root, jako
 sh /data/adb/modules/vdinstaller/scripts/helper.sh <verb> <base64(JSON-args)>
 ```
 
-a čte přesně jeden JSON objekt na stdout. Úspěch je `{"ok":true,...}`; selhání je
+a čte přesně jeden JSON objekt na stdout. Úspěch je `{"ok":true,...}`, selhání je
 `{"ok":false,"code":"ERR_...","message":"..."}`. Dlouhé operace vracejí `opid`, který dotazujete.
-Nescrapujte WebUI; použijte tuto smlouvu.
+Nescrapujte WebUI, použijte tuto smlouvu.
 
 ## Slovesa
 
@@ -79,11 +79,11 @@ Dotazujte `progress` s `opid`. Objekt nese `percent`, `phase`
 ## Bezpečnostní zábradlí
 
 - Přepínač verifikátoru a úprava `packages.xml` jsou vratné a auditované (`logs/audit.jsonl`).
-- `install`/`uninstall` mění stav zařízení; potvrďte záměr před voláním, jako to dělá WebUI.
-- Nikdy nescrapujte ani neautomatizujte samotnou WebUI; tato smlouva je podporovaný povrch.
+- `install`/`uninstall` mění stav zařízení, potvrďte záměr před voláním, jako to dělá WebUI.
+- Nikdy nescrapujte ani neautomatizujte samotnou WebUI, tato smlouva je podporovaný povrch.
 
 <!-- doc-footer -->
 
 ---
 
-> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány; viz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány, viz [CONTRIBUTING.md](CONTRIBUTING.md)._

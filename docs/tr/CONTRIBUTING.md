@@ -34,23 +34,23 @@ katkıda bulunmanın kolay ve davetkar olmasını amaçlar.
 ## Yapay zeka katkıcıları hoş geldiniz
 
 Yapay zeka ve ajan katkıları herkesle aynı inceleme çıtasında karşılanır. Motor, headless bir sözleşme
-üzerinden JSON konuşur (`scripts/helper.sh <verb> <base64(JSON)>`); bkz.
+üzerinden JSON konuşur (`scripts/helper.sh <verb> <base64(JSON)>`), bkz.
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Sözleşmeyi sürün, WebUI'yi kazımayın.
 
 ## Kod kuralları
 
 - Her kaynak dosyanın başında **dosya başına eksiksiz banner** (SPDX + iletişim bilgileri). Asla kırpılmış olanı.
 - Kod, tanımlayıcılar, günlükler ve yorumlar **İngilizce**. Yorumlar yalnızca bir şey kattığında.
-- Cihaz için kabuk **POSIX sh**'dir (`sh -n` geçmelidir; `local` dışında bashism yok; paketlenmiş `jq` PATH'te olmadan önce çalışması gereken kod yollarında `jq` bağımlılığı yok).
-- WebUI **vanilla JS**'dir, çerçeve yok; tüm arayüzde açık ve koyu.
-- **Asla** em-dash veya en-dash; her zaman bir tire `-`.
+- Cihaz için kabuk **POSIX sh**'dir (`sh -n` geçmelidir, `local` dışında bashism yok, paketlenmiş `jq` PATH'te olmadan önce çalışması gereken kod yollarında `jq` bağımlılığı yok).
+- WebUI **vanilla JS**'dir, çerçeve yok, tüm arayüzde açık ve koyu.
+- **Asla** em-dash veya en-dash, her zaman bir tire `-`.
 - Yapı her zaman **release**'dir, asla debug değil.
 - Bir şeyin geçmesini sağlamak için **gerçek bir davranışı asla zayıflatmayın** ve asla içerik kaldırmayın.
 
 ## Çeviriler
 
 WebUI dizeleri `module/webroot/lang/<code>.json` içinde bulunur (düz anahtarlar, İngilizce temel
-`lang/en.js` içinde); README'nin dil başına bir `README.<code>.md` dosyası vardır. Bir dil ekleyin veya düzeltin ve bir PR açın.
+`lang/en.js` içinde), README'nin dil başına bir `README.<code>.md` dosyası vardır. Bir dil ekleyin veya düzeltin ve bir PR açın.
 
 ## Lisans
 
@@ -60,4 +60,4 @@ Katkıda bulunarak, katkınızın GNU AGPL-3.0-or-later altında lisanslandığ�
 
 ---
 
-> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır; bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Bu belgeler Claude (Anthropic) ile oluşturulmuş olup VD171 tarafından yürütülmektedir. Düzeltmeler ve iyileştirmeler memnuniyetle karşılanır, bkz. [CONTRIBUTING.md](CONTRIBUTING.md)._

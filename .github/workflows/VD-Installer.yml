@@ -60,6 +60,10 @@ jobs:
       - name: Verify provenance present
         run: for a in arm64-v8a armeabi-v7a x86 x86_64; do test -f "module/bin/$a/PROVENANCE.json" || { echo "::error::missing PROVENANCE.json for $a"; exit 1; }; done
 
+      - name: Provenance beside every bundled binary (kit guard, STANDARDS 8)
+        # Each bin/<abi> and vdlu/verify/<abi> dir must ship a PROVENANCE.json that names its binaries.
+        run: sh .github/scripts/provenance-check.sh module
+
       - name: Assemble release zips
         run: |
           VER="$(.github/scripts/version.sh read | sed 's/^version=//; s/ .*//')"
@@ -93,6 +97,10 @@ jobs:
           (cd stage && zip -qr "../dist/VD-Installer-${VER}-universal.zip" .)
           rm -rf stage
           ls -la dist
+
+      - name: Reject orphan .sha256 companions in the zip (kit guard, STANDARDS 8)
+        # An orphan <file>.sha256 (target pruned) would abort the on-device flash gate.
+        run: sh .github/scripts/zip-orphan-check.sh dist/*.zip
 
       - name: Fill update.json
         run: |

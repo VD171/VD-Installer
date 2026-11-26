@@ -34,23 +34,23 @@ se do něj přispívalo snadno a příjemně.
 ## Přispěvatelé s AI vítáni
 
 Příspěvky od AI a agentů jsou vítány se stejnou laťkou kontroly jako od kohokoli jiného. Engine
-mluví pomocí JSON přes bezhlavý kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`); viz
+mluví pomocí JSON přes bezhlavý kontrakt (`scripts/helper.sh <verb> <base64(JSON)>`), viz
 [docs/AI-AGENTS.md](docs/AI-AGENTS.md). Řiďte kontrakt, nescrapujte WebUI.
 
 ## Pravidla kódu
 
 - **Úplná hlavička v každém souboru** (SPDX + kontakty) na začátku každého zdrojového souboru. Nikdy ne zkrácená.
 - Kód, identifikátory, logy a komentáře v **angličtině**. Komentáře jen tehdy, když něco přidávají.
-- Shell je **POSIX sh** pro zařízení (`sh -n` musí projít; žádné bashismy kromě `local`; žádná závislost na `jq` v cestách kódu, které musí běžet dříve, než je přibalený `jq` v PATH).
-- WebUI je **čisté JS**, bez frameworku; světlý i tmavý režim v celém UI.
-- **Nikdy** em-dash ani en-dash; vždy spojovník `-`.
+- Shell je **POSIX sh** pro zařízení (`sh -n` musí projít, žádné bashismy kromě `local`, žádná závislost na `jq` v cestách kódu, které musí běžet dříve, než je přibalený `jq` v PATH).
+- WebUI je **čisté JS**, bez frameworku, světlý i tmavý režim v celém UI.
+- **Nikdy** em-dash ani en-dash, vždy spojovník `-`.
 - Build je vždy **release**, nikdy debug.
 - **Nikdy neoslabujte skutečné chování**, aby něco prošlo, a nikdy neodstraňujte obsah.
 
 ## Překlady
 
 Řetězce WebUI se nacházejí v `module/webroot/lang/<code>.json` (ploché klíče, anglický základ v
-`lang/en.js`); README má `README.<code>.md` pro každý jazyk. Přidejte nebo opravte jazyk a otevřete PR.
+`lang/en.js`), README má `README.<code>.md` pro každý jazyk. Přidejte nebo opravte jazyk a otevřete PR.
 
 ## Licence
 
@@ -60,4 +60,4 @@ Přispěním souhlasíte s tím, že váš příspěvek je licencován pod GNU A
 
 ---
 
-> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány; viz [CONTRIBUTING.md](CONTRIBUTING.md)._
+> _Tato dokumentace byla vytvořena pomocí Claude (Anthropic) a spravuje ji VD171. Opravy a vylepšení jsou vítány, viz [CONTRIBUTING.md](CONTRIBUTING.md)._

@@ -24,9 +24,38 @@
 
 > **Languages:** [English](README.md) · العربية · [Čeština](README.cs.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md) · [Français](README.fr.md) · [हिन्दी](README.hi.md) · [Bahasa Indonesia](README.id.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Nederlands](README.nl.md) · [Polski](README.pl.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Svenska](README.sv.md) · [ไทย](README.th.md) · [Türkçe](README.tr.md) · [Українська](README.uk.md) · [Tiếng Việt](README.vi.md) · [中文](README.zh.md)
 
-# VDInstaller
+<p align="center">
+  <img src="module/webroot/assets/logo-wordmark.png" alt="VD Installer" width="320">
+</p>
 
-> مُثبِّت sideload بصلاحيات الجذر دون عوائق - KernelSU / APatch / Magisk WebUI.
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases/latest"><img src="https://img.shields.io/github/v/release/VD171/VD-Installer?label=release&color=0969da" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-1a7f37" alt="License"></a>
+  <a href="https://github.com/VD171/VD-Installer/releases"><img src="https://img.shields.io/github/downloads/VD171/VD-Installer/total?label=downloads&color=8250df" alt="Downloads"></a>
+  <a href="https://github.com/VD171/VD-Installer/stargazers"><img src="https://img.shields.io/github/stars/VD171/VD-Installer?color=d29922" alt="Stars"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/VD171/VD-Installer/releases">Releases</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki">Wiki</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/USER-GUIDE">دليل المستخدم</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/AI-AGENTS">وكلاء الذكاء الاصطناعي</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/ARCHITECTURE">البنية</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/FILE-STRUCTURE">هيكل الملفات</a> ·
+  <a href="https://github.com/VD171/VD-Installer/wiki/BINARIES">الملفات الثنائية</a> ·
+  <a href="CHANGELOG.md">سجل التغييرات</a> ·
+  <a href="https://xdaforums.com/t/VD-Installer.4809504/">XDA thread</a>
+</p>
+
+# VD Installer
+
+> مُثبِّت sideload بصلاحيات الجذر دون عوائق: KernelSU / APatch / Magisk WebUI.
+
+## لقطات الشاشة
+
+<p align="center">
+  <img src="docs/screenshots/ar/install-dark.png" width="24%" alt="Install"> <img src="docs/screenshots/ar/options-dark.png" width="24%" alt="Options"> <img src="docs/screenshots/ar/updates-dark.png" width="24%" alt="Updates"> <img src="docs/screenshots/ar/about-dark.png" width="24%" alt="About">
+</p>
 
 ## لماذا
 
@@ -38,26 +67,26 @@ Protect الخطأ `INSTALL_FAILED_VERIFICATION_FAILURE`، وتحتاج التط
 
 ## المزايا
 
-- **كل أشكال APK** - ملف `.apk` واحد، أو مجلد كامل من حزم APK المستقلة (دفعة)، أو أرشيف مُقسَّم مُجمَّع
+- **كل أشكال APK:** ملف `.apk` واحد، أو مجلد كامل من حزم APK المستقلة (دفعة)، أو أرشيف مُقسَّم مُجمَّع
   (`.xapk` / `.apkm` / `.apks` / `.zip`)، أو مجلد يضم ملفات split APK منفصلة.
-- **لا جدار تحقُّق** - مفتاح ثلاثي الحالات لمُدقِّق الحزم في Play Protect: إبقاؤه كما كان (مُطفَأ أثناء
+- **لا جدار تحقُّق:** مفتاح ثلاثي الحالات لمُدقِّق الحزم في Play Protect: إبقاؤه كما كان (مُطفَأ أثناء
   التثبيت فقط، ويُستعاد تمامًا)، أو دائمًا مُشغَّل، أو دائمًا مُطفَأ.
-- **صريح بشأن Developer Verification** - تثبيت الجذر مُعفًى أصلًا من Developer Verification لعام 2026 في
+- **صريح بشأن Developer Verification:** تثبيت الجذر مُعفًى أصلًا من Developer Verification لعام 2026 في
   أندرويد؛ المفتاح يبذل أقصى جهد ويقول ذلك، وليس مفتاحًا زائفًا أبدًا.
-- **ليس "مُثبَّتًا عبر sideload"** - يُظهر مصدر التثبيت اختياريًا بوصفه Play Store، سواء المُثبِّت (وقت
+- **ليس "مُثبَّتًا عبر sideload":** يُظهر مصدر التثبيت اختياريًا بوصفه Play Store، سواء المُثبِّت (وقت
   التثبيت) أو البادئ (عبر تعديل `packages.xml` مُراعٍ لـ ABX).
-- **منفصل وقابل للاستئناف** - تعمل عمليات التثبيت كعملية جذر منفصلة؛ إغلاق WebUI لا يقطعها أبدًا،
+- **منفصل وقابل للاستئناف:** تعمل عمليات التثبيت كعملية جذر منفصلة؛ إغلاق WebUI لا يقطعها أبدًا،
   وتُعيد الواجهة الاتصال عبر معرِّف العملية.
-- **قرارك** - حزم الاختبار، منح كل أذونات وقت التشغيل، المستخدم المُستهدَف، تجاوز
+- **قرارك:** حزم الاختبار، منح كل أذونات وقت التشغيل، المستخدم المُستهدَف، تجاوز
   حظر SDK المستهدف المنخفض: كلها اختيارية.
-- **دون اتصال، مكتفٍ ذاتيًا، دون إعادة تشغيل** - وحدة WebUI مع ملفاتها الثنائية المُرفقة؛ قابلة
+- **دون اتصال، مكتفٍ ذاتيًا، دون إعادة تشغيل:** وحدة WebUI مع ملفاتها الثنائية المُرفقة؛ قابلة
   للاستخدام في لحظة فلاشها.
 
 ## وكلاء الذكاء الاصطناعي
 
 يرحب هذا المشروع بمساهمي الذكاء الاصطناعي والوكلاء. يتحدث المحرِّك بلغة JSON عبر عقد صغير بلا واجهة
 (`scripts/helper.sh <verb> <base64(JSON)>`)، موثَّق في
-[docs/AI-AGENTS.md](docs/AI-AGENTS.md)، حتى يستطيع الوكيل قيادة كل إجراء تستطيعه WebUI - لا تكشط
+[docs/AI-AGENTS.md](docs/AI-AGENTS.md)، حتى يستطيع الوكيل قيادة كل إجراء تستطيعه WebUI, لا تكشط
 WebUI. تخضع تصحيحات الذكاء الاصطناعي لنفس مستوى المراجعة كأي تصحيح آخر.
 
 ## التثبيت
@@ -80,6 +109,14 @@ Termux (مع إغلاق مكتباته المشتركة) ومُحوِّلَي `a
 كلٌّ مع `PROVENANCE.json`. يُجمِّع سير عمل الإصدار الملفات المضغوطة القابلة للفلاش، ويكتب رفقاء
 `.sha256`، ويملأ `update.json`، وينشر بوصفه `github-actions[bot]`.
 
+## التحديثات التزايدية (VDLU)
+
+يأتي VD Installer مزوّدًا بالمحرك **[VDLiveUpdate](https://github.com/VD171/VDLiveUpdate) (VDLU)** (مُضمَّن في `module/vdlu/`): تُحدِّث الوحدة نفسها بجلب الملفات التي تغيّرت فقط (كتل معنونة بالمحتوى + ملف `manifest.json` موقَّع)، بدلًا من إعادة تنزيل ملف `.zip` بالكامل. ملف التعريف **المُقوَّى**: توقيع ed25519 إلزامي والرجوع إلى إصدار أقدم محظور؛ ويبقى ملف `.zip` الكامل صالحًا كبديل احتياطي.
+
+- **LIVE فقط** (دون إعادة تشغيل): تُطبَّق التحديثات عند الإقلاع التالي عبر `service.sh`، في الخلفية، ولا تفعل شيئًا عندما لا يكون هناك feed يمكن الوصول إليه.
+- **الحالة** في `/data/adb/vdinstaller/vdlu/`، خارج الوحدة، لذا تبقى بعد إعادة الفلاش.
+- **WebUI:** لوحة **التحديثات** مع إشعار منبثق للتقدّم وزر إلغاء؛ والتحديث التلقائي اختياري.
+
 ## التوثيق
 
 توجد الأدلة في [docs/](docs/) وتُنسَخ إلى ويكي GitHub. راجع [docs/AI-AGENTS.md](docs/AI-AGENTS.md)
@@ -99,16 +136,15 @@ Termux (مع إغلاق مكتباته المشتركة) ومُحوِّلَي `a
 
 ## جهات الاتصال
 
-- Site           : https://vd171.ru
-- Site           : https://vd.priv8.ru
-- Source         : https://github.com/VD171/VD-Installer
-- GitHub         : [@VD171](https://github.com/VD171)
-- XDA-Developers : [@VD171](https://xdaforums.com/m/vd171.4699873/)
-- XDA thread     : [VD-Installer](https://xdaforums.com/t/VD-Installer.4809504/)
-- Telegram       : [@VD_Priv8](https://t.me/VD_Priv8)
-- Channel        : [@Priv8_VD](https://t.me/Priv8_VD)
-- Discord        : [@VD.Priv8](https://discord.com/users/1296831918989639721)
-- E-mail         : vd.priv8@pm.me
+- https://vd171.ru
+- https://vd.priv8.ru
+- **Telegram:** @VD_Priv8 https://t.me/VD_Priv8
+- **Channel:** @Priv8_VD https://t.me/Priv8_VD
+- **Discord:** @VD.Priv8 https://discord.com/users/1296831918989639721
+- **E-mail:** vd.priv8@pm.me
+- **XDA-Developers:** @VD171 https://xdaforums.com/m/vd171.4699873/
+- **XDA thread:** https://xdaforums.com/t/VD-Installer.4809504/
+- **GitHub:** @VD171 https://github.com/VD171
 
 ## الرخصة
 
@@ -126,6 +162,4 @@ VDInstaller مُرخَّص بموجب GNU AGPL-3.0-or-later. راجع [LICENSE](
 
 ---
 
-> انضم إلى القناة: [@Priv8_VD](https://t.me/Priv8_VD)
-
-> _This documentation was generated with Claude (Anthropic) and is maintained by VD171. Corrections and improvements are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md)._
+📣 **انضم إلى القناة للتحديثات:** @Priv8_VD https://t.me/Priv8_VD

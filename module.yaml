@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/KernelSU-Modules/tools/main/schemas/module.schema.json
+schemaVersion: 1
+id: vdinstaller
+name: VD Installer
+summary: Frictionless root sideload installer for single, batch and split APKs, with a Play Protect verifier toggle and install-source spoof, driven from a KernelSU/APatch/Magisk WebUI.
+description: README.md
+license: AGPL-3.0-or-later
+homepage: https://github.com/VD171/VD-Installer
+support: https://xdaforums.com/t/4809504
+tags:
+  - kernelsu
+  - apatch
+  - magisk
+  - root
+  - installer
+  - sideload
+  - apk
+  - webui
+compatibility:
+  architectures:
+    - arm64-v8a
+    - armeabi-v7a
+    - x86
+    - x86_64
+release:
+  assetPattern: "VD-Installer-*.zip"

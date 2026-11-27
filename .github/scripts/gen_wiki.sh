@@ -22,9 +22,8 @@
 # ======================================================================
 #
 #  Generate the project Wiki from docs/. Single source of generation, used by
-#  both the GitHub wiki-sync workflow and the manual Forgejo wiki push, so both
-#  wikis are byte-identical. docs/ stays the source of truth; this only renders
-#  a Home, a _Sidebar and a Languages index around the mirrored pages.
+#  the GitHub wiki-sync workflow. docs/ stays the source of truth; this only
+#  renders a Home, a _Sidebar and a Languages index around the mirrored pages.
 #
 #  Usage: gen_wiki.sh <docs_dir> <wiki_dir>
 
